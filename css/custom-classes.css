@@ -1,0 +1,53 @@
+/* This is Custom CSS Styles */
+
+/*BG for sign-in*/
+.box-bg{
+  background-color: rgb(198, 235, 190);
+}
+
+/* Apply this to your <aside> */
+.shadow-box {
+  padding: 2rem;
+  box-shadow:
+    0 6px 10px rgba(0, 0, 0, 0.06),
+    0 16px 28px rgba(0, 0, 0, 0.12),
+    0 36px 56px rgba(0, 0, 0, 0.06);
+  transform: translateY(-4px);
+}
+
+.letter-spacing{
+  letter-spacing: 1px;
+}
+
+/*This is for the sign in box h & w*/
+.h-and-w{
+  height: 450px;
+  width: 450px;
+}
+
+.cursor-pointer{
+  cursor: pointer;
+}
+
+/* BTN for Sign In  pages */
+.btn-h{
+  height: 60px;
+}
+
+/* Sign-in form container */
+.signin-box {
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow:
+    0 4px 8px rgba(0, 0, 0, 0.04),     /* light base */
+    0 12px 24px rgba(0, 0, 0, 0.06),   /* soft mid */
+    0 24px 40px rgba(0, 0, 0, 0.03);   /* gentle outer */
+  max-width: 420px;        /* keeps it compact */
+  margin: 3rem auto;       /* centers on page */
+}
+
+/*for logo size*/
+.logo-size {
+  width: 120px;
+  height: auto;
+}
