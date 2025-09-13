@@ -33,7 +33,7 @@ $(document).ready(function () {
 
     if (enteredPin === generatedPin) {
       // ✅ Correct PIN → redirect
-      window.location.href = "nextpage.html"; 
+      window.location.href = "sign-up-1.html";
     } else {
       // ❌ Incorrect PIN → show toast
       const toast = new bootstrap.Toast($("#pinToast")[0]);

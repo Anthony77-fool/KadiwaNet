@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Verify Email</title>
+  <title>Sign In Step 1</title>
 
   <!-- FAVICON -->
   <link rel="icon" type="image/png" href="images/KadiwaNet_Logo.png" sizes="32x32">
@@ -66,9 +66,20 @@
       <form action="" class="h-and-w signin-box py-5">
 
         <!-- Header Title -->
-        <header class="text-center pb-4">
+        <header class="text-center d-flex gap-3 flex-column pb-3">
           <h2 class="fw-bold letter-spacing">Create an account</h2>
-          <h6 class="fw-normal letter-spacing">Verify Email Address to get started!</h6>
+          
+          <!-- Steps Indicator -->
+          <div class="d-flex justify-content-center align-items-center px-5">
+            <i class="bi bi-1-circle-fill fs-2 text-success"></i>
+            <hr class="hr-w mx-3 my-0 border-3 opacity-50">
+            <i class="bi bi-2-circle-fill fs-2 opacity-50"></i>
+            <hr class="hr-w mx-3 my-0 border-3 opacity-50">
+            <i class="bi bi-3-circle-fill fs-2 opacity-50"></i>
+          </div>
+
+
+          <h6 class="fw-normal letter-spacing">Provide your account information</h6>
         </header>
 
         <!-- Input Fields -->
@@ -76,12 +87,19 @@
 
           <!-- Email Address & Password -->
           <input type="email" class="form-control mb-3 w-75" placeholder="Email Address" required>
+          <input type="email" class="form-control mb-3 w-75" placeholder="Email Address" required>
+
+          <!-- Container for seller or Buyer options-->
+          <div class="btn-group w-50" role="group" aria-label="Select role">
+            <button type="button" class="btn btn-role border-success border-3 bg-success text-white fw-semibold">Seller</button>
+            <button type="button" class="btn btn-role border border-3 fw-normal">Buyer</button>
+          </div>
 
           <!-- Sign In Button -->
           <button type="button"
                   id="openPinModal"
-                  class="cursor-pointer w-75 btn-h btn btn-success border-0 rounded-3 fs-3 fw-bold mt-2 text-white">
-            Send Code
+                  class="cursor-pointer w-75 btn-h btn btn-success border-0 rounded-3 fs-3 fw-bold mt-3 text-white">
+            Proceed
           </button>
 
           <!-- Sign Up Link -->
@@ -98,55 +116,29 @@
 
   </div>
 
-  <!-- Modal: Enter PIN -->
-  <div class="modal fade" id="pinModal" tabindex="-1" aria-labelledby="pinModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content rounded-4 shadow">
-        <div class="modal-header d-flex flex-row justify-content-between box-bg">
-          <h5 class="modal-title fw-bold" id="pinModalLabel">Enter Verification PIN</h5>
-          <i class="fa-solid fa-square-xmark cursor-pointer fs-2 text-success" data-bs-dismiss="modal" aria-label="Close"></i>
-        </div>
+  <script>
+    $(document).ready(function () {
+      const activeClasses = "border-success border-3 bg-success text-white fw-semibold";
+      const inactiveClasses = "border border-3 fw-normal";
 
-        <div class="modal-body text-center">
-          <p class="fw-semibold mb-4">
-            Please enter the 6-digit code we sent to your email.
-          </p>
+      $(".btn-role").on("click", function () {
+        // Remove active styling from all buttons
+        $(".btn-role")
+          .removeClass(activeClasses)
+          .addClass(inactiveClasses);
 
-          <div class="pin-wrapper d-flex justify-content-center gap-2">
-            <input type="text" maxlength="1" class="pin-box form-control text-center fs-3" />
-            <input type="text" maxlength="1" class="pin-box form-control text-center fs-3" />
-            <input type="text" maxlength="1" class="pin-box form-control text-center fs-3" />
-            <input type="text" maxlength="1" class="pin-box form-control text-center fs-3" />
-            <input type="text" maxlength="1" class="pin-box form-control text-center fs-3" />
-            <input type="text" maxlength="1" class="pin-box form-control text-center fs-3" />
-          </div>
-        </div>
+        // Add active styling to the clicked one
+        $(this)
+          .removeClass(inactiveClasses)
+          .addClass(activeClasses);
+      });
 
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-            Cancel
-          </button>
-          <button type="button" class="btn btn-success" id="submitPinBtn">
-            Verify
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Toast Notification for PIN Verification -->
-  <div class="toast-container position-fixed bottom-0 end-0 p-3">
-    <div id="pinToast" class="toast align-items-center text-bg-danger border-0" role="alert">
-      <div class="d-flex">
-        <div class="toast-body">
-          Incorrect PIN. Please try again.
-        </div>
-        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
-      </div>
-    </div>
-  </div>
-
-  <script src="js/verify-email-code.js"></script>
+      // Make sure "Seller" is set as default (active)
+      $(".btn-role").first()
+        .removeClass(inactiveClasses)
+        .addClass(activeClasses);
+    });
+  </script>
 
 </body>
 </html>

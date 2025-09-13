@@ -73,3 +73,7 @@
   border-color: var(--bs-success) !important;
   box-shadow: 0 0 0 0.25rem rgba(25,135,84,.25) !important;
 }
+
+.hr-w{
+  width: 15%;
+}

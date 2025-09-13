@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Verify Email</title>
+  <title>Sign In Step 2</title>
 
   <!-- FAVICON -->
   <link rel="icon" type="image/png" href="images/KadiwaNet_Logo.png" sizes="32x32">
@@ -63,7 +63,12 @@
     <main class="w-100 d-flex flex-column justify-content-center align-items-center">
 
       <!-- Sign In Form -->
-      <form action="" class="h-and-w signin-box py-5">
+      <form action="" class="h-and-w signin-box pb-5 pt-3">
+
+        <!-- This is btn back -->
+         <a href="sign-up-1.html" class="container ps-4">
+           <i class="fa-solid fa-square-caret-left fs-2 text-success cursor-pointer"></i>
+         </a>
 
         <!-- Header Title -->
         <header class="text-center pb-4">
@@ -86,8 +91,8 @@
 
           <!-- Sign Up Link -->
           <div class="d-flex flex-row justify-content-between cursor-pointer w-75 mt-2">
-            <h6 class="fw-normal">Already have an account?</h6>
-            <a href="sign-in.html" class="cursor-pointer fs-6 text-decoration-none text-success fw-bold">Click here</a>
+            <h6 class="fw-normal">Doesn't have an account?</h6>
+            <a href="verify-email.html" class="cursor-pointer fs-6 text-decoration-none text-success fw-bold">Click here</a>
           </div>
 
         </div>
@@ -96,54 +101,6 @@
 
     </main>
 
-  </div>
-
-  <!-- Modal: Enter PIN -->
-  <div class="modal fade" id="pinModal" tabindex="-1" aria-labelledby="pinModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content rounded-4 shadow">
-        <div class="modal-header d-flex flex-row justify-content-between box-bg">
-          <h5 class="modal-title fw-bold" id="pinModalLabel">Enter Verification PIN</h5>
-          <i class="fa-solid fa-square-xmark cursor-pointer fs-2 text-success" data-bs-dismiss="modal" aria-label="Close"></i>
-        </div>
-
-        <div class="modal-body text-center">
-          <p class="fw-semibold mb-4">
-            Please enter the 6-digit code we sent to your email.
-          </p>
-
-          <div class="pin-wrapper d-flex justify-content-center gap-2">
-            <input type="text" maxlength="1" class="pin-box form-control text-center fs-3" />
-            <input type="text" maxlength="1" class="pin-box form-control text-center fs-3" />
-            <input type="text" maxlength="1" class="pin-box form-control text-center fs-3" />
-            <input type="text" maxlength="1" class="pin-box form-control text-center fs-3" />
-            <input type="text" maxlength="1" class="pin-box form-control text-center fs-3" />
-            <input type="text" maxlength="1" class="pin-box form-control text-center fs-3" />
-          </div>
-        </div>
-
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-            Cancel
-          </button>
-          <button type="button" class="btn btn-success" id="submitPinBtn">
-            Verify
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Toast Notification for PIN Verification -->
-  <div class="toast-container position-fixed bottom-0 end-0 p-3">
-    <div id="pinToast" class="toast align-items-center text-bg-danger border-0" role="alert">
-      <div class="d-flex">
-        <div class="toast-body">
-          Incorrect PIN. Please try again.
-        </div>
-        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
-      </div>
-    </div>
   </div>
 
   <script src="js/verify-email-code.js"></script>
