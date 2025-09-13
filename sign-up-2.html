@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sign In</title>
+  <title>Sign In Step 2</title>
 
   <!-- FAVICON -->
   <link rel="icon" type="image/png" href="images/KadiwaNet_Logo.png" sizes="32x32">
@@ -35,46 +35,6 @@
   <!-- main container -->
   <div class="d-flex flex-row justify-content-evenly vh-100">
 
-    <!-- This is sign-in inputs side -->
-    <main class="w-100 d-flex flex-column justify-content-center align-items-center">
-
-      <!-- Sign In Form -->
-      <form action="" class="h-and-w signin-box py-5">
-        <!-- Header Title -->
-        <header class="text-center mb-5">
-          <h2 class="fw-bold letter-spacing">Sign In</h2>
-        </header>
-
-        <!-- Input Fields -->
-        <div class="d-flex flex-column align-items-center">
-
-          <!-- Email Address & Password -->
-          <input type="email" class="form-control mb-3 w-75" placeholder="Email Address" required>
-          <input type="password" class="form-control mb-3 w-75" placeholder="Password" required>
-
-          <!-- Remember Me & Forgot Password -->
-          <div class="d-flex flex-row justify-content-between w-75">
-            <div class="d-flex flex-row">
-              <input type="checkbox" name="remember-me" id="remember-me" class="form-check-input cursor-pointer me-2">
-              <label for="remember-me" class="cursor-pointer fs-6">Remember Me</label>
-            </div>
-            <a href="#" class="cursor-pointer fs-6 text-decoration-none text-success fw-bold">Forgot Password?</a>
-          </div>
-
-          <!-- Sign In Button -->
-          <button type="submit" class="cursor-pointer w-75 btn-h mt-3 btn btn-success border-0 rounded-3 fs-3 fw-bold mt-5 text-white">Sign In</button>
-
-          <!-- Sign Up Link -->
-          <div class="d-flex flex-row justify-content-between cursor-pointer w-75 mt-2">
-            <h6 class="fw-normal">Doesn't have an account?</h6>
-            <a href="verify-email.html" class="cursor-pointer fs-6 text-decoration-none text-success fw-bold">Click here</a>
-          </div>
-
-        </div>
-
-      </form>
-
-    </main>
     <!-- This is sign-in image side -->
     <aside class="w-100 box-bg shadow-box d-flex flex-column justify-content-center align-items-center">
 
@@ -99,11 +59,51 @@
 
     </aside>
 
+    <!-- This is sign-in inputs side -->
+    <main class="w-100 d-flex flex-column justify-content-center align-items-center">
+
+      <!-- Sign In Form -->
+      <form action="" class="h-and-w signin-box pb-5 pt-3">
+
+        <!-- This is btn back -->
+         <a href="sign-up-1.html" class="container ps-4">
+           <i class="fa-solid fa-square-caret-left fs-2 text-success cursor-pointer"></i>
+         </a>
+
+        <!-- Header Title -->
+        <header class="text-center pb-4">
+          <h2 class="fw-bold letter-spacing">Create an account</h2>
+          <h6 class="fw-normal letter-spacing">Verify Email Address to get started!</h6>
+        </header>
+
+        <!-- Input Fields -->
+        <div class="d-flex flex-column align-items-center">
+
+          <!-- Email Address & Password -->
+          <input type="email" class="form-control mb-3 w-75" placeholder="Email Address" required>
+
+          <!-- Sign In Button -->
+          <button type="button"
+                  id="openPinModal"
+                  class="cursor-pointer w-75 btn-h btn btn-success border-0 rounded-3 fs-3 fw-bold mt-2 text-white">
+            Send Code
+          </button>
+
+          <!-- Sign Up Link -->
+          <div class="d-flex flex-row justify-content-between cursor-pointer w-75 mt-2">
+            <h6 class="fw-normal">Doesn't have an account?</h6>
+            <a href="verify-email.html" class="cursor-pointer fs-6 text-decoration-none text-success fw-bold">Click here</a>
+          </div>
+
+        </div>
+
+      </form>
+
+    </main>
+
   </div>
+
+  <script src="js/verify-email-code.js"></script>
 
 </body>
 </html>
-
-<!--
-  Tea Green: 198, 235, 190
--->
