@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Sign In</title>
 
   <!-- FAVICON -->
   <link rel="icon" type="image/png" href="images/KadiwaNet_Logo.png" sizes="32x32">
@@ -26,6 +26,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Loved+by+the+King&family=Over+the+Rainbow&family=Roboto:ital,wght@0,100..900;1,100..900&family=Unkempt:wght@400;700&display=swap" rel="stylesheet">
 
+  <!-- CDN for JQUERY -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 </head>
 <body>
 
@@ -33,18 +36,12 @@
   <div class="d-flex flex-row justify-content-evenly vh-100">
 
     <!-- This is sign-in inputs side -->
-    <main class="w-100 d-flex flex-column align-items-center">
-
-      <!-- Logo for head -->
-      <header class="d-flex flex-row justify-content-start align-items-center w-100 mt-2">
-        <img src="images/KadiwaNet_Logo.png" alt="KadiwaNet Logo" class="logo-size">
-        <h1 class="fw-bolder letter-spacing">KadiwaNet</h1>
-      </header>
+    <main class="w-100 d-flex flex-column justify-content-center align-items-center">
 
       <!-- Sign In Form -->
-      <form action="" class="h-and-w signin-box">
+      <form action="" class="h-and-w signin-box py-5">
         <!-- Header Title -->
-        <header class="text-center p-5">
+        <header class="text-center mb-5">
           <h2 class="fw-bold letter-spacing">Sign In</h2>
         </header>
 
@@ -65,12 +62,12 @@
           </div>
 
           <!-- Sign In Button -->
-          <button type="submit" class="cursor-pointer w-75 btn-h mt-3 box-bg border-0 rounded-3 fs-3 fw-bold mt-5 text-white">Sign In</button>
+          <button type="submit" class="cursor-pointer w-75 btn-h mt-3 btn btn-success border-0 rounded-3 fs-3 fw-bold mt-5 text-white">Sign In</button>
 
           <!-- Sign Up Link -->
           <div class="d-flex flex-row justify-content-between cursor-pointer w-75 mt-2">
             <h6 class="fw-normal">Doesn't have an account?</h6>
-            <a href="#" class="cursor-pointer fs-6 text-decoration-none text-success fw-bold">Click here</a>
+            <a href="verify-email.html" class="cursor-pointer fs-6 text-decoration-none text-success fw-bold">Click here</a>
           </div>
 
         </div>
@@ -83,7 +80,7 @@
 
       <!-- Image Container -->
       <div class="image-container">
-        <img src="images/Kadiwa-gif-unscreen.gif" alt="This is KadiwaNet Hero Image">
+        <img src="images/KadiwaNet_Gif.gif" alt="This is KadiwaNet Hero Image">
       </div>
 
       <!-- Text Container -->

@@ -21,7 +21,7 @@
 
 /*This is for the sign in box h & w*/
 .h-and-w{
-  height: 450px;
+  height: auto;
   width: 450px;
 }
 
@@ -50,4 +50,26 @@
 .logo-size {
   width: 120px;
   height: auto;
+}
+
+.pin-box {
+  width: 3rem;
+  height: 3.5rem;
+  font-weight: 600;
+  border: 2px solid #ced4da;
+  border-radius: .5rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+/* Glow in success color on focus */
+.pin-box:focus {
+  border-color: var(--bs-success);
+  box-shadow: 0 0 0 0.25rem rgba(25,135,84,.25); /* success glow */
+  outline: none;
+}
+
+/*Focus for PIN boxes*/
+.form-control.pin-box:focus {
+  border-color: var(--bs-success) !important;
+  box-shadow: 0 0 0 0.25rem rgba(25,135,84,.25) !important;
 }
