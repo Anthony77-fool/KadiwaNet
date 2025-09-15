@@ -33,7 +33,7 @@
 <body>
 
   <!-- main container -->
-  <div class="d-flex flex-row justify-content-evenly vh-100">
+  <div class="d-flex flex-row justify-content-evenly h-100">
 
     <!-- This is sign-in image side -->
     <aside class="w-100 box-bg shadow-box d-flex flex-column justify-content-center align-items-center">
@@ -50,49 +50,128 @@
       </div>
 
       <!-- Links Container-->
-       <div class="d-flex flex-row gap-4 mt-4">
-        <i class="fa-brands fa-facebook fs-3"></i>
-        <i class="fa-brands fa-linkedin fs-3"></i>
-        <i class="fa-brands fa-instagram fs-3"></i>
-        <i class="fa-brands fa-google fs-3"></i>
+       <div class="d-flex flex-row gap-4 mt-4 cursor-pointer">
+        <i class="fa-brands fa-facebook fs-3 cursor-pointer"></i>
+        <i class="fa-brands fa-linkedin fs-3 cursor-pointer"></i>
+        <i class="fa-brands fa-instagram fs-3 cursor-pointer"></i>
+        <i class="fa-brands fa-google fs-3 cursor-pointer"></i>
        </div>
 
     </aside>
 
     <!-- This is sign-in inputs side -->
-    <main class="w-100 d-flex flex-column justify-content-center align-items-center">
+    <main class="w-100 d-flex flex-column justify-content-center align-items-center h-100 py-5">
 
       <!-- Sign In Form -->
-      <form action="" class="h-and-w signin-box pb-5 pt-3">
+      <form action="" class="h-and-w signin-box py-5">
 
-        <!-- This is btn back -->
-         <a href="sign-up-1.html" class="container ps-4">
-           <i class="fa-solid fa-square-caret-left fs-2 text-success cursor-pointer"></i>
-         </a>
+        
 
         <!-- Header Title -->
-        <header class="text-center pb-4">
+        <header class="text-center d-flex gap-3 flex-column pb-3">
           <h2 class="fw-bold letter-spacing">Create an account</h2>
-          <h6 class="fw-normal letter-spacing">Verify Email Address to get started!</h6>
+          
+          <!-- Steps Indicator -->
+          <div class="d-flex justify-content-center align-items-center px-5">
+            <i class="bi bi-1-circle-fill fs-2 opacity-50"></i>
+            <hr class="hr-w mx-3 my-0 border-3 opacity-50">
+            <i class="bi bi-2-circle-fill fs-2 text-success"></i>
+            <hr class="hr-w mx-3 my-0 border-3 opacity-50">
+            <i class="bi bi-3-circle-fill fs-2 opacity-50"></i>
+          </div>
+
+
+          <h6 class="fw-normal letter-spacing">Provide your basic information</h6>
         </header>
 
         <!-- Input Fields -->
         <div class="d-flex flex-column align-items-center">
 
-          <!-- Email Address & Password -->
-          <input type="email" class="form-control mb-3 w-75" placeholder="Email Address" required>
+          <!-- First Name, Middle Name, Last Name -->
+          <input type="text" class="form-control mb-3 w-75" placeholder="First Name" required>
+          <input type="text" class="form-control mb-3 w-75" placeholder="Middle Name" required>
+          <input type="text" class="form-control mb-3 w-75" placeholder="Last Name" required>
+
+           <!-- Container for Male or Female options-->
+          <div class="btn-group w-50" role="group" aria-label="Select role">
+            <button type="button" class="btn btn-role border-success border-3 bg-success text-white fw-semibold">
+              <i class="bi bi-gender-male"></i>
+              Male
+            </button>
+            <button type="button" class="btn btn-role border border-3 fw-normal">
+              <i class="bi bi-gender-female"></i>
+              Female
+            </button>
+          </div>
+
+          <!-- Dropdown for selecting Province -->
+          <div class="dropdown w-75 mt-3">
+            <button class="btn border-0 w-100 fw-normal py-2 rounded-3 shadow-sm d-flex justify-content-between align-items-center" 
+                    type="button" 
+                    id="dropdownMenuButton" 
+                    data-bs-toggle="dropdown" 
+                    aria-expanded="false">
+              <span>Select Province</span>
+              <i class="bi bi-caret-down-fill"></i>
+            </button>
+            <ul class="dropdown-menu w-100 rounded-3 shadow-sm" aria-labelledby="dropdownMenuButton">
+              <li><a class="dropdown-item" href="#">Option 1</a></li>
+              <li><a class="dropdown-item" href="#">Option 2</a></li>
+              <li><a class="dropdown-item" href="#">Option 3</a></li>
+              <li><a class="dropdown-item" href="#">Option 4</a></li>
+              <li><a class="dropdown-item" href="#">Option 5</a></li>
+            </ul>
+          </div>
+
+          <!-- Dropdown for selecting Municipality -->
+          <div class="dropdown w-75 mt-3">
+            <button class="btn border-0 w-100 fw-normal py-2 rounded-3 shadow-sm d-flex justify-content-between align-items-center" 
+                    type="button" 
+                    id="dropdownMenuButton" 
+                    data-bs-toggle="dropdown" 
+                    aria-expanded="false">
+              <span>Select Municipality</span>
+              <i class="bi bi-caret-down-fill"></i>
+            </button>
+            <ul class="dropdown-menu w-100 rounded-3 shadow-sm" aria-labelledby="dropdownMenuButton">
+              <li><a class="dropdown-item" href="#">Option 1</a></li>
+              <li><a class="dropdown-item" href="#">Option 2</a></li>
+              <li><a class="dropdown-item" href="#">Option 3</a></li>
+              <li><a class="dropdown-item" href="#">Option 4</a></li>
+              <li><a class="dropdown-item" href="#">Option 5</a></li>
+            </ul>
+          </div>
+
+          <!-- Dropdown for selecting Barangay -->
+          <div class="dropdown w-75 mt-3">
+            <button class="btn border-0 w-100 fw-normal py-2 rounded-3 shadow-sm d-flex justify-content-between align-items-center" 
+                    type="button" 
+                    id="dropdownMenuButton" 
+                    data-bs-toggle="dropdown" 
+                    aria-expanded="false">
+              <span>Select Barangay</span>
+              <i class="bi bi-caret-down-fill"></i>
+            </button>
+            <ul class="dropdown-menu w-100 rounded-3 shadow-sm" aria-labelledby="dropdownMenuButton">
+              <li><a class="dropdown-item" href="#">Option 1</a></li>
+              <li><a class="dropdown-item" href="#">Option 2</a></li>
+              <li><a class="dropdown-item" href="#">Option 3</a></li>
+              <li><a class="dropdown-item" href="#">Option 4</a></li>
+              <li><a class="dropdown-item" href="#">Option 5</a></li>
+            </ul>
+          </div>
 
           <!-- Sign In Button -->
           <button type="button"
                   id="openPinModal"
-                  class="cursor-pointer w-75 btn-h btn btn-success border-0 rounded-3 fs-3 fw-bold mt-2 text-white">
-            Send Code
+                  class="cursor-pointer w-75 btn-h btn btn-success border-0 rounded-3 fs-3 fw-bold mt-3 text-white">
+            Proceed
           </button>
 
           <!-- Sign Up Link -->
           <div class="d-flex flex-row justify-content-between cursor-pointer w-75 mt-2">
-            <h6 class="fw-normal">Doesn't have an account?</h6>
-            <a href="verify-email.html" class="cursor-pointer fs-6 text-decoration-none text-success fw-bold">Click here</a>
+            <h6 class="fw-normal">Already have an account?</h6>
+            <a href="sign-in.html" class="cursor-pointer fs-6 text-decoration-none text-success fw-bold">Click here</a>
           </div>
 
         </div>
@@ -103,7 +182,48 @@
 
   </div>
 
-  <script src="js/verify-email-code.js"></script>
+   <!-- Script for clicking options -->
+  <script>
+    $(document).ready(function () {
+      const activeClasses = "border-success border-3 bg-success text-white fw-semibold";
+      const inactiveClasses = "border border-3 fw-normal";
+
+      $(".btn-role").on("click", function () {
+        // Remove active styling from all buttons
+        $(".btn-role")
+          .removeClass(activeClasses)
+          .addClass(inactiveClasses);
+
+        // Add active styling to the clicked one
+        $(this)
+          .removeClass(inactiveClasses)
+          .addClass(activeClasses);
+      });
+
+      // Make sure "Seller" is set as default (active)
+      $(".btn-role").first()
+        .removeClass(inactiveClasses)
+        .addClass(activeClasses);
+
+      // Target all dropdown buttons with caret icons
+      $('.dropdown').each(function() {
+        const $dropdown = $(this);
+        const $button = $dropdown.find('button');
+        const $icon = $button.find('i');
+
+        // On show event → rotate caret up
+        $dropdown.on('show.bs.dropdown', function () {
+          $icon.addClass('rotate-up');
+        });
+
+        // On hide event → rotate caret back down
+        $dropdown.on('hide.bs.dropdown', function () {
+          $icon.removeClass('rotate-up');
+        });
+      });
+
+    });
+  </script>
 
 </body>
 </html>

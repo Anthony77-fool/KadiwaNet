@@ -50,11 +50,11 @@
       </div>
 
       <!-- Links Container-->
-       <div class="d-flex flex-row gap-4 mt-4">
-        <i class="fa-brands fa-facebook fs-3"></i>
-        <i class="fa-brands fa-linkedin fs-3"></i>
-        <i class="fa-brands fa-instagram fs-3"></i>
-        <i class="fa-brands fa-google fs-3"></i>
+       <div class="d-flex flex-row gap-4 mt-4 cursor-pointer">
+        <i class="fa-brands fa-facebook fs-3 cursor-pointer"></i>
+        <i class="fa-brands fa-linkedin fs-3 cursor-pointer"></i>
+        <i class="fa-brands fa-instagram fs-3 cursor-pointer"></i>
+        <i class="fa-brands fa-google fs-3 cursor-pointer"></i>
        </div>
 
     </aside>
@@ -87,7 +87,7 @@
 
           <!-- Email Address & Password -->
           <input type="email" class="form-control mb-3 w-75" placeholder="Email Address" required>
-          <input type="email" class="form-control mb-3 w-75" placeholder="Email Address" required>
+          <input type="password" class="form-control mb-3 w-75" placeholder="Password" required>
 
           <!-- Container for seller or Buyer options-->
           <div class="btn-group w-50" role="group" aria-label="Select role">
@@ -96,11 +96,11 @@
           </div>
 
           <!-- Sign In Button -->
-          <button type="button"
+          <a href="sign-up-2.html" type="button"
                   id="openPinModal"
                   class="cursor-pointer w-75 btn-h btn btn-success border-0 rounded-3 fs-3 fw-bold mt-3 text-white">
             Proceed
-          </button>
+          </a>
 
           <!-- Sign Up Link -->
           <div class="d-flex flex-row justify-content-between cursor-pointer w-75 mt-2">
@@ -116,6 +116,7 @@
 
   </div>
 
+  <!-- Script for clicking options -->
   <script>
     $(document).ready(function () {
       const activeClasses = "border-success border-3 bg-success text-white fw-semibold";
