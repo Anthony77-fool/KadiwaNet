@@ -88,8 +88,18 @@
 .dropdown button i {
   transition: transform 0.3s ease;
 }
-
+/* Dropdown menu max height and scroll */
 .dropdown-menu {
   max-height: 250px; /* set whatever height fits your layout */
   overflow-y: auto;  /* vertical scroll if content exceeds max-height */
+}
+
+.border-dotted {
+  border-style: dotted !important;
+}
+
+.text-truncate {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }

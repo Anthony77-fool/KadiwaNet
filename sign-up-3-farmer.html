@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sign In Step 2</title>
+  <title>Sign In Step 3 - Farmer</title>
 
   <!-- FAVICON -->
   <link rel="icon" type="image/png" href="images/KadiwaNet_Logo.png" sizes="32x32">
@@ -66,7 +66,7 @@
       <form action="" class="h-and-w signin-box pb-5 pt-3">
 
         <!-- This is btn back -->
-         <a href="sign-up-1.html" class="container ps-4">
+         <a href="sign-up-2.html" class="container ps-4">
            <i class="fa-solid fa-square-caret-left fs-2 text-success cursor-pointer"></i>
          </a>
 
@@ -78,86 +78,71 @@
           <div class="d-flex justify-content-center align-items-center px-5">
             <i class="bi bi-1-circle-fill fs-2 opacity-50"></i>
             <hr class="hr-w mx-3 my-0 border-3 opacity-50">
-            <i class="bi bi-2-circle-fill fs-2 text-success"></i>
+            <i class="bi bi-2-circle-fill fs-2 opacity-50"></i>
             <hr class="hr-w mx-3 my-0 border-3 opacity-50">
-            <i class="bi bi-3-circle-fill fs-2 opacity-50"></i>
+            <i class="bi bi-3-circle-fill fs-2 text-success"></i>
           </div>
 
 
-          <h6 class="fw-normal letter-spacing">Provide your basic information</h6>
+          <h6 class="fw-normal letter-spacing">Provide your profile and verification details</h6>
         </header>
 
         <!-- Input Fields -->
         <div class="d-flex flex-column align-items-center">
 
-          <!-- First Name, Middle Name, Last Name -->
-          <input type="text" class="form-control mb-3 w-75" placeholder="First Name" required>
-          <input type="text" class="form-control mb-3 w-75" placeholder="Middle Name" required>
-          <input type="text" class="form-control mb-3 w-75" placeholder="Last Name" required>
-
-           <!-- Container for Male or Female options-->
-          <div class="btn-group w-50" role="group" aria-label="Select role">
-            <button type="button" class="btn btn-role border-success border-3 bg-success text-white fw-semibold">
-              <i class="bi bi-gender-male"></i>
-              Male
-            </button>
-            <button type="button" class="btn btn-role border border-3 fw-normal">
-              <i class="bi bi-gender-female"></i>
-              Female
-            </button>
+          <!-- Mobile Number, Business Location -->
+          <!-- Mobile Number Input with Prefix -->
+          <div class="input-group mb-3 w-75">
+            <span class="input-group-text bg-light border-0 fw-semibold">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/9/99/Flag_of_the_Philippines.svg" 
+                  alt="PH Flag" width="20">
+              +63
+            </span>
+            <input type="tel" class="form-control" placeholder="Mobile Number" required>
           </div>
+          <input type="text" class="form-control mb-3 w-75" placeholder="Business Location" required>
 
-          <!-- Dropdown for selecting Province -->
-          <div class="dropdown w-75 mt-3">
+          <!-- Type of Land Ownership Dropdown 'Static' -->
+          <div class="dropdown w-75">
             <button class="btn border-0 w-100 fw-normal py-2 rounded-3 shadow-sm d-flex justify-content-between align-items-center" 
                     type="button" 
-                    id="provinceDropdownButton"
+                    id="landOwnershipDropdownButton"
                     data-bs-toggle="dropdown" 
                     aria-expanded="false">
-              <span>Select Province</span>
+              <span>Select Type of Land Ownership</span>
               <i class="bi bi-caret-down-fill"></i>
             </button>
-            <ul class="dropdown-menu w-100 rounded-3 shadow-sm" aria-labelledby="dropdownMenuButton" id="provinceDropdown">
-              <!-- Provinces will be populated here -->
+            <ul class="dropdown-menu w-100 rounded-3 shadow-sm" aria-labelledby="landOwnershipDropdownButton" id="landOwnershipDropdown">
+              <li><a class="dropdown-item" href="#" data-value="private">Private/Individual Ownership</a></li>
+              <li><a class="dropdown-item" href="#" data-value="government">Government-Owned Land</a></li>
+              <li><a class="dropdown-item" href="#" data-value="leasehold">Agricultural Leasehold</a></li>
+              <li><a class="dropdown-item" href="#" data-value="cooperative">Cooperative Ownership</a></li>
+              <li><a class="dropdown-item" href="#" data-value="ancestral">Ancestral Domain</a></li>
             </ul>
           </div>
 
-          <!-- Dropdown for selecting Municipality -->
-          <div class="dropdown w-75 mt-3">
-            <button class="btn border-0 w-100 fw-normal py-2 rounded-3 shadow-sm d-flex justify-content-between align-items-center" 
-                    type="button" 
-                    id="municipalityDropdownButton" 
-                    data-bs-toggle="dropdown" 
-                    aria-expanded="false">
-              <span>Select Municipality</span>
-              <i class="bi bi-caret-down-fill"></i>
-            </button>
-            <ul class="dropdown-menu w-100 rounded-3 shadow-sm" aria-labelledby="dropdownMenuButton" id="municipalityDropdown">
-              <!-- Municipalities will be populated here -->
-            </ul>
+          <!-- Hidden file inputs -->
+          <input type="file" id="authIdInput" class="d-none">
+          <input type="file" id="authCertInput" class="d-none">
+
+          <!-- Authentication ID -->
+          <div class="container border-dotted border-1 w-75 d-flex flex-row align-items-center mt-3 p-5 cursor-pointer" id="authIdBox">
+            <i class="bi bi-upload fs-3 me-4 opacity-50"></i>
+            <h6 class="text-center opacity-50">Upload Authentication ID <span class="file-name ms-2"></span></h6>
           </div>
 
-          <!-- Dropdown for selecting Barangay -->
-          <div class="dropdown w-75 mt-3">
-            <button class="btn border-0 w-100 fw-normal py-2 rounded-3 shadow-sm d-flex justify-content-between align-items-center" 
-                    type="button" 
-                    id="barangayDropdownButton" 
-                    data-bs-toggle="dropdown" 
-                    aria-expanded="false">
-              <span>Select Barangay</span>
-              <i class="bi bi-caret-down-fill"></i>
-            </button>
-            <ul class="dropdown-menu w-100 rounded-3 shadow-sm" aria-labelledby="dropdownMenuButton" id="barangayDropdown">
-              <!-- Barangays will be populated here -->
-            </ul>
+          <!-- Farmer Authentication Certificate -->
+          <div class="container border-dotted border-1 w-75 d-flex flex-row justify-content-center align-items-center mt-3 p-5 cursor-pointer" id="authCertBox">
+            <i class="bi bi-upload fs-3 me-4 opacity-50"></i>
+            <h6 class="text-center opacity-50">Upload Farmer Authentication Certificate <span class="file-name ms-2"></span></h6>
           </div>
 
           <!-- Sign In Button -->
-          <a href="sign-up-3-farmer.html" type="button"
+          <button type="button"
                   id="openPinModal"
                   class="cursor-pointer w-75 btn-h btn btn-success border-0 rounded-3 fs-3 fw-bold mt-3 text-white">
             Proceed
-          </a>
+          </button>
 
           <!-- Sign Up Link -->
           <div class="d-flex flex-row justify-content-between cursor-pointer w-75 mt-2">
@@ -178,8 +163,7 @@
   </footer>
 
    <!-- Script for clicking options -->
-  <script src="js/signUp-2-ui.js"></script>
-  <script src="js/address-dropdown.js"></script>
+  <script src="js/enable-upload-files.js"></script>
 
 </body>
 </html>
