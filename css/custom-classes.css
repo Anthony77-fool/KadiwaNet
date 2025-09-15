@@ -89,3 +89,7 @@
   transition: transform 0.3s ease;
 }
 
+.dropdown-menu {
+  max-height: 250px; /* set whatever height fits your layout */
+  overflow-y: auto;  /* vertical scroll if content exceeds max-height */
+}
