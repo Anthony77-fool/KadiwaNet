@@ -74,6 +74,32 @@
   box-shadow: 0 0 0 0.25rem rgba(25,135,84,.25) !important;
 }
 
+/* Horizontal line width for steps indicator */
 .hr-w{
   width: 15%;
+}
+
+/* Dropdown arrow rotation */
+.rotate-up {
+  transform: rotate(180deg);
+  transition: transform 0.3s ease;
+}
+/* Target the <i> element inside the button */
+.dropdown button i {
+  transition: transform 0.3s ease;
+}
+/* Dropdown menu max height and scroll */
+.dropdown-menu {
+  max-height: 250px; /* set whatever height fits your layout */
+  overflow-y: auto;  /* vertical scroll if content exceeds max-height */
+}
+
+.border-dotted {
+  border-style: dotted !important;
+}
+
+.text-truncate {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
