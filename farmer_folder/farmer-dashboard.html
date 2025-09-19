@@ -86,10 +86,10 @@
   </div>
 
   <!-- Container for Aside and Main -->
-  <div class="w-100 bg-white">
+  <div class="w-100 d-flex flex-row">
 
     <!-- Navigation Aside Bar -->
-    <aside class="w-25 bg-white">
+    <aside class="w-25 border border-1 vh-100 bg-white">
       <nav class="nav flex-column bg-white py-3">
         
         <!-- Dashboard Link -->
@@ -99,31 +99,31 @@
         </a>
 
         <!-- Inventory Link -->
-        <a class="nav-link mb-3 d-flex align-items-center text-decoration-none" href="farmer-profile.html">
+        <a class="nav-link mb-3 d-flex align-items-center text-decoration-none sidebar-hover" href="farmer-profile.html">
           <i class="bi bi-box-seam fs-3 me-4"></i>
           <h4 class="mb-0 fw-normal">Inventory</h4>
         </a>
 
         <!-- Transactions Link -->
-        <a class="nav-link mb-3 d-flex align-items-center text-decoration-none" href="farmer-products.html">
+        <a class="nav-link mb-3 d-flex align-items-center text-decoration-none sidebar-hover" href="farmer-products.html">
           <i class="bi bi-credit-card-2-back fs-3 me-4"></i>
           <h4 class="mb-0 fw-normal">Transactions</h4>
         </a>
 
         <!-- Notifications Link -->
-        <a class="nav-link mb-3 d-flex align-items-center text-decoration-none" href="farmer-orders.html">
+        <a class="nav-link mb-3 d-flex align-items-center text-decoration-none sidebar-hover" href="farmer-orders.html">
           <i class="bi bi-bell fs-3 me-4"></i>
           <h4 class="mb-0 fw-normal">Notifications</h4>
         </a>
 
         <!-- Messages Link -->
-        <a class="nav-link mb-3 d-flex align-items-center text-decoration-none" href="farmer-messages.html">
+        <a class="nav-link mb-3 d-flex align-items-center text-decoration-none sidebar-hover" href="farmer-messages.html">
           <i class="bi bi-chat fs-3 me-4"></i>
           <h4 class="mb-0 fw-normal">Messages</h4>
         </a>
 
         <!-- Reviews Link -->
-        <a class="nav-link mb-3 d-flex align-items-center text-decoration-none" href="farmer-reviews.html">
+        <a class="nav-link mb-3 d-flex align-items-center text-decoration-none sidebar-hover" href="farmer-reviews.html">
           <i class="bi bi-star fs-3 me-4"></i>
           <h4 class="mb-0 fw-normal">Reviews</h4>
         </a>
@@ -131,6 +131,323 @@
       </nav>
     </aside>
 
+    <!-- Main Content Area -->
+    <main class="w-75 bg-white px-5 py-4 h-100">
+      <!-- Header Text -->
+      <header>
+      <h2 class="letter-spacing fw-bold">Dashboard</h2>
+      </header>
+
+      <!-- Middle Part -->
+      <div class="container">
+        <div class="row gap-3">
+
+          <!-- Box containing Sales -->
+          <article class="col-2 shadow-article d-flex flex-column justify-content-between p-3">
+            <header class="d-flex flex-row justify-content-between align-items-center">
+              <h5 class="mb-0">Sales</h5>
+              <i class="bi bi-bar-chart-line-fill fs-4 text-danger"></i>
+            </header>
+
+            <h3 class="mt-1 mb-0">35%</h3>
+
+            <i class="bi bi-arrow-up-right-square-fill fs-3 align-self-end text-success mt-auto"></i>
+          </article>
+
+          <!-- Box containing Inventory -->
+          <article class="col-2 shadow-article d-flex flex-column justify-content-between p-3">
+            <header class="d-flex flex-row justify-content-between align-items-center">
+              <h5 class="mb-0">Inventory</h5>
+              <i class="bi bi-box-seam fs-4 text-primary"></i>
+            </header>
+
+            <h3 class="mt-1 mb-0">190</h3>
+
+            <i class="bi bi-arrow-up-right-square-fill fs-3 align-self-end text-success"></i>
+          </article>
+
+          <!-- Box containing Reviews -->
+          <article class="col-2 shadow-article d-flex flex-column justify-content-between p-3">
+            <header class="d-flex flex-row justify-content-between align-items-center">
+              <h5 class="mb-0">Reviews</h5>
+              <i class="bi bi-star fs-4 text-danger"></i>
+            </header>
+
+            <h3 class="mt-1 mb-0">3.920</h3>
+
+            <i class="bi bi-arrow-up-right-square-fill fs-3 align-self-end text-success"></i>
+          </article>
+
+          <!-- Box containing Crop List -->
+          <article class="col-5 shadow-article d-flex flex-column justify-content-between p-3">
+            <header class="d-flex flex-row justify-content-between align-items-center">
+              <h5 class="mb-0 letter">Crop List</h5>
+
+              <!-- Button Group -->
+              <div class="btn-group rounded-pill overflow-hidden d-flex justify-content-center align-items-center bg-success pe-3">
+                <!-- Main button -->
+                <button type="button" class="btn btn-success fs-6 fw-semibold letter-spacing cursor-pointer">
+                  New
+                </button>
+
+                <!-- Icon with white circle -->
+                <span class="text-success bg-white p-1 rounded-circle d-flex justify-content-center justify-content-center">
+                  <i class="fa-solid fa-plus cursor-pointer"></i>
+                </span>
+              </div>
+            </header>
+
+            <h3 class="mt-1 mb-0">192</h3>
+
+            <i class="bi bi-arrow-up-right-square-fill fs-3 align-self-end text-success"></i>
+          </article>
+
+        </div>
+      </div>
+
+      <!-- Last Part -->
+      <div class="container mt-3">
+        <div class="row gap-3">
+          
+          <div class="col-4 gap-4 d-flex flex-column">
+
+            <!-- Weekly Sale Analysis -->
+            <article class="shadow-article p-3">
+              <h5 class="mb-3">Weekly Sale Analysis</h5>
+
+              <div class="d-flex justify-content-between align-items-end" style="height: 120px;">
+                <!-- SUN -->
+                <div class="d-flex flex-column align-items-center">
+                  <div class="bg-success rounded-pill" style="width: 28px; height:100px;"></div>
+                  <small class="mt-2 fw-semibold">SUN</small>
+                </div>
+
+                <!-- MON -->
+                <div class="d-flex flex-column align-items-center">
+                  <div class="bg-success-subtle rounded-pill" style="width: 28px; height:80px;"></div>
+                  <small class="mt-2 fw-semibold">MON</small>
+                </div>
+
+                <!-- TUE -->
+                <div class="d-flex flex-column align-items-center">
+                  <div class="bg-success rounded-pill" style="width: 28px; height:65px;"></div>
+                  <small class="mt-2 fw-semibold">TUE</small>
+                </div>
+
+                <!-- WED -->
+                <div class="d-flex flex-column align-items-center">
+                  <div class="bg-success-subtle rounded-pill" style="width: 28px; height:45px;"></div>
+                  <small class="mt-2 fw-semibold">WED</small>
+                </div>
+
+                <!-- THU -->
+                <div class="d-flex flex-column align-items-center">
+                  <div class="bg-success rounded-pill" style="width: 28px; height:63px;"></div>
+                  <small class="mt-2 fw-semibold">THU</small>
+                </div>
+
+                <!-- FRI -->
+                <div class="d-flex flex-column align-items-center">
+                  <div class="bg-success rounded-pill" style="width: 28px; height:74px;"></div>
+                  <small class="mt-2 fw-semibold">FRI</small>
+                </div>
+
+                <!-- SAT -->
+                <div class="d-flex flex-column align-items-center">
+                  <div class="bg-success-subtle rounded-pill" style="width: 28px; height:55px;"></div>
+                  <small class="mt-2 fw-semibold">SAT</small>
+                </div>
+              </div>
+            </article>
+            
+            <!-- Delivery Reminders -->
+            <article class="shadow-article position-relative overflow-hidden rounded-3">
+              <h5 class="mb-0 text-white p-3 position-absolute top-0 start-0 z-2">
+                Delivery Reminder
+              </h5>
+
+              <!-- Background image -->
+              <img
+                src="farmer-images/bg-img-daily-rem1.jpg"
+                alt="Background for delivery reminder"
+                class="w-100"
+                style="height: 100px;"
+              >
+
+              <!-- Foreground image (rem1) -->
+              <img
+                src="farmer-images/daily-rem1.jpg"
+                alt="Crop Image"
+                class="position-absolute top-50 end-0 translate-middle-y rounded-start-pill shadow"
+                style="width: 140px; height: 100px; object-fit: cover;"
+              >
+
+              <i class="bi bi-chat-left-dots-fill mt-5 ms-4 fs-3 position-absolute start-0 z-2 text-white-50"></i>
+            </article>
+
+          </div>
+          
+          <!-- Transactions -->
+          <div class="col-4 shadow-article p-3 overflow-auto" style="max-height: 315px;">
+            <h5 class="mb-4">Transactions</h5>
+
+            <!-- Container for background + overlays done -->
+            <div class="position-relative mt-2 rounded-2">
+              <!-- Background image -->
+              <img
+                src="farmer-images/bg-img-daily-rem1.jpg"
+                alt="Background for delivery reminder"
+                class="w-100 rounded-2"
+                style="height: 52px; object-fit: cover;"
+              >
+              <!-- Name -->
+              <h5 class="position-absolute top-0 start-0 text-white py-2 px-3 m-0">
+                John D. Sample
+              </h5>
+              <!-- Button (if done padding: 5px 35px 5px 35px;)-->
+              <button
+                class="btn btn-success position-absolute bottom-0 end-0 my-2 mx-3 fw-semibold" style="padding: 5px 35px 5px 35px;">
+                Done
+              </button>
+            </div>
+
+            <!-- Container for background + overlays pending -->
+            <div class="position-relative mt-2 rounded-2">
+              <!-- Background image -->
+              <img
+                src="farmer-images/bg-img-daily-rem1.jpg"
+                alt="Background for delivery reminder"
+                class="w-100 rounded-2"
+                style="height: 52px; object-fit: cover;"
+              >
+              <!-- Name -->
+              <h5 class="position-absolute top-0 start-0 text-white py-2 px-3 m-0">
+                John D. Sample
+              </h5>
+              <!-- Button padding: 5px 35px 5px 35px; -->
+              <button
+                class="btn btn-warning position-absolute bottom-0 end-0 my-2 mx-3 fw-semibold text-white" style="padding: 5px 25px 5px 25px;">
+                Pending
+              </button>
+            </div>
+
+            <!-- Container for background + overlays dispatched -->
+            <div class="position-relative mt-2 rounded-2">
+              <!-- Background image -->
+              <img
+                src="farmer-images/bg-img-daily-rem1.jpg"
+                alt="Background for delivery reminder"
+                class="w-100 rounded-2"
+                style="height: 52px; object-fit: cover;"
+              >
+              <!-- Name -->
+              <h5 class="position-absolute top-0 start-0 text-white py-2 px-3 m-0">
+                John D. Sample
+              </h5>
+              <!-- Button -->
+              <button
+                class="btn btn-info position-absolute bottom-0 end-0 my-2 mx-3 fw-semibold text-white">
+                Dispatched
+              </button>
+            </div>
+
+            <!-- Container for background + overlays done -->
+            <div class="position-relative mt-2 rounded-2">
+              <!-- Background image -->
+              <img
+                src="farmer-images/bg-img-daily-rem1.jpg"
+                alt="Background for delivery reminder"
+                class="w-100 rounded-2"
+                style="height: 52px; object-fit: cover;"
+              >
+              <!-- Name -->
+              <h5 class="position-absolute top-0 start-0 text-white py-2 px-3 m-0">
+                John D. Sample
+              </h5>
+              <!-- Button (if done padding: 5px 35px 5px 35px;)-->
+              <button
+                class="btn btn-success position-absolute bottom-0 end-0 my-2 mx-3 fw-semibold" style="padding: 5px 35px 5px 35px;">
+                Done
+              </button>
+            </div>
+
+            <!-- Container for background + overlays dispatched -->
+            <div class="position-relative mt-2 rounded-2">
+              <!-- Background image -->
+              <img
+                src="farmer-images/bg-img-daily-rem1.jpg"
+                alt="Background for delivery reminder"
+                class="w-100 rounded-2"
+                style="height: 52px; object-fit: cover;"
+              >
+              <!-- Name -->
+              <h5 class="position-absolute top-0 start-0 text-white py-2 px-3 m-0">
+                John D. Sample
+              </h5>
+              <!-- Button -->
+              <button
+                class="btn btn-info position-absolute bottom-0 end-0 my-2 mx-3 fw-semibold text-white">
+                Dispatched
+              </button>
+            </div>
+
+          </div>
+
+          <!-- Crop Pricing (img get from root) -->
+          <div class="col-3 shadow-article p-3 rounded-3 overflow-auto" style="max-height: 315px;">
+            <h5 class="mb-4 fw-bold">Latest Crop Pricing</h5>
+
+            <!-- Banana -->
+            <div class="d-flex align-items-center mb-3">
+              <img src="../images/crop_images/banana.avif" alt="Banana" class="rounded me-3" style="width:60px; height:60px; object-fit:cover;">
+              <div>
+                <h6 class="mb-1">Banana</h6>
+                <span class="fw-semibold text-success">₱60/kg</span>
+              </div>
+            </div>
+
+            <!-- Ampalaya -->
+            <div class="d-flex align-items-center mb-3">
+              <img src="../images/crop_images/ampalaya.jpg" alt="Ampalaya" class="rounded me-3" style="width:60px; height:60px; object-fit:cover;">
+              <div>
+                <h6 class="mb-1">Ampalaya</h6>
+                <span class="fw-semibold text-success">₱50/kg</span>
+              </div>
+            </div>
+
+            <!-- Mango -->
+            <div class="d-flex align-items-center mb-3">
+              <img src="../images/crop_images/mango.jpg" alt="Mango" class="rounded me-3" style="width:60px; height:60px; object-fit:cover;">
+              <div>
+                <h6 class="mb-1">Mango</h6>
+                <span class="fw-semibold text-success">₱40/kg</span>
+              </div>
+            </div>
+
+            <!-- Rice -->
+            <div class="d-flex align-items-center mb-3">
+              <img src="../images/crop_images/rice.webp" alt="Rice" class="rounded me-3" style="width:60px; height:60px; object-fit:cover;">
+              <div>
+                <h6 class="mb-1">Rice</h6>
+                <span class="fw-semibold text-success">₱90/kg</span>
+              </div>
+            </div>
+
+            <!-- Rice -->
+            <div class="d-flex align-items-center mb-3">
+              <img src="../images/crop_images/rice.webp" alt="Rice" class="rounded me-3" style="width:60px; height:60px; object-fit:cover;">
+              <div>
+                <h6 class="mb-1">Rice</h6>
+                <span class="fw-semibold text-success">₱90/kg</span>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+    </main>
 
   </div>
 
