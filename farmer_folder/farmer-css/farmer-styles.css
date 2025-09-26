@@ -165,3 +165,10 @@
 .sidebar-hover:hover h4 {
   font-weight: bold;
 }
+
+#hashtagBox:empty:before,
+#hashtagBox[data-placeholder]:before {
+  content: attr(data-placeholder);
+  color: #6c757d; /* Bootstrap muted */
+  pointer-events: none;
+}
