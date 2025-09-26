@@ -166,9 +166,35 @@
   font-weight: bold;
 }
 
+/*for hashtog for modal */
 #hashtagBox:empty:before,
 #hashtagBox[data-placeholder]:before {
   content: attr(data-placeholder);
   color: #6c757d; /* Bootstrap muted */
   pointer-events: none;
+}
+
+/*for table in orders */
+.orders-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem; /* spacing between rows */
+}
+
+.order-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem; /* bigger rows */
+  border-radius: 0.5rem;
+}
+
+.order-row.header {
+  border-radius: 0.5rem;
+  padding: 1rem 1.5rem;
+}
+
+.order-row .col {
+  flex: 1;
+  text-align: center;
 }

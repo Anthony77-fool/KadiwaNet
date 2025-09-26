@@ -136,24 +136,87 @@
     <main class="w-75 bg-white px-5 py-4 h-100">
       <!-- Header Text -->
       <header class="d-flex flex-row justify-content-between">
-        <h2 class="letter-spacing fw-bold">Inventory</h2>
-        <!-- Button Group -->
-        <div class="btn-group rounded-pill overflow-hidden d-flex justify-content-center align-items-center bg-success pe-3">
-          <!-- Main button -->
-          <button type="button" class="btn btn-success fs-6 fw-semibold letter-spacing cursor-pointer" 
-          data-bs-toggle="modal" data-bs-target="#productModal">
-            New
-          </button>
-
-          <!-- Icon with white circle -->
-          <span class="text-success bg-white p-1 rounded-circle d-flex justify-content-center justify-content-center"
-          role="button"
-          data-bs-toggle="modal" data-bs-target="#productModal">
-            <i class="fa-solid fa-plus cursor-pointer"></i>
-          </span>
-        </div>
+        <h2 class="letter-spacing fw-bold">Transactions</h2>
       </header>
       
+      <!-- submain -->
+      <div class="d-flex flex-row w-100 shadow-article">
+        
+        <!-- for orders -->
+        <article class="w-75 rounded-start shadow p-3 text-white"
+         style="background: url('farmer-images/bg-img-daily-rem1.jpg') center/cover no-repeat; height: 100%;">
+  
+          <header class="d-flex justify-content-between align-items-center">
+            <!-- Search bar -->
+            <form role="search" style="width: 40%;"> <!-- adjust width as needed -->
+              <div class="input-group w-100">
+                <span class="input-group-text bg-white cursor-pointer">
+                  <i class="fa-solid fa-magnifying-glass cursor-pointer"></i>
+                </span>
+                <input class="form-control border-start-0" type="search" placeholder="Search..." aria-label="Search">
+              </div>
+            </form>
+
+            <!-- Filter dropdown -->
+            <div class="dropdown">
+              <button class="btn bg-white border border-success text-dark dropdown-toggle fw-semibold" 
+                      type="button" id="filterDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                Filter: Default
+              </button>
+              <ul class="dropdown-menu dropdown-menu-end bg-white border border-success" aria-labelledby="filterDropdown">
+                <li><a class="dropdown-item active text-success fw-semibold" href="#" data-filter="default">Default</a></li>
+                <li><a class="dropdown-item" href="#" data-filter="name">By Name</a></li>
+                <li><a class="dropdown-item" href="#" data-filter="date">By Date</a></li>
+              </ul>
+            </div>
+          </header>
+
+          <!-- this is where the orders gonna be shown -->
+          <!-- Orders List -->
+          <div class="orders-list mt-3">
+
+            <!-- Header Row -->
+            <div class="order-row header text-white fw-semibold">
+              <div class="col fs-5">Name</div>
+              <div class="col fs-5">Order ID</div>
+              <div class="col fs-5">Action</div>
+            </div>
+
+            <!-- Data Rows -->
+            <div class="order-row bg-white shadow-sm">
+              <div class="col text-dark">Juan Dela Cruz</div>
+              <div class="col text-dark">#ORD001</div>
+              <div class="col">
+                <button class="btn btn-success fw-semibold">View</button>
+              </div>
+            </div>
+
+            <div class="order-row bg-white shadow-sm">
+              <div class="col text-dark">Maria Santos</div>
+              <div class="col text-dark">#ORD002</div>
+              <div class="col">
+                <button class="btn btn-success fw-semibold">View</button>
+              </div>
+            </div>
+
+            <div class="order-row bg-white shadow-sm">
+              <div class="col text-dark">Carlos Reyes</div>
+              <div class="col text-dark">#ORD003</div>
+              <div class="col">
+                <button class="btn btn-success fw-semibold">View</button>
+              </div>
+            </div>
+
+          </div>
+                      
+        </article>
+
+
+        <article class="w-25 box-bg rounded-end">
+          hallo
+        </article>
+
+      </div>
 
     </main>
 
