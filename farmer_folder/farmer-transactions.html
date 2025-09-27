@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Farmer Transactions</title>
+
+  <!-- FAVICON -->
+  <link rel="icon" type="image/png" href="../images/KadiwaNet_Logo.png" sizes="32x32">
+
+  <!-- Custom CSS  -->
+  <link rel="stylesheet" href="../css/custom-classes.css">
+  <link rel="stylesheet" href="farmer-css/farmer-styles.css">
+
+  <!--Bootstrap link-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+
+  <!-- BS ICONS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+  <!-- FontAwesome Icons -->
+  <script src="https://kit.fontawesome.com/da97a1e785.js" crossorigin="anonymous"></script>
+
+  <!-- Google Fonts  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Loved+by+the+King&family=Over+the+Rainbow&family=Roboto:ital,wght@0,100..900;1,100..900&family=Unkempt:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- CDN for JQUERY -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</head>
+<body class="w-100 vh-100 bg-color overflow-hidden">
+
+  <!-- Navbar top -->
+  <div class="px-5">
+
+    <!-- Header -->
+    <header class="navbar navbar-expand-lg navbar-light bg-light px-5 py-2">
+      <!-- Logo -->
+      <a class="navbar-brand d-flex align-items-center" href="#">
+        <img src="../images/KadiwaNet_Logo.png" alt="KadiwaNet Logo" width="70" height="50" class="me-2">
+        <span class="fw-bold">KadiwaNet</span>
+      </a>
+
+      <!-- Search bar (wider) -->
+      <form class="d-flex mx-auto" role="search" style="width: 40%;"> <!-- adjust width as needed -->
+        <div class="input-group w-100">
+          <!-- Icon inside input -->
+          <span class="input-group-text bg-white cursor-pointer">
+            <i class="fa-solid fa-magnifying-glass cursor-pointer"></i>
+          </span>
+          <input class="form-control border-start-0" type="search" placeholder="Search..." aria-label="Search">
+        </div>
+      </form>
+
+      <!-- Notification and User -->
+      <div class="d-flex align-items-center">
+        <button class="btn btn-light position-relative me-3">
+          <i class="fa-solid fa-bell"></i>
+          <span class="position-absolute top-0 start-100 translate-middle p-1 bg-danger border border-light rounded-circle"></span>
+        </button>
+
+        <!-- User profile with chevron at the bottom inside the profile picture -->
+        <div class="d-flex align-items-center cursor-pointer">
+          <!-- Name next to picture -->
+          <h6 class="mb-0 ms-2">Mike Jann</h6>
+
+          <!-- Profile picture wrapper -->
+          <div class="position-relative">
+            <img src="../images/farmer-images/12_05_2024 10_10_06 am.png" 
+                alt="User Profile Picture" 
+                width="45" height="45" 
+                class="rounded-circle">
+            
+            <!-- Chevron inside the profile picture at bottom center -->
+            <i class="bi bi-send-arrow-down-fill fs-5 position-absolute text-success" 
+              style="top: 22px; left: 90%; transform: translateX(-50%);"></i>
+          </div>
+
+        </div>
+
+      </div>
+    </header>
+
+  </div>
+
+  <!-- Container for Aside and Main -->
+  <div class="w-100 vh-100 d-flex flex-row">
+
+    <!-- Navigation Aside Bar -->
+    <aside class="w-25 border border-1 h-100 bg-white">
+      <nav class="nav flex-column bg-white py-3">
+        
+        <!-- Dashboard Link -->
+        <a class="nav-link mb-3 d-flex align-items-center text-decoration-none sidebar-hover" href="farmer-dashboard.html">
+          <i class="bi bi-box-seam fs-3 me-4 "></i>
+          <h4 class="mb-0 fw-normal">Dashboard</h4>
+        </a>
+
+        <!-- Inventory Link -->
+        <a class="nav-link mb-3 d-flex align-items-center text-decoration-none sidebar-link" href="farmer-inventory.html">
+          <i class="bi bi-columns-gap fs-4 me-4 text-white"></i>
+          <h4 class="mb-0 fw-normal text-white fw-bold">Inventory</h4>
+        </a>
+
+        <!-- Transactions Link -->
+        <a class="nav-link mb-3 d-flex align-items-center text-decoration-none sidebar-hover" href="farmer-products.html">
+          <i class="bi bi-credit-card-2-back fs-3 me-4"></i>
+          <h4 class="mb-0 fw-normal">Transactions</h4>
+        </a>
+
+        <!-- Notifications Link -->
+        <a class="nav-link mb-3 d-flex align-items-center text-decoration-none sidebar-hover" href="farmer-orders.html">
+          <i class="bi bi-bell fs-3 me-4"></i>
+          <h4 class="mb-0 fw-normal">Notifications</h4>
+        </a>
+
+        <!-- Messages Link -->
+        <a class="nav-link mb-3 d-flex align-items-center text-decoration-none sidebar-hover" href="farmer-messages.html">
+          <i class="bi bi-chat fs-3 me-4"></i>
+          <h4 class="mb-0 fw-normal">Messages</h4>
+        </a>
+
+        <!-- Reviews Link -->
+        <a class="nav-link mb-3 d-flex align-items-center text-decoration-none sidebar-hover" href="farmer-reviews.html">
+          <i class="bi bi-star fs-3 me-4"></i>
+          <h4 class="mb-0 fw-normal">Reviews</h4>
+        </a>
+
+      </nav>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="w-75 bg-white px-5 py-4 h-100">
+      <!-- Header Text -->
+      <header class="d-flex flex-row justify-content-between">
+        <h2 class="letter-spacing fw-bold">Transactions</h2>
+      </header>
+      
+      <!-- submain -->
+      <div class="d-flex flex-row w-100 shadow-article" style="height: 550px; overflow-y: auto;">
+        
+        <!-- for orders -->
+        <article class="w-75 rounded-start shadow p-3 text-white"
+         style="background: url('farmer-images/bg-img-daily-rem1.jpg') center/cover no-repeat; height: 100%; overflow-y: auto;">
+  
+          <header class="d-flex justify-content-between align-items-center">
+            <!-- Search bar -->
+            <form role="search" style="width: 40%;"> <!-- adjust width as needed -->
+              <div class="input-group w-100">
+                <span class="input-group-text bg-white cursor-pointer">
+                  <i class="fa-solid fa-magnifying-glass cursor-pointer"></i>
+                </span>
+                <input class="form-control border-start-0" type="search" placeholder="Search..." aria-label="Search">
+              </div>
+            </form>
+
+            <!-- Filter dropdown -->
+            <div class="dropdown">
+              <button class="btn bg-white border border-success text-dark dropdown-toggle fw-semibold" 
+                      type="button" id="filterDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                Filter: Default
+              </button>
+              <ul class="dropdown-menu dropdown-menu-end bg-white border border-success" aria-labelledby="filterDropdown">
+                <li><a class="dropdown-item active text-success fw-semibold" href="#" data-filter="default">Default</a></li>
+                <li><a class="dropdown-item" href="#" data-filter="name">By Name</a></li>
+                <li><a class="dropdown-item" href="#" data-filter="date">By Date</a></li>
+              </ul>
+            </div>
+          </header>
+
+          <!-- this is where the orders gonna be shown -->
+          <!-- Orders List -->
+          <div class="orders-list mt-3">
+
+            <!-- Header Row -->
+            <div class="order-row header text-white fw-semibold">
+              <div class="col fs-5">Name</div>
+              <div class="col fs-5">Order ID</div>
+              <div class="col fs-5">Action</div>
+            </div>
+
+            <!-- Data Rows -->
+            <div class="order-row bg-white shadow-sm">
+              <div class="col text-dark">Juan Dela Cruz</div>
+              <div class="col text-dark">#ORD001</div>
+              <div class="col">
+                <button class="btn btn-success fw-semibold">View</button>
+              </div>
+            </div>
+
+            <div class="order-row bg-white shadow-sm">
+              <div class="col text-dark">Maria Santos</div>
+              <div class="col text-dark">#ORD002</div>
+              <div class="col">
+                <button class="btn btn-success fw-semibold">View</button>
+              </div>
+            </div>
+
+            <div class="order-row bg-white shadow-sm">
+              <div class="col text-dark">Carlos Reyes</div>
+              <div class="col text-dark">#ORD003</div>
+              <div class="col">
+                <button class="btn btn-success fw-semibold">View</button>
+              </div>
+            </div>
+
+            <!-- Data Rows -->
+            <div class="order-row bg-white shadow-sm">
+              <div class="col text-dark">Juan Dela Cruz</div>
+              <div class="col text-dark">#ORD001</div>
+              <div class="col">
+                <button class="btn btn-success fw-semibold">View</button>
+              </div>
+            </div>
+
+            <div class="order-row bg-white shadow-sm">
+              <div class="col text-dark">Maria Santos</div>
+              <div class="col text-dark">#ORD002</div>
+              <div class="col">
+                <button class="btn btn-success fw-semibold">View</button>
+              </div>
+            </div>
+
+            <div class="order-row bg-white shadow-sm">
+              <div class="col text-dark">Carlos Reyes</div>
+              <div class="col text-dark">#ORD003</div>
+              <div class="col">
+                <button class="btn btn-success fw-semibold">View</button>
+              </div>
+            </div>
+
+          </div>
+                      
+        </article>
+
+        <article class="w-25 box-bg rounded-end p-2" style="overflow-y: auto;">
+
+          <div class="d-flex flex-row justify-content-between align-items-center">
+            <!-- This is de expand icon -->
+            <i class="fa-solid fa-square-caret-left fs-2 text-success cursor-pointer"></i>
+            <!-- This is message icon -->
+            <a href="#" class="text-decoration-none d-flex justify-content-end w-100">
+              <i class="bi bi-chat fs-2 text-success cursor-pointer"></i>
+            </a>
+          </div>
+
+          <div class="d-flex flex-column justify-content-center align-items-center">
+            <img src="../images/farmer-images/12_05_2024 10_10_06 am.png" alt="" class="rounded-circle" width="100px" height="100px">
+            <label for="" class="text-secondary">Marck Anthony Sabado</label>
+          </div>
+
+          <!-- Product Card -->
+          <div class="shadow-article cursor-pointer p-4 rounded-0 m-2">
+
+              <img src="../images/crop_images/banana.avif" alt="Banana Image" class="rounded w-100" style="height:150px; object-fit:cover;">
+              <h5 class="mt-2 text-center fw-semibold">Saging</h5><!-- This is prod name -->
+              <div class="d-flex justify-content-between"><!-- This is Price -->
+                <h6 class="fw-semibold">Price</h6>
+                <h6 class="text-success">₱60</h6>
+              </div>
+              <div class="d-flex justify-content-between"><!-- This is Quantity -->
+                <h6 class="fw-semibold">Quantity</h6>
+                <h6 class="text-success">70</h6>
+              </div>
+              <!-- Address (label left, value right, allow wrapping) -->
+              <div class="d-flex justify-content-between align-items-start">
+                <h6 class="fw-semibold mb-1">Address</h6>
+                <h6 class="text-success mb-0 text-wrap text-end" 
+                    style="max-width: 100px; white-space: normal; word-break: break-word;">
+                  Nalvo, Pasuquin, Ilocos Norte
+                </h6>
+              </div>
+              <div class="d-flex justify-content-between"><!-- This is Status -->
+                <h6 class="fw-semibold">Status</h6>
+                <h6 class="text-success">Delivered</h6>
+              </div>
+
+          </div>
+
+        </article>
+
+      </div>
+
+    </main>
+
+  </div>
+
+</body>
+</html>

@@ -106,7 +106,7 @@
         </a>
 
         <!-- Transactions Link -->
-        <a class="nav-link mb-3 d-flex align-items-center text-decoration-none sidebar-hover" href="farmer-products.html">
+        <a class="nav-link mb-3 d-flex align-items-center text-decoration-none sidebar-hover" href="farmer-transactions.html">
           <i class="bi bi-credit-card-2-back fs-3 me-4"></i>
           <h4 class="mb-0 fw-normal">Transactions</h4>
         </a>
@@ -235,7 +235,6 @@
             </div>
           </article>
           
-          
         </div>
       </div>
       
@@ -243,6 +242,76 @@
     </main>
 
   </div>
+
+  <!-- Product Modal -->
+  <div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+
+        <!-- Modal Header -->
+        <div class="modal-header d-flex flex-row justify-content-between box-bg">
+          <h5 class="modal-title fw-bold" id="pinModalLabel">Add New Inventory</h5>
+          <i class="fa-solid fa-square-xmark cursor-pointer fs-2 text-success" data-bs-dismiss="modal" aria-label="Close"></i>
+        </div>
+
+        <!-- Modal Body -->
+        <div class="modal-body">
+          <form id="productForm">
+
+            <!-- Image Upload + Preview -->
+            <div class="d-flex flex-column align-items-center mb-3">
+              <img id="imagePreview" src="../images/no-image.png" 
+                  alt="Product Preview" 
+                  class="rounded border border-2 border-success mb-2"
+                  style="width: 300px; height:200px; object-fit:cover; cursor:pointer;">
+              <input type="file" id="productImage" accept="image/*" class="d-none">
+              <small class="text-muted">Click the image to upload</small>
+            </div>
+
+            <!-- Product Name -->
+            <div class="mb-3">
+              <label class="form-label fw-semibold">Product Name</label>
+              <input type="text" class="form-control" placeholder="Enter product name">
+            </div>
+
+            <!-- Container for Grouping Price and Quantity -->
+            <div class="d-flex flex-row justify-content-between w-100">
+              <!-- Price -->
+              <div class="mb-3 w-75">
+                <label class="form-label fw-semibold">Price</label>
+                <input type="number" class="form-control" placeholder="Enter price" min="1" id="priceInput">
+              </div>
+
+              <!-- Quantity -->
+              <div class="mb-3 w-75 ms-2">
+                <label class="form-label fw-semibold">Quantity</label>
+                <input type="number" class="form-control" placeholder="Enter quantity" min="1" id="quantityInput">
+              </div>
+            </div>
+
+            <!-- Hashtags -->
+            <div class="mb-3">
+              <label class="form-label fw-semibold">Hashtags</label>
+              <div id="hashtagBox" class="form-control d-flex flex-wrap gap-2 p-2" 
+                  style="height: 200px; cursor:text;" 
+                  contenteditable="true"></div>
+            </div>
+
+          </form>
+        </div>
+
+        <!-- Modal Footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-success">Save Product</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="farmer-js/modal-trigger-js.js">
+  </script>
 
 </body>
 </html>
