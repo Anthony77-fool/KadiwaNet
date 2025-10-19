@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Farmer Transactions</title>
+  <title>Farmer Notifications</title>
 
   <!-- FAVICON -->
   <link rel="icon" type="image/png" href="../images/KadiwaNet_Logo.png" sizes="32x32">
@@ -106,13 +106,13 @@
         </a>
 
         <!-- Transactions Link -->
-        <a class="nav-link mb-3 d-flex align-items-center text-decoration-none sidebar-hover" href="farmer-transactions.html">
+        <a class="nav-link mb-3 d-flex align-items-center text-decoration-none sidebar-hover" href="farmer-products.html">
           <i class="bi bi-credit-card-2-back fs-3 me-4"></i>
           <h4 class="mb-0 fw-normal">Transactions</h4>
         </a>
 
         <!-- Notifications Link -->
-        <a class="nav-link mb-3 d-flex align-items-center text-decoration-none sidebar-hover" href="farmer-notifications.html">
+        <a class="nav-link mb-3 d-flex align-items-center text-decoration-none sidebar-hover" href="farmer-orders.html">
           <i class="bi bi-bell fs-3 me-4"></i>
           <h4 class="mb-0 fw-normal">Notifications</h4>
         </a>
@@ -133,31 +133,14 @@
     </aside>
 
     <!-- Main Content Area -->
-    <main class="w-75 bg-white px-5 py-4 h-100">
-      <!-- Header Text -->
-      <header class="d-flex flex-row justify-content-between">
-        <h2 class="letter-spacing fw-bold">Transactions</h2>
-      </header>
-      
-      <!-- submain -->
-      <div class="d-flex flex-row w-100 shadow-article" style="height: 550px; overflow-y: auto;">
-        
-        <!-- for orders -->
-        <article class="w-75 rounded-start shadow p-3 text-white"
-         style="background: url('farmer-images/bg-img-daily-rem1.jpg') center/cover no-repeat; height: 100%; overflow-y: auto;">
-  
-          <header class="d-flex justify-content-between align-items-center">
-            <!-- Search bar -->
-            <form role="search" style="width: 40%;"> <!-- adjust width as needed -->
-              <div class="input-group w-100">
-                <span class="input-group-text bg-white cursor-pointer">
-                  <i class="fa-solid fa-magnifying-glass cursor-pointer"></i>
-                </span>
-                <input class="form-control border-start-0" type="search" placeholder="Search..." aria-label="Search">
-              </div>
-            </form>
+    <main class="w-75 bg-white px-5 py-4 h-100"> 
 
-            <!-- Filter dropdown -->
+      <!-- Notifications Content Area Acting as Submain -->
+      <div class="w-100" style="height: 550px; overflow-y: auto;">
+
+        <!-- Filter Dropdown -->
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <h2 class="letter-spacing fw-bold">Inventory</h2>
             <div class="dropdown">
               <button class="btn bg-white border border-success text-dark dropdown-toggle fw-semibold" 
                       type="button" id="filterDropdown" data-bs-toggle="dropdown" aria-expanded="false">
@@ -169,118 +152,52 @@
                 <li><a class="dropdown-item" href="#" data-filter="date">By Date</a></li>
               </ul>
             </div>
-          </header>
-
-          <!-- this is where the orders gonna be shown -->
-          <!-- Orders List -->
-          <div class="orders-list mt-3">
-
-            <!-- Header Row -->
-            <div class="order-row header text-white fw-semibold">
-              <div class="col fs-5">Name</div>
-              <div class="col fs-5">Order ID</div>
-              <div class="col fs-5">Action</div>
-            </div>
-
-            <!-- Data Rows -->
-            <div class="order-row bg-white shadow-sm">
-              <div class="col text-dark">Juan Dela Cruz</div>
-              <div class="col text-dark">#ORD001</div>
-              <div class="col">
-                <button class="btn btn-success fw-semibold">View</button>
-              </div>
-            </div>
-
-            <div class="order-row bg-white shadow-sm">
-              <div class="col text-dark">Maria Santos</div>
-              <div class="col text-dark">#ORD002</div>
-              <div class="col">
-                <button class="btn btn-success fw-semibold">View</button>
-              </div>
-            </div>
-
-            <div class="order-row bg-white shadow-sm">
-              <div class="col text-dark">Carlos Reyes</div>
-              <div class="col text-dark">#ORD003</div>
-              <div class="col">
-                <button class="btn btn-success fw-semibold">View</button>
-              </div>
-            </div>
-
-            <!-- Data Rows -->
-            <div class="order-row bg-white shadow-sm">
-              <div class="col text-dark">Juan Dela Cruz</div>
-              <div class="col text-dark">#ORD001</div>
-              <div class="col">
-                <button class="btn btn-success fw-semibold">View</button>
-              </div>
-            </div>
-
-            <div class="order-row bg-white shadow-sm">
-              <div class="col text-dark">Maria Santos</div>
-              <div class="col text-dark">#ORD002</div>
-              <div class="col">
-                <button class="btn btn-success fw-semibold">View</button>
-              </div>
-            </div>
-
-            <div class="order-row bg-white shadow-sm">
-              <div class="col text-dark">Carlos Reyes</div>
-              <div class="col text-dark">#ORD003</div>
-              <div class="col">
-                <button class="btn btn-success fw-semibold">View</button>
-              </div>
-            </div>
-
-          </div>
-                      
-        </article>
-
-        <article class="w-25 box-bg rounded-end p-2" style="overflow-y: auto;">
-
-          <div class="d-flex flex-row justify-content-between align-items-center">
-            <!-- This is de expand icon -->
-            <i class="fa-solid fa-square-caret-left fs-2 text-success cursor-pointer"></i>
-            <!-- This is message icon -->
-            <a href="#" class="text-decoration-none d-flex justify-content-end w-100">
-              <i class="bi bi-chat fs-2 text-success cursor-pointer"></i>
-            </a>
           </div>
 
-          <div class="d-flex flex-column justify-content-center align-items-center">
-            <img src="../images/farmer-images/12_05_2024 10_10_06 am.png" alt="" class="rounded-circle" width="100px" height="100px">
-            <label for="" class="text-secondary fw-semibold">Marck Anthony Sabado</label>
+          <!-- Custom Table Wrapper -->
+          <div class="table-responsive rounded-3 bg-white border border-2">
+            <table class="table align-middle mb-0">
+              <thead class="table-light">
+                <tr class="text-success fw-semibold">
+                  <th scope="col">File Name</th>
+                  <th scope="col">Date/Time</th>
+                  <th scope="col">From</th>
+                  <th scope="col">Description</th>
+                  <th scope="col" class="text-center">Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="border-bottom shadow-article">
+                  <td>report_2025.pdf</td>
+                  <td>Oct 20, 2025 - 10:30 AM</td>
+                  <td>Admin</td>
+                  <td>Monthly performance report available.</td>
+                  <td class="text-center">
+                    <button class="btn btn-sm btn-outline-success rounded-circle" title="View">
+                      <i class="bi bi-eye"></i>
+                    </button>
+                    <button class="btn btn-sm btn-outline-danger rounded-circle ms-1" title="Delete">
+                      <i class="bi bi-trash"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr class="shadow-article">
+                  <td>update_notes.docx</td>
+                  <td>Oct 19, 2025 - 04:15 PM</td>
+                  <td>Team Lead</td>
+                  <td>Latest project update shared.</td>
+                  <td class="text-center">
+                    <button class="btn btn-sm btn-outline-success rounded-circle" title="View">
+                      <i class="bi bi-eye"></i>
+                    </button>
+                    <button class="btn btn-sm btn-outline-danger rounded-circle ms-1" title="Delete">
+                      <i class="bi bi-trash"></i>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </div>
-
-          <!-- Product Card -->
-          <div class="shadow-article cursor-pointer p-4 rounded-0 m-2">
-
-              <img src="../images/crop_images/banana.avif" alt="Banana Image" class="rounded w-100" style="height:150px; object-fit:cover;">
-              <h5 class="mt-2 text-center fw-semibold">Saging</h5><!-- This is prod name -->
-              <div class="d-flex justify-content-between"><!-- This is Price -->
-                <h6 class="fw-semibold">Price</h6>
-                <h6 class="text-success">₱60</h6>
-              </div>
-              <div class="d-flex justify-content-between"><!-- This is Quantity -->
-                <h6 class="fw-semibold">Quantity</h6>
-                <h6 class="text-success">70</h6>
-              </div>
-              <!-- Address (label left, value right, allow wrapping) -->
-              <div class="d-flex justify-content-between align-items-start">
-                <h6 class="fw-semibold mb-1">Address</h6>
-                <h6 class="text-success mb-0 text-wrap text-end" 
-                    style="max-width: 100px; white-space: normal; word-break: break-word;">
-                  Nalvo, Pasuquin, Ilocos Norte
-                </h6>
-              </div>
-              <div class="d-flex justify-content-between"><!-- This is Status -->
-                <h6 class="fw-semibold">Status</h6>
-                <h6 class="text-success">Delivered</h6>
-              </div>
-
-          </div>
-
-        </article>
 
       </div>
 
