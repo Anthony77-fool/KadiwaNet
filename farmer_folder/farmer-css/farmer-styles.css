@@ -198,3 +198,10 @@
   flex: 1;
   text-align: center;
 }
+
+/*for the hover for messages*/
+.list-group-item:hover {
+  background-color: #f8f9fa;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
