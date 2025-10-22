@@ -1,0 +1,209 @@
+/* ================= Vendor Navigation Icons ================= */
+.nav-icon i {
+  color: #555;
+  transition: color 0.2s ease-in-out;
+}
+
+.nav-icon small {
+  color: #666;
+  font-size: 0.8rem;
+}
+
+.nav-icon:hover i,
+.nav-icon:hover small {
+  color: #198754;
+}
+
+.nav-icon.active i,
+.nav-icon.active small {
+  color: #198754;
+  font-weight: 600;
+}
+
+/* ================= Responsive Navbar ================= */
+@media (max-width: 992px) {
+  .navbar-nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .nav-item {
+    flex: 1 1 30%;
+    margin: 8px 0;
+  }
+  .nav-icon small {
+    display: block;
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 768px) {
+  form[role="search"] {
+    order: -1; /* put search on top */
+    margin-bottom: 10px;
+  }
+
+  header h1 {
+    font-size: 1.5rem;
+    margin-left: 0;
+    text-align: center;
+    width: 100%;
+  }
+
+  header .dropdown button {
+    width: 100%; /* full width buttons on mobile */
+    text-align: left;
+  }
+
+  header {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+  }
+}
+
+/* ================= Badge Styling ================= */
+.badge {
+  font-size: 0.65rem;
+}
+
+/* ================= Shadow Articles / Inventory Cards ================= */
+.shadow-article {
+  background: #fff;
+  border-radius: 0.75rem;
+  box-shadow:
+    0 4px 6px rgba(0, 0, 0, 0.08),
+    0 1px 3px rgba(0, 0, 0, 0.04);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.shadow-article:hover {
+  box-shadow:
+    0 10px 15px rgba(0, 0, 0, 0.12),
+    0 4px 6px rgba(0, 0, 0, 0.06);
+  transform: translateY(-2px);
+}
+
+.shadow-article.no-hover:hover {
+  box-shadow:
+    0 4px 6px rgba(0, 0, 0, 0.08),
+    0 1px 3px rgba(0, 0, 0, 0.04);
+  transform: none;
+}
+
+/* ================= Carousel Styling ================= */
+#cropsCarousel {
+  background-color: #fff;
+  border-radius: 16px;
+  padding: 2rem;
+  max-width: 100%;
+}
+
+#cropsCarousel .shadow-sm {
+  background-color: #f8f9fa;
+  border-radius: 0;
+  transition: all 0.25s ease;
+}
+
+#cropsCarousel .shadow-sm:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+#cropsCarousel .shadow-sm img {
+  border-radius: 8px;
+}
+
+/* ================= Carousel Indicators (Dots) ================= */
+.carousel-indicators {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
+  gap: 8px;
+  position: relative;
+}
+
+.carousel-indicators button {
+  border-radius: 50%;
+  background-color: #d6d6d6; /* light gray for visibility */
+  border: none;
+  opacity: 1;
+  transition: all 0.3s ease;
+}
+
+.carousel-indicators button:hover {
+  background-color: #a6a6a6;
+}
+
+.carousel-indicators button.active {
+  background-color: #198754; /* active dot color */
+  transform: scale(1.3);
+}
+
+/* ================= Responsive Carousel Padding ================= */
+@media (max-width: 576px) {
+  #cropsCarousel {
+    padding: 1rem;
+  }
+}
+
+/* ================= Trusted Farmer Card Styling ================= */
+.trusted-farmer-card {
+  background-color: #fff;
+  border-radius: 16px;
+  transition: all 0.3s ease;
+}
+
+.trusted-farmer-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.farmer-photo {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #198754;
+}
+
+.top-badge {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #198754;
+  color: #fff;
+  font-weight: 700;
+  padding: 5px 10px;
+  border-radius: 50%;
+  font-size: 0.9rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.rating i {
+  margin: 0 2px;
+}
+
+.crop-card {
+  background-color: #fff;
+  border-radius: 16px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.crop-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.crop-img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.rating i {
+  margin: 0 2px;
+}
+
