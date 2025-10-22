@@ -103,3 +103,7 @@
   white-space: nowrap;
   text-overflow: ellipsis;
 }
+
+.bg-color{
+  background-color: rgb(248, 249, 250);
+}

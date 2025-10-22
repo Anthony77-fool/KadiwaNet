@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vendor HomePage</title>
+
+  <!-- FAVICON -->
+  <link rel="icon" type="image/png" href="../images/KadiwaNet_Logo.png" sizes="32x32">
+
+  <!-- Custom CSS  -->
+  <link rel="stylesheet" href="../css/custom-classes.css">
+  <link rel="stylesheet" href="css/vendor_styles.css">
+
+  <!--Bootstrap link-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+
+  <!-- BS ICONS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+  <!-- FontAwesome Icons -->
+  <script src="https://kit.fontawesome.com/da97a1e785.js" crossorigin="anonymous"></script>
+
+  <!-- Google Fonts  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Loved+by+the+King&family=Over+the+Rainbow&family=Roboto:ital,wght@0,100..900;1,100..900&family=Unkempt:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- CDN for JQUERY -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</head>
+<body class="w-100 bg-white">
+  
+  <!-- KadiwaNet Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light shadow-sm px-4 py-2">
+    <div class="container-fluid">
+
+      <!-- Logo -->
+      <a class="navbar-brand d-flex align-items-center" href="home.html">
+        <img src="../images/KadiwaNet_Logo.png" alt="KadiwaNet Logo" width="60" height="45" class="me-2">
+        <span class="fw-bold">KadiwaNet</span>
+      </a>
+
+      <!-- Mobile Toggle -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#kadiwaNavbar" aria-controls="kadiwaNavbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Navbar Content -->
+      <div class="collapse navbar-collapse justify-content-between" id="kadiwaNavbar">
+
+        <!-- ✅ Search Bar (always visible, not hidden on mobile) -->
+        <form class="d-flex mx-auto my-3 my-lg-0 w-100" role="search" style="max-width: 400px;">
+          <div class="input-group w-100">
+            <span class="input-group-text bg-white border-end-0">
+              <i class="fa-solid fa-magnifying-glass text-secondary"></i>
+            </span>
+            <input class="form-control border-start-0" type="search" placeholder="Search products, farmers..." aria-label="Search">
+          </div>
+        </form>
+
+        <!-- ✅ Navigation Icons -->
+        <ul class="navbar-nav mx-auto text-center mt-2 mt-lg-0 d-flex flex-wrap justify-content-center">
+          <li class="nav-item mx-2">
+            <a href="home.html" class="nav-link nav-icon">
+              <i class="fa-solid fa-house fs-5"></i><br>
+              <small>Home</small>
+            </a>
+          </li>
+          <li class="nav-item mx-2">
+            <a href="crops.html" class="nav-link nav-icon">
+              <i class="fa-solid fa-leaf fs-5"></i><br>
+              <small>Crops</small>
+            </a>
+          </li>
+          <li class="nav-item mx-2">
+            <a href="farmers.html" class="nav-link nav-icon">
+              <i class="fa-solid fa-people-group fs-5"></i><br>
+              <small>Farmers</small>
+            </a>
+          </li>
+          <li class="nav-item mx-2">
+            <a href="messages.html" class="nav-link nav-icon">
+              <i class="fa-solid fa-envelope fs-5"></i><br>
+              <small>Messages</small>
+            </a>
+          </li>
+          <li class="nav-item mx-2">
+            <a href="orders.html" class="nav-link nav-icon">
+              <i class="fa-solid fa-box fs-5"></i><br>
+              <small>Orders</small>
+            </a>
+          </li>
+          <li class="nav-item mx-2 position-relative">
+            <a href="cart.html" class="nav-link nav-icon position-relative">
+              <i class="fa-solid fa-cart-shopping fs-5"></i><br>
+              <small>Cart</small>
+              <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                2
+              </span>
+            </a>
+          </li>
+        </ul>
+
+        <!-- ✅ Notifications & Profile -->
+        <div class="d-flex align-items-center justify-content-center mt-3 mt-lg-0">
+          <!-- Notifications -->
+          <button class="btn btn-light position-relative me-3">
+            <i class="fa-solid fa-bell fs-5 text-secondary"></i>
+            <span class="position-absolute top-0 start-100 translate-middle p-1 bg-danger border border-light rounded-circle"></span>
+          </button>
+
+          <!-- Profile Dropdown -->
+          <div class="dropdown">
+            <a class="d-flex align-items-center text-decoration-none dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <img src="../images/farmer-images/12_05_2024 10_10_06 am.png" alt="User Profile" width="40" height="40" class="rounded-circle me-2">
+              <span class="fw-semibold text-dark">Mike Jann</span>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end shadow-sm" aria-labelledby="userDropdown">
+              <li><a class="dropdown-item" href="profile.html"><i class="fa-solid fa-user me-2 text-success"></i>Profile</a></li>
+              <li><a class="dropdown-item" href="settings.html"><i class="fa-solid fa-gear me-2 text-success"></i>Settings</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item text-danger" href="logout.html"><i class="fa-solid fa-right-from-bracket me-2"></i>Logout</a></li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </nav>
+
+  <!-- Category Filter Header -->
+  <header class="p-3 rounded-3 d-flex flex-wrap align-items-center justify-content-between gap-3">
+
+    <!-- Title -->
+    <h1 class="fw-bold mb-0 ms-lg-5 flex-shrink-0">
+      Category
+    </h1>
+
+    <!-- Filter Buttons -->
+    <div class="d-flex flex-wrap justify-content-center justify-content-lg-end gap-3 flex-grow-1">
+
+      <!-- 🌾 Crops Dropdown -->
+      <div class="dropdown">
+        <button class="btn btn-outline-success dropdown-toggle rounded-pill px-4 w-100 w-sm-auto"
+                type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <i class="fa-solid fa-seedling me-2"></i> Crops
+        </button>
+        <ul class="dropdown-menu shadow border-0 rounded-4 p-2">
+          <li><a class="dropdown-item rounded-3" href="#">Vegetables</a></li>
+          <li><a class="dropdown-item rounded-3" href="#">Fruits</a></li>
+          <li><a class="dropdown-item rounded-3" href="#">Grains</a></li>
+          <li><a class="dropdown-item rounded-3" href="#">Roots</a></li>
+        </ul>
+      </div>
+
+      <!-- 📍 Province Dropdown -->
+      <div class="dropdown">
+        <button class="btn btn-outline-success dropdown-toggle rounded-pill px-4 w-100 w-sm-auto"
+                type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <i class="fa-solid fa-map-marker-alt me-2"></i> Province
+        </button>
+        <ul class="dropdown-menu shadow border-0 rounded-4 p-2">
+          <li><a class="dropdown-item rounded-3" href="#">Ilocos Norte</a></li>
+          <li><a class="dropdown-item rounded-3" href="#">Batangas</a></li>
+          <li><a class="dropdown-item rounded-3" href="#">Cebu</a></li>
+          <li><a class="dropdown-item rounded-3" href="#">Davao</a></li>
+        </ul>
+      </div>
+
+      <!-- 💰 Price Dropdown -->
+      <div class="dropdown">
+        <button class="btn btn-outline-success dropdown-toggle rounded-pill px-4 w-100 w-sm-auto"
+                type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <i class="fa-solid fa-tags me-2"></i> Price
+        </button>
+        <ul class="dropdown-menu shadow border-0 rounded-4 p-2">
+          <li><a class="dropdown-item rounded-3" href="#">₱0 - ₱100</a></li>
+          <li><a class="dropdown-item rounded-3" href="#">₱101 - ₱500</a></li>
+          <li><a class="dropdown-item rounded-3" href="#">₱501 - ₱1000</a></li>
+          <li><a class="dropdown-item rounded-3" href="#">₱1001+</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- 🌾 Carousel Section -->
+  <section class="container">
+
+    <!-- Carousel Container -->
+    <div id="cropsCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
+      <div class="carousel-inner pb-3">
+
+        <!-- Slide 1 -->
+        <div class="carousel-item active">
+          <div class="row row-cols-2 row-cols-md-3 row-cols-lg-6 g-3">
+            <div class="col"><div class="p-3 shadow-sm text-center"><img src="../images/crop_images/mango.jpg" class="w-100 rounded mb-2" style="height:120px;object-fit:cover;"><h6>Mango</h6></div></div>
+            <div class="col"><div class="p-3 shadow-sm text-center"><img src="../images/crop_images/banana.avif" class="w-100 rounded mb-2" style="height:120px;object-fit:cover;"><h6>Banana</h6></div></div>
+            <div class="col"><div class="p-3 shadow-sm text-center"><img src="../images/crop_images/rice-img.jpg" class="w-100 rounded mb-2" style="height:120px;object-fit:cover;"><h6>Rice</h6></div></div>
+            <div class="col"><div class="p-3 shadow-sm text-center"><img src="../images/crop_images/corn-img.jpg" class="w-100 rounded mb-2" style="height:120px;object-fit:cover;"><h6>Corn</h6></div></div>
+            <div class="col"><div class="p-3 shadow-sm text-center"><img src="../images/crop_images/coconut-img.jpg" class="w-100 rounded mb-2" style="height:120px;object-fit:cover;"><h6>Coconut</h6></div></div>
+            <div class="col"><div class="p-3 shadow-sm text-center"><img src="../images/crop_images/pineapple-img.jpg" class="w-100 rounded mb-2" style="height:120px;object-fit:cover;"><h6>Pineapple</h6></div></div>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="carousel-item">
+          <div class="row row-cols-2 row-cols-md-3 row-cols-lg-6 g-3">
+            <div class="col"><div class="p-3 shadow-sm text-center"><img src="../images/crop_images/tomato-img.jpg" class="w-100 rounded mb-2" style="height:120px;object-fit:cover;"><h6>Tomato</h6></div></div>
+            <div class="col"><div class="p-3 shadow-sm text-center"><img src="../images/crop_images/eggplant-img.jpg" class="w-100 rounded mb-2" style="height:120px;object-fit:cover;"><h6>Eggplant</h6></div></div>
+            <div class="col"><div class="p-3 shadow-sm text-center"><img src="../images/crop_images/okra-img.jpg" class="w-100 rounded mb-2" style="height:120px;object-fit:cover;"><h6>Okra</h6></div></div>
+            <div class="col"><div class="p-3 shadow-sm text-center"><img src="../images/crop_images/sweet-potato.jpg" class="w-100 rounded mb-2" style="height:120px;object-fit:cover;"><h6>Sweet Potato</h6></div></div>
+            <div class="col"><div class="p-3 shadow-sm text-center"><img src="../images/crop_images/garlic-img.jpg" class="w-100 rounded mb-2" style="height:120px;object-fit:cover;"><h6>Garlic</h6></div></div>
+            <div class="col"><div class="p-3 shadow-sm text-center"><img src="../images/crop_images/onion-img.jpg" class="w-100 rounded mb-2" style="height:120px;object-fit:cover;"><h6>Onion</h6></div></div>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="carousel-item">
+          <div class="row row-cols-2 row-cols-md-3 row-cols-lg-6 g-3">
+            <div class="col"><div class="p-3 shadow-sm text-center"><img src="../images/crop_images/ampalaya-img.jpg" class="w-100 rounded mb-2" style="height:120px;object-fit:cover;"><h6>Ampalaya</h6></div></div>
+            <div class="col"><div class="p-3 shadow-sm text-center"><img src="../images/crop_images/sugarcane-img.jpg" class="w-100 rounded mb-2" style="height:120px;object-fit:cover;"><h6>Sugarcane</h6></div></div>
+            <div class="col"><div class="p-3 shadow-sm text-center"><img src="../images/crop_images/cassava-img.webp" class="w-100 rounded mb-2" style="height:120px;object-fit:cover;"><h6>Cassava</h6></div></div>
+            <div class="col"><div class="p-3 shadow-sm text-center"><img src="../images/crop_images/watermelon-img.jpg" class="w-100 rounded mb-2" style="height:120px;object-fit:cover;"><h6>Watermelon</h6></div></div>
+            <div class="col"><div class="p-3 shadow-sm text-center"><img src="../images/crop_images/peanut-img.jpg" class="w-100 rounded mb-2" style="height:120px;object-fit:cover;"><h6>Peanut</h6></div></div>
+            <div class="col"><div class="p-3 shadow-sm text-center"><img src="../images/crop_images/chilli-pepper-img.jpg" class="w-100 rounded mb-2" style="height:120px;object-fit:cover;"><h6>Chili Pepper</h6></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dots -->
+      <div class="carousel-indicators position-static mt-3">
+        <button type="button" data-bs-target="#cropsCarousel" data-bs-slide-to="0" class="active rounded-circle" aria-current="true" aria-label="Slide 1" style="width: 20px; height: 20px; background-color: #d6d6d6;"></button>
+        <button type="button" data-bs-target="#cropsCarousel" data-bs-slide-to="1" class="rounded-circle" aria-label="Slide 2" style="width: 20px; height: 20px; background-color: #d6d6d6;"></button>
+        <button type="button" data-bs-target="#cropsCarousel" data-bs-slide-to="2" class="rounded-circle" aria-label="Slide 3" style="width: 20px; height: 20px; background-color: #d6d6d6;"></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Most Trusted Farmers Section -->
+  <section class="container mb-5">
+    <h3 class="mb-4 text-center">Most Trusted Farmers</h3>
+    
+    <div class="row justify-content-center g-4">
+
+      <!-- Top 1 Farmer -->
+      <div class="col-12 col-md-6 col-lg-4 cursor-pointer">
+        <div class="trusted-farmer-card shadow-sm p-3 text-center">
+          <div class="position-relative">
+            <img src="../images/farmer-images/12_05_2024 10_10_06 am.png" alt="John D." class="farmer-photo mb-3">
+            <span class="top-badge">1</span>
+          </div>
+          <h5 class="fw-bold mb-1">John D. Example</h5>
+          <p class="text-muted mb-2"><i class="bi bi-geo-alt-fill me-1"></i> Laguna, Philippines</p>
+          <div class="rating mb-2">
+            <i class="bi bi-star-fill text-warning"></i>
+            <i class="bi bi-star-fill text-warning"></i>
+            <i class="bi bi-star-fill text-warning"></i>
+            <i class="bi bi-star-fill text-warning"></i>
+            <i class="bi bi-star text-warning"></i>
+          </div>
+          <p class="text-muted small">Trusted for high quality produce and reliable delivery.</p>
+        </div>
+      </div>
+
+      <!-- Top 2 Farmer -->
+      <div class="col-12 col-md-6 col-lg-4 cursor-pointer">
+        <div class="trusted-farmer-card shadow-sm p-3 text-center">
+          <div class="position-relative">
+            <img src="../images/no-image.png" alt="Jane S." class="farmer-photo mb-3">
+            <span class="top-badge">2</span>
+          </div>
+          <h5 class="fw-bold mb-1">Jane S. Example</h5>
+          <p class="text-muted mb-2"><i class="bi bi-geo-alt-fill me-1"></i> Batangas, Philippines</p>
+          <div class="rating mb-2">
+            <i class="bi bi-star-fill text-warning"></i>
+            <i class="bi bi-star-fill text-warning"></i>
+            <i class="bi bi-star-fill text-warning"></i>
+            <i class="bi bi-star text-warning"></i>
+            <i class="bi bi-star text-warning"></i>
+          </div>
+          <p class="text-muted small">Known for consistent quality and excellent service.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 🌱 Crops Showcase Section -->
+  <section class="container my-5">
+    <h3 class="text-center mb-4">Available Crops</h3>
+    
+    <div class="row g-4">
+
+      <!-- Slide 1 Crops -->
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="crop-card shadow-sm p-3">
+          <img src="../images/crop_images/mango.jpg" alt="Mango" class="crop-img mb-3">
+          <h5 class="fw-bold mb-1">Mango</h5>
+          <p class="text-success fw-semibold mb-1">₱150 / kg</p>
+          <div class="rating mb-2">
+            <i class="bi bi-star-fill text-warning"></i>
+            <i class="bi bi-star-fill text-warning"></i>
+            <i class="bi bi-star-fill text-warning"></i>
+            <i class="bi bi-star-fill text-warning"></i>
+            <i class="bi bi-star text-warning"></i>
+          </div>
+          <p class="text-muted mb-1"><i class="bi bi-geo-alt-fill me-1"></i> Laguna</p>
+          <p class="text-muted small mb-0"><i class="bi bi-person-fill me-1"></i> John D. Example</p>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="crop-card shadow-sm p-3">
+          <img src="../images/crop_images/banana.avif" alt="Banana" class="crop-img mb-3">
+          <h5 class="fw-bold mb-1">Banana</h5>
+          <p class="text-success fw-semibold mb-1">₱80 / kg</p>
+          <div class="rating mb-2">
+            <i class="bi bi-star-fill text-warning"></i>
+            <i class="bi bi-star-fill text-warning"></i>
+            <i class="bi bi-star-fill text-warning"></i>
+            <i class="bi bi-star text-warning"></i>
+            <i class="bi bi-star text-warning"></i>
+          </div>
+          <p class="text-muted mb-1"><i class="bi bi-geo-alt-fill me-1"></i> Batangas</p>
+          <p class="text-muted small mb-0"><i class="bi bi-person-fill me-1"></i> Jane S. Example</p>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="crop-card shadow-sm p-3">
+          <img src="../images/crop_images/rice-img.jpg" alt="Rice" class="crop-img mb-3">
+          <h5 class="fw-bold mb-1">Rice</h5>
+          <p class="text-success fw-semibold mb-1">₱60 / kg</p>
+          <div class="rating mb-2">
+            <i class="bi bi-star-fill text-warning"></i>
+            <i class="bi bi-star-fill text-warning"></i>
+            <i class="bi bi-star-fill text-warning"></i>
+            <i class="bi bi-star-fill text-warning"></i>
+            <i class="bi bi-star text-warning"></i>
+          </div>
+          <p class="text-muted mb-1"><i class="bi bi-geo-alt-fill me-1"></i> Nueva Ecija</p>
+          <p class="text-muted small mb-0"><i class="bi bi-person-fill me-1"></i> Maria L. Example</p>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="crop-card shadow-sm p-3">
+          <img src="../images/crop_images/corn-img.jpg" alt="Corn" class="crop-img mb-3">
+          <h5 class="fw-bold mb-1">Corn</h5>
+          <p class="text-success fw-semibold mb-1">₱50 / kg</p>
+          <div class="rating mb-2">
+            <i class="bi bi-star-fill text-warning"></i>
+            <i class="bi bi-star-fill text-warning"></i>
+            <i class="bi bi-star-fill text-warning"></i>
+            <i class="bi bi-star text-warning"></i>
+            <i class="bi bi-star text-warning"></i>
+          </div>
+          <p class="text-muted mb-1"><i class="bi bi-geo-alt-fill me-1"></i> Bulacan</p>
+          <p class="text-muted small mb-0"><i class="bi bi-person-fill me-1"></i> Carlo M. Example</p>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="crop-card shadow-sm p-3">
+          <img src="../images/crop_images/coconut-img.jpg" alt="Coconut" class="crop-img mb-3">
+          <h5 class="fw-bold mb-1">Coconut</h5>
+          <p class="text-success fw-semibold mb-1">₱70 / kg</p>
+          <div class="rating mb-2">
+            <i class="bi bi-star-fill text-warning"></i>
+            <i class="bi bi-star-fill text-warning"></i>
+            <i class="bi bi-star-fill text-warning"></i>
+            <i class="bi bi-star text-warning"></i>
+            <i class="bi bi-star text-warning"></i>
+          </div>
+          <p class="text-muted mb-1"><i class="bi bi-geo-alt-fill me-1"></i> Quezon</p>
+          <p class="text-muted small mb-0"><i class="bi bi-person-fill me-1"></i> Ana P. Example</p>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="crop-card shadow-sm p-3">
+          <img src="../images/crop_images/pineapple-img.jpg" alt="Pineapple" class="crop-img mb-3">
+          <h5 class="fw-bold mb-1">Pineapple</h5>
+          <p class="text-success fw-semibold mb-1">₱120 / kg</p>
+          <div class="rating mb-2">
+            <i class="bi bi-star-fill text-warning"></i>
+            <i class="bi bi-star-fill text-warning"></i>
+            <i class="bi bi-star-fill text-warning"></i>
+            <i class="bi bi-star-fill text-warning"></i>
+            <i class="bi bi-star text-warning"></i>
+          </div>
+          <p class="text-muted mb-1"><i class="bi bi-geo-alt-fill me-1"></i> Bukidnon</p>
+          <p class="text-muted small mb-0"><i class="bi bi-person-fill me-1"></i> Ricardo S. Example</p>
+        </div>
+      </div>
+
+      <!-- Slide 2 Crops -->
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="crop-card shadow-sm p-3">
+          <img src="../images/crop_images/tomato-img.jpg" alt="Tomato" class="crop-img mb-3">
+          <h5 class="fw-bold mb-1">Tomato</h5>
+          <p class="text-success fw-semibold mb-1">₱90 / kg</p>
+          <div class="rating mb-2">
+            <i class="bi bi-star-fill text-warning"></i>
+            <i class="bi bi-star-fill text-warning"></i>
+            <i class="bi bi-star-fill text-warning"></i>
+            <i class="bi bi-star text-warning"></i>
+            <i class="bi bi-star text-warning"></i>
+          </div>
+          <p class="text-muted mb-1"><i class="bi bi-geo-alt-fill me-1"></i> Cavite</p>
+          <p class="text-muted small mb-0"><i class="bi bi-person-fill me-1"></i> Mark T. Example</p>
+        </div>
+      </div>
+
+      <!-- Repeat the same structure for ALL other images (eggplant, okra, sweet potato, garlic, onion, ampalaya, sugarcane, cassava, watermelon, peanut, chili pepper) -->
+
+    </div>
+  </section>
+
+</body>
+</html>
