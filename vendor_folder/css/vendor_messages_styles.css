@@ -1,0 +1,123 @@
+/* Chat List Hover + Active Effects */
+/* Chat Sidebar styling - mimics farmer-item hover */
+.chat-sidebar {
+  background: #fff;
+  overflow-y: auto;
+}
+
+.chat-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.chat-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 15px;
+  border-bottom: 1px solid #f1f1f1;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  box-shadow: none !important; /* ✅ Prevent any hover shadow */
+  transform: none !important;   /* ✅ Prevent movement/shake */
+}
+
+.chat-item.active,
+.chat-item:hover {
+  background-color: #f0fff0;
+  box-shadow: none !important; /* ✅ Ensure no shadow shows on hover */
+  transform: none !important;  /* ✅ Prevent “shake” or offset on hover */
+}
+
+.chat-item img {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.chat-item .fw-semibold {
+  color: #212529;
+}
+
+.chat-item small.text-muted {
+  font-size: 0.85rem;
+}
+
+/* ---------------------------------*/
+.chat-main {
+  height: calc(100vh - 80px); /* adjust if navbar height changes */
+  overflow: hidden;
+}
+
+.chat-sidebar {
+  height: 100%;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-list {
+  overflow-y: auto;
+  flex: 1;
+}
+
+.chat-area {
+  height: 100%;
+  background: #f9f9f9;
+}
+
+/* Message bubbles */
+.message {
+  max-width: 75%;
+  padding: 0.6rem 1rem;
+  border-radius: 1rem;
+  word-wrap: break-word;
+}
+.message.incoming {
+  background: #fff;
+  align-self: flex-start;
+}
+.message.outgoing {
+  background: #198754;
+  color: #fff;
+  align-self: flex-end;
+}
+
+/* Messenger-style mobile view */
+@media (max-width: 991px) {
+  .chat-sidebar {
+    position: absolute;
+    top: 0; /* ✅ FIXED: Changed from 80px to 0 */
+    left: 0;
+    width: 100%;
+    z-index: 2000;
+    transform: translateX(0);
+    transition: all 0.3s ease;
+  }
+  .chat-area {
+    position: absolute;
+    top: 0; /* ✅ FIXED: Changed from 80px to 0 */
+    left: 100%;
+    width: 100%;
+    height: 100%; /* ✅ FIXED: Changed from calc(100vh - 80px) to 100% */
+    z-index: 2100;
+    background: #f9f9f9;
+    transition: all 0.3s ease;
+  }
+  .chat-area.active {
+    left: 0;
+  }
+  .chat-sidebar.hidden {
+    transform: translateX(-100%);
+  }
+  .chat-header .back-btn {
+    display: inline-block;
+  }
+}
+
+/* Default desktop view — hide back button */
+.chat-header .back-btn {
+  display: none;
+}
