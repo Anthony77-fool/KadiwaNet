@@ -1,209 +1,390 @@
-/* ================= Vendor Navigation Icons ================= */
-.nav-icon i {
-  color: #555;
-  transition: color 0.2s ease-in-out;
+/* ===========================
+    NAVBAR Z-INDEX FIX
+    =========================== */
+.navbar {
+  position: relative;
+  z-index: 3000 !important;
 }
 
-.nav-icon small {
-  color: #666;
-  font-size: 0.8rem;
+.navbar-collapse {
+  z-index: 3000 !important;
 }
 
-.nav-icon:hover i,
-.nav-icon:hover small {
-  color: #198754;
-}
-
-.nav-icon.active i,
-.nav-icon.active small {
-  color: #198754;
-  font-weight: 600;
-}
-
-/* ================= Responsive Navbar ================= */
-@media (max-width: 992px) {
-  .navbar-nav {
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-  .nav-item {
-    flex: 1 1 30%;
-    margin: 8px 0;
-  }
-  .nav-icon small {
-    display: block;
-    font-size: 0.75rem;
-  }
-}
-
-@media (max-width: 768px) {
-  form[role="search"] {
-    order: -1; /* put search on top */
-    margin-bottom: 10px;
-  }
-
-  header h1 {
-    font-size: 1.5rem;
-    margin-left: 0;
-    text-align: center;
-    width: 100%;
-  }
-
-  header .dropdown button {
-    width: 100%; /* full width buttons on mobile */
-    text-align: left;
-  }
-
-  header {
-    flex-direction: column;
-    align-items: stretch;
-    text-align: center;
-  }
-}
-
-/* ================= Badge Styling ================= */
-.badge {
-  font-size: 0.65rem;
-}
-
-/* ================= Shadow Articles / Inventory Cards ================= */
-.shadow-article {
+/* ===========================
+    CHAT SIDEBAR STYLING
+    =========================== */
+.chat-sidebar {
   background: #fff;
-  border-radius: 0.75rem;
-  box-shadow:
-    0 4px 6px rgba(0, 0, 0, 0.08),
-    0 1px 3px rgba(0, 0, 0, 0.04);
-  transition: box-shadow 0.2s ease, transform 0.2s ease;
+  overflow-y: auto;
 }
 
-.shadow-article:hover {
-  box-shadow:
-    0 10px 15px rgba(0, 0, 0, 0.12),
-    0 4px 6px rgba(0, 0, 0, 0.06);
-  transform: translateY(-2px);
+.chat-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-.shadow-article.no-hover:hover {
-  box-shadow:
-    0 4px 6px rgba(0, 0, 0, 0.08),
-    0 1px 3px rgba(0, 0, 0, 0.04);
-  transform: none;
-}
-
-/* ================= Carousel Styling ================= */
-#cropsCarousel {
-  background-color: #fff;
-  border-radius: 16px;
-  padding: 2rem;
-  max-width: 100%;
-}
-
-#cropsCarousel .shadow-sm {
-  background-color: #f8f9fa;
-  border-radius: 0;
-  transition: all 0.25s ease;
-}
-
-#cropsCarousel .shadow-sm:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
-}
-
-#cropsCarousel .shadow-sm img {
-  border-radius: 8px;
-}
-
-/* ================= Carousel Indicators (Dots) ================= */
-.carousel-indicators {
+.chat-item {
   display: flex;
-  justify-content: center;
-  margin-top: 1.5rem;
-  gap: 8px;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 15px;
+  border-bottom: 1px solid #f1f1f1;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.chat-item:hover {
+  background: #f2fef4;
+  transform: translateX(2px);
+}
+
+.chat-item.active {
+  background: #dcfce7;
+  border-left: 4px solid #198754;
+}
+
+.chat-item img {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.chat-item .fw-semibold {
+  color: #212529;
+  font-size: 1rem;
+}
+
+.chat-item small.text-muted {
+  font-size: 0.85rem;
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ===========================
+    MAIN CHAT LAYOUT
+    =========================== */
+.chat-main {
+  height: calc(100vh - 80px);
+  overflow: hidden;
   position: relative;
 }
 
-.carousel-indicators button {
-  border-radius: 50%;
-  background-color: #d6d6d6; /* light gray for visibility */
-  border: none;
-  opacity: 1;
-  transition: all 0.3s ease;
+.chat-sidebar {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
-.carousel-indicators button:hover {
-  background-color: #a6a6a6;
+.chat-sidebar-header {
+  flex-shrink: 0;
 }
 
-.carousel-indicators button.active {
-  background-color: #198754; /* active dot color */
-  transform: scale(1.3);
+.chat-list {
+  overflow-y: auto;
+  flex: 1;
 }
 
-/* ================= Responsive Carousel Padding ================= */
-@media (max-width: 576px) {
-  #cropsCarousel {
-    padding: 1rem;
+.chat-area {
+  height: 100%;
+  background: #f9f9f9;
+}
+
+/* ===========================
+    CHAT MESSAGES
+    =========================== */
+.chat-messages {
+  overflow-y: auto;
+  background: #f9f9f9;
+}
+
+.message {
+  max-width: 75%;
+  padding: 0.6rem 1rem;
+  border-radius: 1rem;
+  word-wrap: break-word;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.message.incoming {
+  background: #fff;
+  align-self: flex-start;
+  border: 1px solid #e5e5e5;
+  border-radius: 1rem 1rem 1rem 0.2rem;
+}
+
+.message.outgoing {
+  background: #198754;
+  color: #fff;
+  align-self: flex-end;
+  border-radius: 1rem 1rem 0.2rem 1rem;
+}
+
+/* ===========================
+    CHAT INPUT
+    =========================== */
+.chat-input {
+  flex-shrink: 0;
+  background: #fff;
+}
+
+.chat-input .form-control {
+  border: 2px solid #198754;
+  padding: 0.6rem 1.2rem;
+}
+
+.chat-input .form-control:focus {
+  box-shadow: 0 0 0 0.2rem rgba(25, 135, 84, 0.25);
+  border-color: #198754;
+}
+
+.chat-input .btn-success {
+  padding: 0.6rem 1.5rem;
+}
+
+/* ===========================
+    BACK BUTTON (Hidden on Desktop)
+    =========================== */
+.chat-header .back-btn {
+  display: none;
+}
+
+/* ===========================
+    SCROLLBAR STYLING
+    =========================== */
+.chat-sidebar::-webkit-scrollbar,
+.chat-messages::-webkit-scrollbar {
+  width: 6px;
+}
+
+.chat-sidebar::-webkit-scrollbar-track,
+.chat-messages::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.chat-sidebar::-webkit-scrollbar-thumb,
+.chat-messages::-webkit-scrollbar-thumb {
+  background: #198754;
+  border-radius: 3px;
+}
+
+.chat-sidebar::-webkit-scrollbar-thumb:hover,
+.chat-messages::-webkit-scrollbar-thumb:hover {
+  background: #157347;
+}
+
+/* ===========================
+    RESPONSIVE BREAKPOINTS
+    =========================== */
+
+/* Tablets and below - Messenger-style slide */
+@media (max-width: 991px) {
+  .chat-main {
+    height: calc(100vh - 80px);
+  }
+
+  .chat-sidebar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2000;
+    transform: translateX(0);
+    transition: transform 0.3s ease;
+  }
+  
+  .chat-area {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 100%;
+    height: 100%;
+    z-index: 2100;
+    background: #f9f9f9;
+    transition: left 0.3s ease;
+  }
+  
+  .chat-area.active {
+    left: 0;
+  }
+  
+  .chat-sidebar.hidden {
+    transform: translateX(-100%);
+  }
+  
+  /* Show back button on tablet/mobile */
+  .chat-header .back-btn {
+    display: inline-block !important;
+  }
+  
+  .chat-sidebar-header h5 {
+    font-size: 1.1rem;
   }
 }
 
-/* ================= Trusted Farmer Card Styling ================= */
-.trusted-farmer-card {
-  background-color: #fff;
-  border-radius: 16px;
-  transition: all 0.3s ease;
+/* Small tablets (768px and below) */
+@media (max-width: 768px) {
+  .chat-main {
+    height: calc(100vh - 75px);
+  }
+
+  .chat-item {
+    padding: 10px 12px;
+  }
+  
+  .chat-item img {
+    width: 48px;
+    height: 48px;
+  }
+  
+  .chat-item .fw-semibold {
+    font-size: 0.95rem;
+  }
+  
+  .chat-item small.text-muted {
+    font-size: 0.8rem;
+  }
+  
+  .message {
+    max-width: 85%;
+    font-size: 0.9rem;
+  }
+  
+  .chat-sidebar-header h5 {
+    font-size: 1rem;
+  }
+  
+  .chat-header img {
+    width: 45px !important;
+    height: 45px !important;
+  }
+  
+  .chat-header .fw-semibold {
+    font-size: 0.95rem;
+  }
+
+  /* Ensure back button is visible */
+  .chat-header .back-btn {
+    display: inline-block !important;
+  }
 }
 
-.trusted-farmer-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+/* Mobile phones (576px and below) */
+@media (max-width: 576px) {
+  .chat-main {
+    height: calc(100vh - 70px);
+  }
+  
+  .chat-item {
+    padding: 8px 10px;
+  }
+  
+  .chat-item img {
+    width: 42px;
+    height: 42px;
+  }
+  
+  .chat-item .flex-grow-1 {
+    min-width: 0;
+  }
+  
+  .chat-item .fw-semibold {
+    font-size: 0.9rem;
+  }
+  
+  .chat-item small.text-muted {
+    font-size: 0.75rem;
+  }
+  
+  .message {
+    max-width: 90%;
+    padding: 0.5rem 0.9rem;
+    font-size: 0.85rem;
+  }
+  
+  .chat-input .form-control {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+  
+  .chat-input .btn-success {
+    padding: 0.5rem 1.2rem;
+  }
+  
+  .chat-sidebar-header {
+    padding: 0.75rem 1rem !important;
+  }
+  
+  .chat-sidebar-header h5 {
+    font-size: 1rem;
+  }
+  
+  .chat-header {
+    padding: 0.75rem 1rem !important;
+  }
+  
+  .chat-header img {
+    width: 40px !important;
+    height: 40px !important;
+  }
+  
+  .chat-header .fw-semibold {
+    font-size: 0.9rem;
+  }
+  
+  .chat-header small {
+    font-size: 0.75rem;
+  }
+
+  /* Ensure back button is visible */
+  .chat-header .back-btn {
+    display: inline-block !important;
+  }
 }
 
-.farmer-photo {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 3px solid #198754;
+/* Very small devices (400px and below) */
+@media (max-width: 400px) {
+  .chat-item img {
+    width: 38px;
+    height: 38px;
+  }
+  
+  .message {
+    max-width: 95%;
+    padding: 0.45rem 0.8rem;
+    font-size: 0.8rem;
+  }
+  
+  .chat-input .form-control {
+    font-size: 0.85rem;
+  }
+
+  /* Ensure back button is visible */
+  .chat-header .back-btn {
+    display: inline-block !important;
+  }
 }
 
-.top-badge {
-  position: absolute;
-  top: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #198754;
-  color: #fff;
-  font-weight: 700;
-  padding: 5px 10px;
-  border-radius: 50%;
-  font-size: 0.9rem;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+/* ===========================
+    UTILITY CLASSES
+    =========================== */
+.text-truncate-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
-.rating i {
-  margin: 0 2px;
+/* Ensure chat area fills properly */
+.chat-area .chat-messages {
+  flex: 1;
+  min-height: 0;
 }
-
-.crop-card {
-  background-color: #fff;
-  border-radius: 16px;
-  text-align: center;
-  transition: all 0.3s ease;
-}
-
-.crop-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-}
-
-.crop-img {
-  width: 100%;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 12px;
-}
-
-.rating i {
-  margin: 0 2px;
-}
-
+  
