@@ -30,6 +30,52 @@
   <!-- CDN for JQUERY -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   
+  <style>
+    html, body {
+      height: auto;
+      overflow-x: hidden;
+    }
+
+    .chat-main {
+      min-height: 80vh;
+      overflow-y: auto;
+      padding-bottom: 50px;
+    }
+
+    .crop-card {
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+      border: 2px solid transparent;
+    }
+
+    .crop-card.selected {
+      border-color: #28a745;
+      box-shadow: 0 0 15px rgba(40, 167, 69, 0.5);
+      transform: scale(1.03);
+    }
+
+    .crop-img {
+      object-fit: cover;
+      width: 100%;
+      height: 200px; /* fixed height for all images */
+    }
+
+  .crop-card {
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: 2px solid transparent;
+  }
+  .crop-card.selected {
+    border-color: #28a745;
+    box-shadow: 0 0 15px rgba(40, 167, 69, 0.5);
+    transform: scale(1.03);
+  }
+  .crop-img {
+    object-fit: cover;
+    width: 100%;
+    height: 200px; /* fixed height for all images */
+  }
+  </style>
 </head>
 <body class="bg-white">
   
@@ -192,25 +238,6 @@
       </div>
     </div>
   </main>
-
-  <!-- Custom Styles -->
-  <style>
-  .crop-card {
-    cursor: pointer;
-    transition: transform 0.2s, box-shadow 0.2s;
-    border: 2px solid transparent;
-  }
-  .crop-card.selected {
-    border-color: #28a745;
-    box-shadow: 0 0 15px rgba(40, 167, 69, 0.5);
-    transform: scale(1.03);
-  }
-  .crop-img {
-    object-fit: cover;
-    width: 100%;
-    height: 200px; /* fixed height for all images */
-  }
-  </style>
 
   <!-- Script for functionality -->
   <script src="js/vendor_orders_js.js"></script>
