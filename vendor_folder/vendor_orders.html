@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vendor Orders</title>
+
+  <!-- FAVICON -->
+  <link rel="icon" type="image/png" href="../images/KadiwaNet_Logo.png" sizes="32x32">
+
+  <!-- Custom CSS  -->
+  <link rel="stylesheet" href="../css/custom-classes.css">
+  <link rel="stylesheet" href="css/vendor_styles.css">
+  <link rel="stylesheet" href="css/vendor_orders_styles.css">
+
+  <!--Bootstrap link-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+
+  <!-- BS ICONS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+  <!-- FontAwesome Icons -->
+  <script src="https://kit.fontawesome.com/da97a1e785.js" crossorigin="anonymous"></script>
+
+  <!-- Google Fonts  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Loved+by+the+King&family=Over+the+Rainbow&family=Roboto:ital,wght@0,100..900;1,100..900&family=Unkempt:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- CDN for JQUERY -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  
+</head>
+<body class="bg-white">
+  
+  <!-- KadiwaNet Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light shadow-sm px-4 py-2">
+    <div class="container-fluid">
+
+      <!-- Logo -->
+      <a class="navbar-brand d-flex align-items-center" href="home.html">
+        <img src="../images/KadiwaNet_Logo.png" alt="KadiwaNet Logo" width="60" height="45" class="me-2">
+        <span class="fw-bold">KadiwaNet</span>
+      </a>
+
+      <!-- Mobile Toggle -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#kadiwaNavbar" aria-controls="kadiwaNavbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Navbar Content -->
+      <div class="collapse navbar-collapse justify-content-between" id="kadiwaNavbar">
+
+        <!-- ✅ Search Bar (always visible, not hidden on mobile) -->
+        <form class="d-flex mx-auto my-3 my-lg-0 w-100" role="search" style="max-width: 400px;">
+          <div class="input-group w-100">
+            <span class="input-group-text bg-white border-end-0">
+              <i class="fa-solid fa-magnifying-glass text-secondary"></i>
+            </span>
+            <input class="form-control border-start-0" type="search" placeholder="Search products, farmers..." aria-label="Search">
+          </div>
+        </form>
+
+        <!-- ✅ Navigation Icons -->
+        <ul class="navbar-nav mx-auto text-center mt-2 mt-lg-0 d-flex flex-wrap justify-content-center">
+          <li class="nav-item mx-2">
+            <a href="vendor_homepage.html" class="nav-link nav-icon">
+              <i class="fa-solid fa-house fs-5"></i><br>
+              <small>Home</small>
+            </a>
+          </li>
+          <li class="nav-item mx-2">
+            <a href="vendor_farmers.html" class="nav-link nav-icon">
+              <i class="fa-solid fa-people-group fs-5"></i><br>
+              <small>Farmers</small>
+            </a>
+          </li>
+          <li class="nav-item mx-2">
+            <a href="vendor_messages.html" class="nav-link nav-icon">
+              <i class="fa-solid fa-envelope fs-5"></i><br>
+              <small>Messages</small>
+            </a>
+          </li>
+          <li class="nav-item mx-2">
+            <a href="vendor_orders.html" class="nav-link nav-icon">
+              <i class="fa-solid fa-box fs-5 text-success"></i><br>
+              <small class="text-success">Orders</small>
+            </a>
+          </li>
+          <li class="nav-item mx-2 position-relative">
+            <a href="vendor_cart.html" class="nav-link nav-icon position-relative">
+              <i class="fa-solid fa-cart-shopping fs-5"></i><br>
+              <small>Cart</small>
+              <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                2
+              </span>
+            </a>
+          </li>
+        </ul>
+
+        <!-- ✅ Notifications & Profile -->
+        <div class="d-flex align-items-center justify-content-center mt-3 mt-lg-0">
+          <!-- Notifications -->
+          <button class="btn btn-light position-relative me-3">
+            <i class="fa-solid fa-bell fs-5 text-secondary"></i>
+            <span class="position-absolute top-0 start-100 translate-middle p-1 bg-danger border border-light rounded-circle"></span>
+          </button>
+
+          <!-- Profile Dropdown -->
+          <div class="dropdown">
+            <a class="d-flex align-items-center text-decoration-none dropdown-toggle text-success" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <img src="../images/farmer-images/12_05_2024 10_10_06 am.png" alt="User Profile" width="40" height="40" class="rounded-circle me-2">
+              <span class="fw-semibold text-dark">Mike Jann</span>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end shadow-sm" aria-labelledby="userDropdown">
+              <li><a class="dropdown-item" href="vendor_profile_folder/vendor_profile.html"><i class="fa-solid fa-user me-2 text-success"></i>Profile</a></li>
+              <li><a class="dropdown-item" href="settings.html"><i class="fa-solid fa-gear me-2 text-success"></i>Settings</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item text-danger" href="logout.html"><i class="fa-solid fa-right-from-bracket me-2"></i>Logout</a></li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </nav>
+
+  <!-- =================== ORDERS PAGE =================== -->
+  <main class="orders-main py-5">
+    <div class="container">
+
+      <!-- Header -->
+      <header class="d-flex flex-wrap justify-content-between align-items-center mb-4 gap-2">
+        <h2 class="fw-bold mb-0">My Orders</h2>
+
+        <!-- Order Filter Dropdown -->
+        <div class="dropdown">
+          <button class="btn btn-outline-success dropdown-toggle rounded-pill px-4"
+                  type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="bi bi-funnel me-2"></i>
+            <span id="current-filter">All Orders</span>
+          </button>
+
+          <ul class="dropdown-menu shadow border-0 rounded-4 p-2">
+            <li><a class="dropdown-item rounded-3 active bg-success text-white" href="#" data-status="all">All</a></li>
+            <li><a class="dropdown-item rounded-3" href="#" data-status="pending">Pending</a></li>
+            <li><a class="dropdown-item rounded-3" href="#" data-status="processing">Processing</a></li>
+            <li><a class="dropdown-item rounded-3" href="#" data-status="otw">On the Way</a></li>
+            <li><a class="dropdown-item rounded-3" href="#" data-status="completed">Completed</a></li>
+            <li><a class="dropdown-item rounded-3" href="#" data-status="cancelled">Cancelled</a></li>
+          </ul>
+        </div>
+      </header>
+
+      <!-- Orders List -->
+      <div class="row g-4" id="orders-list">
+
+        <!-- Pending -->
+        <div class="col-12 col-md-6 col-lg-4 order-card" data-status="pending">
+          <div class="card shadow-sm h-100 border-2 border-secondary">
+            <img src="../images/crop_images/tomato-img.jpg" class="card-img-top order-img" alt="Tomato">
+            <div class="card-body">
+              <h5 class="card-title fw-bold">Tomato (1kg)</h5>
+              <p class="mb-1 text-secondary">Order #2001</p>
+              <p class="fw-semibold text-secondary">Status: Pending</p>
+
+              <p class="text-muted small mb-1">
+                <i class="bi bi-geo-alt-fill text-danger me-1"></i>
+                At Seller’s Warehouse — <strong>San Pablo City, Laguna</strong>
+              </p>
+              <p class="text-muted small mb-2">
+                <i class="bi bi-calendar-event me-1 text-primary"></i>
+                Expected Delivery: <strong>Tomorrow, Oct 27</strong>
+              </p>
+
+              <div class="progress-tracker my-3">
+                <div class="step active">Placed</div>
+                <div class="step">Processing</div>
+                <div class="step">On the Way</div>
+                <div class="step">Completed</div>
+              </div>
+
+              <div class="d-flex justify-content-between align-items-center mt-3">
+                <span class="fw-semibold text-dark">Total: ₱90</span>
+                <button class="btn btn-outline-danger btn-sm cancel-btn">Cancel Order</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Processing -->
+        <div class="col-12 col-md-6 col-lg-4 order-card" data-status="processing">
+          <div class="card shadow-sm h-100 border-2 border-info">
+            <img src="../images/crop_images/okra-img.jpg" class="card-img-top order-img" alt="Okra">
+            <div class="card-body">
+              <h5 class="card-title fw-bold">Okra (2kg)</h5>
+              <p class="mb-1 text-secondary">Order #2002</p>
+              <p class="fw-semibold text-info">Status: Processing</p>
+
+              <p class="text-muted small mb-1">
+                <i class="bi bi-geo-alt-fill text-danger me-1"></i>
+                Still with Seller — <strong>Barangay Del Pilar, San Fernando</strong>
+              </p>
+              <p class="text-muted small mb-2">
+                <i class="bi bi-calendar-event me-1 text-primary"></i>
+                Expected Delivery: <strong>Tomorrow, Oct 27</strong>
+              </p>
+
+              <div class="progress-tracker my-3">
+                <div class="step active">Placed</div>
+                <div class="step active">Processing</div>
+                <div class="step">On the Way</div>
+                <div class="step">Completed</div>
+              </div>
+
+              <div class="d-flex justify-content-between align-items-center mt-3">
+                <span class="fw-semibold text-dark">Total: ₱120</span>
+                <button class="btn btn-outline-danger btn-sm cancel-btn">Cancel Order</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- On the Way -->
+        <div class="col-12 col-md-6 col-lg-4 order-card" data-status="otw">
+          <div class="card shadow-sm h-100 border-2 border-warning">
+            <img src="../images/crop_images/mango.jpg" class="card-img-top order-img" alt="Mango">
+            <div class="card-body">
+              <h5 class="card-title fw-bold">Mango (2kg)</h5>
+              <p class="mb-1 text-secondary">Order #2003</p>
+              <p class="fw-semibold text-warning">Status: On the Way</p>
+
+              <p class="text-muted small mb-1">
+                <i class="bi bi-truck text-warning me-1"></i>
+                Rider at Stop #2 — <strong>Calamba Crossing</strong>
+              </p>
+              <p class="text-muted small mb-2">
+                <i class="bi bi-calendar-event me-1 text-primary"></i>
+                Expected Delivery: <strong>Today, before 6:00 PM</strong>
+              </p>
+
+              <div class="progress-tracker my-3">
+                <div class="step active">Placed</div>
+                <div class="step active">Processing</div>
+                <div class="step active">On the Way</div>
+                <div class="step">Completed</div>
+              </div>
+
+              <div class="d-flex justify-content-between align-items-center mt-3">
+                <span class="fw-semibold text-dark">Total: ₱300</span>
+                <button class="btn btn-outline-danger btn-sm cancel-btn">Cancel Order</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Completed -->
+        <div class="col-12 col-md-6 col-lg-4 order-card" data-status="completed">
+          <div class="card shadow-sm h-100 border-2 border-success">
+            <img src="../images/crop_images/banana.avif" class="card-img-top order-img" alt="Banana">
+            <div class="card-body">
+              <h5 class="card-title fw-bold">Banana (1kg)</h5>
+              <p class="mb-1 text-secondary">Order #2004</p>
+              <p class="fw-semibold text-success">Status: Completed</p>
+
+              <p class="text-muted small mb-1">
+                <i class="bi bi-house-door-fill text-success me-1"></i>
+                Delivered to <strong>Blk 12 Lot 8, Brgy. Sto. Niño, Calamba</strong>
+              </p>
+              <p class="text-muted small mb-2">
+                <i class="bi bi-check-circle me-1 text-success"></i>
+                Delivered on <strong>Oct 25</strong>
+              </p>
+
+              <div class="progress-tracker my-3">
+                <div class="step active">Placed</div>
+                <div class="step active">Processing</div>
+                <div class="step active">On the Way</div>
+                <div class="step active">Completed</div>
+              </div>
+
+              <div class="d-flex justify-content-between align-items-center mt-3">
+                <span class="fw-semibold text-dark">Total: ₱80</span>
+                <button class="btn btn-outline-secondary btn-sm">View Details</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 🚫 Empty State -->
+        <p id="no-orders" class="text-center text-muted my-5 d-none">
+          <i class="bi bi-inbox fs-3 d-block mb-2"></i>
+          No orders found for this status.
+        </p>
+
+      </div>
+    </div>
+  </main>
+
+  <script src="js/vendor_orders_js.js"></script>
+
+</body>
+</html>
