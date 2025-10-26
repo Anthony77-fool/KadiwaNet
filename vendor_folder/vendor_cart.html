@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vendor Orders</title>
+  <title>Vendor Cart</title>
 
   <!-- FAVICON -->
   <link rel="icon" type="image/png" href="../images/KadiwaNet_Logo.png" sizes="32x32">
@@ -11,6 +11,7 @@
   <!-- Custom CSS  -->
   <link rel="stylesheet" href="../css/custom-classes.css">
   <link rel="stylesheet" href="css/vendor_styles.css">
+  <link rel="stylesheet" href="css/vendor_orders_styles.css">
 
   <!--Bootstrap link-->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
@@ -30,52 +31,6 @@
   <!-- CDN for JQUERY -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   
-  <style>
-    html, body {
-      height: auto;
-      overflow-x: hidden;
-    }
-
-    .chat-main {
-      min-height: 80vh;
-      overflow-y: auto;
-      padding-bottom: 50px;
-    }
-
-    .crop-card {
-      cursor: pointer;
-      transition: transform 0.2s, box-shadow 0.2s;
-      border: 2px solid transparent;
-    }
-
-    .crop-card.selected {
-      border-color: #28a745;
-      box-shadow: 0 0 15px rgba(40, 167, 69, 0.5);
-      transform: scale(1.03);
-    }
-
-    .crop-img {
-      object-fit: cover;
-      width: 100%;
-      height: 200px; /* fixed height for all images */
-    }
-
-  .crop-card {
-    cursor: pointer;
-    transition: transform 0.2s, box-shadow 0.2s;
-    border: 2px solid transparent;
-  }
-  .crop-card.selected {
-    border-color: #28a745;
-    box-shadow: 0 0 15px rgba(40, 167, 69, 0.5);
-    transform: scale(1.03);
-  }
-  .crop-img {
-    object-fit: cover;
-    width: 100%;
-    height: 200px; /* fixed height for all images */
-  }
-  </style>
 </head>
 <body class="bg-white">
   
@@ -123,8 +78,8 @@
           </li>
           <li class="nav-item mx-2">
             <a href="vendor_messages.html" class="nav-link nav-icon">
-              <i class="fa-solid fa-envelope fs-5 text-success"></i><br>
-              <small class="text-success">Messages</small>
+              <i class="fa-solid fa-envelope fs-5"></i><br>
+              <small>Messages</small>
             </a>
           </li>
           <li class="nav-item mx-2">
@@ -135,8 +90,8 @@
           </li>
           <li class="nav-item mx-2 position-relative">
             <a href="vendor_cart.html" class="nav-link nav-icon position-relative">
-              <i class="fa-solid fa-cart-shopping fs-5"></i><br>
-              <small>Cart</small>
+              <i class="fa-solid fa-cart-shopping fs-5 text-success"></i><br>
+              <small class="text-success">Cart</small>
               <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
                 2
               </span>
