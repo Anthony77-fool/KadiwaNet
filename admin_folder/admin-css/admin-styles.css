@@ -1,0 +1,216 @@
+/* Custom Farmer CSS Styles */
+.h-90{
+  height: 90%;
+}
+
+/* Remove the default blue color of nav links */
+.nav-link {
+  color: inherit !important; /* Use text color from parent */
+}
+
+.shadow-article {
+  background: #fff;                 /* keep a white card */
+  border-radius: 0.75rem;           /* rounded corners for softer feel */
+  box-shadow:
+    0 4px 6px rgba(0, 0, 0, 0.08),  /* light spread */
+    0 1px 3px rgba(0, 0, 0, 0.04);  /* extra softness */
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+/* optional “lift” on hover */
+.shadow-article:hover {
+  box-shadow:
+    0 10px 15px rgba(0, 0, 0, 0.12),
+    0 4px 6px rgba(0, 0, 0, 0.06);
+  transform: translateY(-2px);
+}
+
+/* Removes hover animation for shadow-article */
+.shadow-article.no-hover:hover {
+  box-shadow:
+    0 4px 6px rgba(0, 0, 0, 0.08),
+    0 1px 3px rgba(0, 0, 0, 0.04);
+  transform: none;
+}
+
+.nav-link:hover,
+.nav-link:focus,
+.nav-link.active {
+  color: inherit !important; /* Prevent blue on hover/focus/active */
+  background-color: transparent !important; /* Optional: remove background highlight */
+  box-shadow: none !important; /* Optional: remove focus outline */
+}
+
+/* Sidebar link with overlapping dark cone + gradient fade */
+.sidebar-link {
+  position: relative;
+  overflow: hidden;
+  padding-left: 1rem; /* space for cone */
+  background-color: transparent;
+}
+
+/* Gradient fade across full link (lighter green to white) */
+.sidebar-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, #28a745, #ffffff); /* lighter green to white */
+  z-index: 0; /* behind everything */
+  border-radius: 0 10px 10px 0;
+}
+
+/* Dark left cone (overlaps the gradient) */
+.sidebar-link::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0.7rem; /* cone width */
+  height: 100%;
+  background-color: #1c4d2b; /* dark green */
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  z-index: 1; /* above the gradient */
+}
+
+/* Keep text/icon above everything */
+.sidebar-link i,
+.sidebar-link h4 {
+  position: relative;
+  z-index: 2; /* above both layers */
+  color: #212529; /* readable dark text */
+}
+
+/* ---------------------------------
+   Sidebar Hover Links
+   Gradient + cone appear on hover
+   Text/icon turn white, h4 bold
+----------------------------------*/
+/* keep text/icon above layers and allow transitions */
+.sidebar-hover i,
+.sidebar-hover h4 {
+  position: relative;
+  z-index: 2;
+  color: #212529;
+  transition: color 0.25s, transform 0.15s;
+}
+
+/* hover: white text/icon */
+.sidebar-hover:hover i,
+.sidebar-hover:hover h4 {
+  color: #ffffff !important;
+}
+
+/* override fw-normal on hover and make h4 bold */
+.sidebar-hover:hover h4.fw-normal,
+.sidebar-hover:hover h4 {
+  font-weight: 700 !important; /* overrides Bootstrap's fw-normal */
+}
+
+.sidebar-hover {
+  position: relative;
+  overflow: hidden;
+  padding-left: 1rem;          /* space for cone */
+  background-color: transparent;
+  color: #212529;              /* default text/icon color */
+  transition: color 0.3s;
+}
+
+/* gradient (hidden by default) */
+.sidebar-hover::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 100%;
+  background: linear-gradient(to right, #28a745, #ffffff);
+  border-radius: 0 10px 10px 0;
+  z-index: 0;
+  transition: width 0.4s ease;
+}
+
+/* cone (hidden by default) */
+.sidebar-hover::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 100%;
+  background-color: #1c4d2b;
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  z-index: 1;
+  transition: width 0.4s ease;
+}
+
+/* On hover: reveal layers */
+.sidebar-hover:hover::after {
+  width: 100%;
+}
+.sidebar-hover:hover::before {
+  width: 0.7rem; /* cone width */
+}
+
+/* Keep text/icon above layers */
+.sidebar-hover i,
+.sidebar-hover h4 {
+  position: relative;
+  z-index: 2;
+  color: #212529; /* default text color */
+  transition: color 0.3s, font-weight 0.3s;
+}
+
+/* Hover: make icon and text white, h4 bold */
+.sidebar-hover:hover i,
+.sidebar-hover:hover h4 {
+  color: #ffffff;
+}
+
+.sidebar-hover:hover h4 {
+  font-weight: bold;
+}
+
+/*for hashtog for modal */
+#hashtagBox:empty:before,
+#hashtagBox[data-placeholder]:before {
+  content: attr(data-placeholder);
+  color: #6c757d; /* Bootstrap muted */
+  pointer-events: none;
+}
+
+/*for table in orders */
+.orders-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem; /* spacing between rows */
+}
+
+.order-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem; /* bigger rows */
+  border-radius: 0.5rem;
+}
+
+.order-row.header {
+  border-radius: 0.5rem;
+  padding: 1rem 1.5rem;
+}
+
+.order-row .col {
+  flex: 1;
+  text-align: center;
+}
+
+/*for the hover for messages*/
+.list-group-item:hover {
+  background-color: #f8f9fa;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}

@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Reports</title>
+
+  <!-- FAVICON -->
+  <link rel="icon" type="image/png" href="../images/KadiwaNet_Logo.png" sizes="32x32">
+
+  <!-- Custom CSS  -->
+  <link rel="stylesheet" href="../css/custom-classes.css">
+  <link rel="stylesheet" href="admin-css/admin-styles.css">
+
+  <!--Bootstrap link-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+
+  <!-- BS ICONS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+  <!-- FontAwesome Icons -->
+  <script src="https://kit.fontawesome.com/da97a1e785.js" crossorigin="anonymous"></script>
+
+  <!-- Google Fonts  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Loved+by+the+King&family=Over+the+Rainbow&family=Roboto:ital,wght@0,100..900;1,100..900&family=Unkempt:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- CDN for JQUERY -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</head>
+<body class="w-100 vh-100 bg-color overflow-hidden">
+
+  <!-- Navbar top -->
+  <div class="px-5">
+
+    <!-- Header -->
+    <header class="navbar navbar-expand-lg navbar-light bg-light px-5 py-2">
+      <!-- Logo -->
+      <a class="navbar-brand d-flex align-items-center" href="#">
+        <img src="../images/KadiwaNet_Logo.png" alt="KadiwaNet Logo" width="70" height="50" class="me-2">
+        <span class="fw-bold">KadiwaNet</span>
+      </a>
+
+      <!-- Search bar (wider) -->
+      <form class="d-flex mx-auto" role="search" style="width: 40%;"> <!-- adjust width as needed -->
+        <div class="input-group w-100">
+          <!-- Icon inside input -->
+          <span class="input-group-text bg-white cursor-pointer">
+            <i class="fa-solid fa-magnifying-glass cursor-pointer"></i>
+          </span>
+          <input class="form-control border-start-0" type="search" placeholder="Search..." aria-label="Search">
+        </div>
+      </form>
+
+      <!-- ✅ Notifications & Profile -->
+      <div class="d-flex align-items-center justify-content-center mt-3 mt-lg-0">
+
+        <!-- Notifications -->
+        <button class="btn btn-light position-relative me-3">
+          <i class="fa-solid fa-bell fs-5 text-secondary"></i>
+          <span class="position-absolute top-0 start-100 translate-middle p-1 bg-danger border border-light rounded-circle"></span>
+        </button>
+
+        <!-- Profile Dropdown -->
+        <div class="dropdown">
+          <!-- Dropdown Toggle -->
+          <a class="d-flex align-items-center text-decoration-none dropdown-toggle text-success" 
+            href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="../images/farmer-images/12_05_2024 10_10_06 am.png" 
+                alt="User Profile" 
+                width="45" height="45" 
+                class="rounded-circle me-2 border border-2 border-success-subtle">
+            <span class="fw-semibold text-dark">Mike Jann</span>
+          </a>
+
+          <!-- Dropdown Menu -->
+          <ul class="dropdown-menu dropdown-menu-end shadow border-0 rounded-4 p-2" aria-labelledby="userDropdown">
+            <li>
+              <a class="dropdown-item rounded-3" href="vendor_profile_folder/vendor_profile.html">
+                <i class="fa-solid fa-user me-2 text-success"></i> Profile
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item rounded-3" href="settings.html">
+                <i class="fa-solid fa-gear me-2 text-success"></i> Settings
+              </a>
+            </li>
+            <li><hr class="dropdown-divider"></li>
+            <li>
+              <a class="dropdown-item text-danger rounded-3" href="logout.html">
+                <i class="fa-solid fa-right-from-bracket me-2"></i> Logout
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </header>
+
+  </div>
+
+  <!-- Container for Aside and Main -->
+  <div class="w-100 vh-100 d-flex flex-row">
+
+    <!-- Navigation Aside Bar -->
+    <aside class="w-25 border border-1 h-100 bg-white">
+      <nav class="nav flex-column bg-white py-3">
+
+        <!-- 🏠 Dashboard Link -->
+        <a class="nav-link mb-3 d-flex align-items-center text-decoration-none sidebar-hover" href="admin-home.html">
+          <i class="bi bi-columns-gap fs-4 me-4"></i>
+          <h4 class="mb-0 fw-normal">Home</h4>
+        </a>
+
+        <!-- 💰 Market Price -->
+        <a class="nav-link mb-3 d-flex align-items-center text-decoration-none sidebar-hover" href="admin-market-price.html">
+          <i class="bi bi-cash-coin fs-3 me-4"></i>
+          <h4 class="mb-0 fw-normal">Market Price</h4>
+        </a>
+
+        <!-- 💳 Transactions -->
+        <a class="nav-link mb-3 d-flex align-items-center text-decoration-none sidebar-hover" href="admin-transactions.html">
+          <i class="bi bi-credit-card-2-back fs-3 me-4"></i>
+          <h4 class="mb-0 fw-normal">Transactions</h4>
+        </a>
+
+        <!-- 👤 User Verification -->
+        <a class="nav-link mb-3 d-flex align-items-center text-decoration-none sidebar-hover" href="admin-user-verification.html">
+          <i class="bi bi-person-check fs-3 me-4"></i>
+          <h4 class="mb-0 fw-normal">User Verification</h4>
+        </a>
+
+        <!-- 👥 Users -->
+        <a class="nav-link mb-3 d-flex align-items-center text-decoration-none sidebar-hover" href="admin-users.html">
+          <i class="bi bi-people fs-3 me-4"></i>
+          <h4 class="mb-0 fw-normal">Users</h4>
+        </a>
+
+        <!-- 📊 Reports -->
+        <a class="nav-link mb-3 d-flex align-items-center text-decoration-none sidebar-link" href="admin-reports.html">
+          <i class="bi bi-graph-up fs-3 me-4 text-white"></i>
+          <h4 class="mb-0 fw-normal text-white fw-bold">Reports</h4>
+        </a>
+
+        <!-- 📧 Messages (updated icon) -->
+        <a class="nav-link mb-3 d-flex align-items-center text-decoration-none sidebar-hover" href="admin-messages.html">
+          <i class="fa-solid fa-envelope fs-3 me-4"></i><br>
+          <h4 class="mb-0 fw-normal">Messages</h4>
+        </a>
+
+      </nav>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="w-75 bg-white px-5 py-4 h-100 overflow-auto">
+
+      <!-- 🔽 Sorting + Header -->
+      <header class="d-flex justify-content-between align-items-start flex-wrap mb-4">
+
+        <!-- Left: Header -->
+        <h3 class="fw-bold mb-0">User Reports</h3>
+
+        <!-- Right: Sorting Filters -->
+        <div class="d-flex flex-wrap gap-3">
+
+          <!-- Role Filter -->
+          <div class="dropdown">
+            <button class="btn btn-outline-success dropdown-toggle rounded-pill px-4"
+                    type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="fa-solid fa-users me-2"></i> Role
+            </button>
+            <ul class="dropdown-menu shadow border-0 rounded-4 p-2">
+              <li><a class="dropdown-item rounded-3 filter-role" data-role="all" href="#">All</a></li>
+              <li><a class="dropdown-item rounded-3 filter-role" data-role="farmer" href="#">Farmer (Seller)</a></li>
+              <li><a class="dropdown-item rounded-3 filter-role" data-role="vendor" href="#">Vendor (Buyer)</a></li>
+              <li><a class="dropdown-item rounded-3 filter-role" data-role="user" href="#">User</a></li>
+            </ul>
+          </div>
+
+          <!-- Sort by Name -->
+          <div class="dropdown">
+            <button class="btn btn-outline-success dropdown-toggle rounded-pill px-4"
+                    type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="fa-solid fa-user me-2"></i> Sort by Name
+            </button>
+            <ul class="dropdown-menu shadow border-0 rounded-4 p-2">
+              <li><a class="dropdown-item rounded-3 sort-name" data-sort="default" href="#">Default</a></li>
+              <li><a class="dropdown-item rounded-3 sort-name" data-sort="asc" href="#">A–Z</a></li>
+              <li><a class="dropdown-item rounded-3 sort-name" data-sort="desc" href="#">Z–A</a></li>
+            </ul>
+          </div>
+
+          <!-- Sort by Date -->
+          <div class="dropdown">
+            <button class="btn btn-outline-success dropdown-toggle rounded-pill px-4"
+                    type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="fa-solid fa-calendar-days me-2"></i> Sort by Date
+            </button>
+            <ul class="dropdown-menu shadow border-0 rounded-4 p-2">
+              <li><a class="dropdown-item rounded-3 sort-date" data-sort="default" href="#">Default</a></li>
+              <li><a class="dropdown-item rounded-3 sort-date" data-sort="newest" href="#">Newest</a></li>
+              <li><a class="dropdown-item rounded-3 sort-date" data-sort="oldest" href="#">Oldest</a></li>
+            </ul>
+          </div>
+
+        </div>
+
+      </header>
+
+      <!-- 📋 Reports Table -->
+       <div class="table-responsive simple-scroll shadow-sm rounded-3 border" style="max-height:500px; overflow:auto;">
+        <table class="table align-middle mb-0">
+          <thead class="table-success text-center">
+            <tr>
+              <th style="width:6%;">#</th>
+              <th style="width:22%;">Product</th>
+              <th style="width:22%;">Date &amp; Time</th>
+              <th style="width:24%;">Name</th>
+              <th style="width:14%;">Role</th>
+              <th style="width:12%;">Actions</th>
+            </tr>
+          </thead>
+          <tbody id="reportTable" class="text-center">
+              <!-- rows -->
+             <tr data-role="farmer">
+                <td>1</td>
+                <td>Banana</td>
+                <td>2025-10-26 09:30 AM</td>
+                <td>John Farmer</td>
+                <td><span class="badge bg-success">Farmer</span></td>
+                <td>
+                  <div class="d-flex justify-content-center gap-2">
+                    <button class="btn btn-outline-success btn-sm rounded-circle" title="View">
+                      <i class="fa-solid fa-eye"></i>
+                    </button>
+                    <button class="btn btn-outline-danger btn-sm rounded-circle delete-report" title="Delete">
+                      <i class="fa-solid fa-trash"></i>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+              <tr data-role="farmer">
+                <td>1</td>
+                <td>Banana</td>
+                <td>2025-10-26 09:30 AM</td>
+                <td>John Farmer</td>
+                <td><span class="badge bg-success">Farmer</span></td>
+                <td>
+                  <div class="d-flex justify-content-center gap-2">
+                    <button class="btn btn-outline-success btn-sm rounded-circle" title="View">
+                      <i class="fa-solid fa-eye"></i>
+                    </button>
+                    <button class="btn btn-outline-danger btn-sm rounded-circle delete-report" title="Delete">
+                      <i class="fa-solid fa-trash"></i>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+              <tr data-role="farmer">
+                <td>1</td>
+                <td>Banana</td>
+                <td>2025-10-26 09:30 AM</td>
+                <td>John Farmer</td>
+                <td><span class="badge bg-success">Farmer</span></td>
+                <td>
+                  <div class="d-flex justify-content-center gap-2">
+                    <button class="btn btn-outline-success btn-sm rounded-circle" title="View">
+                      <i class="fa-solid fa-eye"></i>
+                    </button>
+                    <button class="btn btn-outline-danger btn-sm rounded-circle delete-report" title="Delete">
+                      <i class="fa-solid fa-trash"></i>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </main>
+
+  </div>
+
+  <!-- 🧩 Reports Sorting & Filtering Script -->
+  <script src="admin-js/admin_reports_js.js"></script>
+
+</body>
+</html>
