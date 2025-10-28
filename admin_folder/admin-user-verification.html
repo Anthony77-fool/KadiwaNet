@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin User Verification</title>
+
+  <!-- FAVICON -->
+  <link rel="icon" type="image/png" href="../images/KadiwaNet_Logo.png" sizes="32x32">
+
+  <!-- Custom CSS  -->
+  <link rel="stylesheet" href="../css/custom-classes.css">
+  <link rel="stylesheet" href="admin-css/admin-styles.css">
+
+  <!--Bootstrap link-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+
+  <!-- BS ICONS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+  <!-- FontAwesome Icons -->
+  <script src="https://kit.fontawesome.com/da97a1e785.js" crossorigin="anonymous"></script>
+
+  <!-- Google Fonts  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Loved+by+the+King&family=Over+the+Rainbow&family=Roboto:ital,wght@0,100..900;1,100..900&family=Unkempt:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- CDN for JQUERY -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <style>
+    main {
+      height: calc(100vh - 100px);
+    }
+
+    table thead {
+      border-radius: 1rem !important;
+    }
+
+    .btn-outline-success,
+    .btn-outline-danger,
+    .btn-outline-info {
+      width: 36px;
+      height: 36px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .table th,
+    .table td {
+      vertical-align: middle;
+    }
+
+    .badge {
+      font-size: 0.8em;
+    }
+
+    .modal-content {
+      border: none;
+    }
+
+    .file-item:hover {
+      background-color: #f8f9fa !important;
+      transform: translateY(-2px);
+      transition: all 0.2s ease;
+    }
+
+    .modal-header {
+      background: linear-gradient(135deg, #28a745, #20c997);
+    }
+
+    .modal-footer {
+      border-top: 1px solid #dee2e6;
+    }
+  </style>
+
+</head>
+<body class="w-100 vh-100 bg-color overflow-hidden">
+
+  <!-- Navbar top -->
+  <div class="px-5">
+
+    <!-- Header -->
+    <header class="navbar navbar-expand-lg navbar-light bg-light px-5 py-2">
+      <!-- Logo -->
+      <a class="navbar-brand d-flex align-items-center" href="#">
+        <img src="../images/KadiwaNet_Logo.png" alt="KadiwaNet Logo" width="70" height="50" class="me-2">
+        <span class="fw-bold">KadiwaNet</span>
+      </a>
+
+      <!-- Search bar (wider) -->
+      <form class="d-flex mx-auto" role="search" style="width: 40%;"> <!-- adjust width as needed -->
+        <div class="input-group w-100">
+          <!-- Icon inside input -->
+          <span class="input-group-text bg-white cursor-pointer">
+            <i class="fa-solid fa-magnifying-glass cursor-pointer"></i>
+          </span>
+          <input class="form-control border-start-0" type="search" placeholder="Search..." aria-label="Search">
+        </div>
+      </form>
+
+      <!-- ✅ Notifications & Profile -->
+      <div class="d-flex align-items-center justify-content-center mt-3 mt-lg-0">
+
+        <!-- Notifications -->
+        <button class="btn btn-light position-relative me-3">
+          <i class="fa-solid fa-bell fs-5 text-secondary"></i>
+          <span class="position-absolute top-0 start-100 translate-middle p-1 bg-danger border border-light rounded-circle"></span>
+        </button>
+
+        <!-- Profile Dropdown -->
+        <div class="dropdown">
+          <!-- Dropdown Toggle -->
+          <a class="d-flex align-items-center text-decoration-none dropdown-toggle text-success" 
+            href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="../images/farmer-images/12_05_2024 10_10_06 am.png" 
+                alt="User Profile" 
+                width="45" height="45" 
+                class="rounded-circle me-2 border border-2 border-success-subtle">
+            <span class="fw-semibold text-dark">Mike Jann</span>
+          </a>
+
+          <!-- Dropdown Menu -->
+          <ul class="dropdown-menu dropdown-menu-end shadow border-0 rounded-4 p-2" aria-labelledby="userDropdown">
+            <li>
+              <a class="dropdown-item rounded-3" href="vendor_profile_folder/vendor_profile.html">
+                <i class="fa-solid fa-user me-2 text-success"></i> Profile
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item rounded-3" href="settings.html">
+                <i class="fa-solid fa-gear me-2 text-success"></i> Settings
+              </a>
+            </li>
+            <li><hr class="dropdown-divider"></li>
+            <li>
+              <a class="dropdown-item text-danger rounded-3" href="logout.html">
+                <i class="fa-solid fa-right-from-bracket me-2"></i> Logout
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </header>
+
+  </div>
+
+  <!-- Container for Aside and Main -->
+  <div class="w-100 vh-100 d-flex flex-row">
+
+    <!-- Navigation Aside Bar -->
+    <aside class="w-25 border border-1 h-100 bg-white">
+      <nav class="nav flex-column bg-white py-3">
+
+        <!-- 🏠 Dashboard Link -->
+        <a class="nav-link mb-3 d-flex align-items-center text-decoration-none sidebar-hover" href="admin-home.html">
+          <i class="bi bi-columns-gap fs-4 me-4"></i>
+          <h4 class="mb-0 fw-normal">Home</h4>
+        </a>
+
+        <!-- 💰 Market Price -->
+        <a class="nav-link mb-3 d-flex align-items-center text-decoration-none sidebar-hover" href="admin-market-price.html">
+          <i class="bi bi-cash-coin fs-3 me-4"></i>
+          <h4 class="mb-0 fw-normal">Market Price</h4>
+        </a>
+
+        <!-- 💳 Transactions -->
+        <a class="nav-link mb-3 d-flex align-items-center text-decoration-none sidebar-hover" href="admin-transactions.html">
+          <i class="bi bi-credit-card-2-back fs-3 me-4"></i>
+          <h4 class="mb-0 fw-normal">Transactions</h4>
+        </a>
+
+        <!-- 👤 User Verification -->
+        <a class="nav-link mb-3 d-flex align-items-center text-decoration-none sidebar-link" href="admin-user-verification.html">
+          <i class="bi bi-person-check fs-3 me-4 text-white"></i>
+          <h4 class="mb-0 fw-normal text-white fw-bold">User Verification</h4>
+        </a>
+
+        <!-- 👥 Users -->
+        <a class="nav-link mb-3 d-flex align-items-center text-decoration-none sidebar-hover" href="admin-users.html">
+          <i class="bi bi-people fs-3 me-4"></i>
+          <h4 class="mb-0 fw-normal">Users</h4>
+        </a>
+
+        <!-- 📊 Reports -->
+        <a class="nav-link mb-3 d-flex align-items-center text-decoration-none sidebar-hover" href="admin-reports.html">
+          <i class="bi bi-graph-up fs-3 me-4"></i>
+          <h4 class="mb-0 fw-normal">Reports</h4>
+        </a>
+
+        <!-- 📧 Messages (updated icon) -->
+        <a class="nav-link mb-3 d-flex align-items-center text-decoration-none sidebar-hover" href="admin-messages.html">
+          <i class="fa-solid fa-envelope fs-3 me-4"></i><br>
+          <h4 class="mb-0 fw-normal">Messages</h4>
+        </a>
+
+      </nav>
+    </aside>
+
+    <!-- 🔐 User Verification (Admin) Page -->
+    <main class="d-flex flex-wrap gap-4 h-100 w-100 p-4 bg-light rounded-4">
+
+      <!-- 👤 Pending Verifications -->
+      <section class="w-100 bg-white p-4 rounded-4 shadow-sm d-flex flex-column" style="max-height:550px; overflow:auto;">
+
+        <!-- Header -->
+        <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-3">
+          <h5 class="fw-bold text-success mb-0">Pending User Verifications</h5>
+
+          <div class="d-flex gap-2 flex-wrap">
+            <!-- Sort Dropdown -->
+            <div class="dropdown">
+              <button class="btn btn-outline-success dropdown-toggle rounded-pill px-4"
+                      data-bs-toggle="dropdown" aria-expanded="false"
+                      style="min-width: 140px;">
+                <i class="fa-solid fa-filter me-2"></i> Sort By
+              </button>
+              <ul class="dropdown-menu shadow border-0 rounded-4 p-2" style="min-width: 150px;">
+                <li><a class="dropdown-item rounded-3" href="#">Default</a></li>
+                <li><a class="dropdown-item rounded-3" href="#">Name (A–Z)</a></li>
+                <li><a class="dropdown-item rounded-3" href="#">User ID</a></li>
+                <li><a class="dropdown-item rounded-3" href="#">Email</a></li>
+              </ul>
+            </div>
+
+            <!-- Filter Dropdown -->
+            <div class="dropdown">
+              <button class="btn btn-outline-success dropdown-toggle rounded-pill px-4"
+                      data-bs-toggle="dropdown" aria-expanded="false"
+                      style="min-width: 140px;">
+                <i class="fa-solid fa-filter me-2"></i> Filter By
+              </button>
+              <ul class="dropdown-menu shadow border-0 rounded-4 p-2" style="min-width: 150px;">
+                <li><a class="dropdown-item rounded-3" href="#">All</a></li>
+                <li><a class="dropdown-item rounded-3" href="#">Pending</a></li>
+                <li><a class="dropdown-item rounded-3" href="#">Rejected</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Table -->
+        <div class="table-responsive flex-grow-1 border rounded-4 shadow-sm">
+          <table class="table align-middle mb-0">
+            <thead class="table-success text-center">
+              <tr>
+                <th>User ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="verificationTableBody" class="text-center">
+              <tr>
+                <td>001</td>
+                <td>John Doe</td>
+                <td>john@example.com</td>
+                <td>
+                  <button class="btn btn-sm btn-outline-info rounded-circle me-2 view-details-btn" title="View Details" data-bs-toggle="modal" data-bs-target="#userDetailsModal" data-user-id="001">
+                    <i class="fa-solid fa-eye"></i>
+                  </button>
+                  <button class="btn btn-sm btn-outline-success rounded-circle me-2 approve-btn" title="Approve">
+                    <i class="fa-solid fa-check"></i>
+                  </button>
+                  <button class="btn btn-sm btn-outline-danger rounded-circle deny-btn" title="Deny">
+                    <i class="fa-solid fa-xmark"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>002</td>
+                <td>Jane Smith</td>
+                <td>jane@example.com</td>
+                <td>
+                  <button class="btn btn-sm btn-outline-info rounded-circle me-2 view-details-btn" title="View Details" data-bs-toggle="modal" data-bs-target="#userDetailsModal" data-user-id="002">
+                    <i class="fa-solid fa-eye"></i>
+                  </button>
+                  <button class="btn btn-sm btn-outline-success rounded-circle me-2 approve-btn" title="Approve">
+                    <i class="fa-solid fa-check"></i>
+                  </button>
+                  <button class="btn btn-sm btn-outline-danger rounded-circle deny-btn" title="Deny">
+                    <i class="fa-solid fa-xmark"></i>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Creative Modal for Viewing User Details and Files -->
+    <div class="modal fade" id="userDetailsModal" tabindex="-1" aria-labelledby="userDetailsModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content rounded-4 shadow-lg border-0">
+          <div class="modal-header bg-success text-white rounded-top-4 d-flex justify-content-between">
+            <h5 class="modal-title fw-bold" id="userDetailsModalLabel">
+              <i class="fa-solid fa-user-check me-2"></i> User Verification Details
+            </h5>
+            <i class="fa-solid fa-circle-xmark fs-2 cursor-pointer" data-bs-dismiss="modal" aria-label="Close"></i>
+          </div>
+          <div class="modal-body p-4">
+            <!-- User Info Section -->
+            <div class="row mb-4">
+              <div class="col-md-6">
+                <h6 class="fw-bold text-success mb-3"><i class="fa-solid fa-id-card me-2"></i> User Information</h6>
+                <p><strong>User ID:</strong> <span id="modalUserId">001</span></p>
+                <p><strong>Name:</strong> <span id="modalUserName">John Doe</span></p>
+                <p><strong>Email:</strong> <span id="modalUserEmail">john@example.com</span></p>
+                <p><strong>Phone:</strong> <span id="modalUserPhone">+1 234 567 890</span></p>
+                <p><strong>Registration Date:</strong> <span id="modalRegDate">2025-10-20</span></p>
+              </div>
+              <div class="col-md-6">
+                <h6 class="fw-bold text-success mb-3"><i class="fa-solid fa-file-alt me-2"></i> Submitted Files</h6>
+                <div class="d-flex flex-column gap-3">
+                  <!-- ID Photo -->
+                  <div class="file-item p-3 bg-light rounded-3 border">
+                    <div class="d-flex align-items-center gap-3">
+                      <i class="fa-solid fa-image text-primary fs-4"></i>
+                      <div>
+                        <p class="mb-1 fw-semibold">ID Photo</p>
+                        <a href="#" class="text-decoration-none text-success">View Image</a>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Proof of Address -->
+                  <div class="file-item p-3 bg-light rounded-3 border">
+                    <div class="d-flex align-items-center gap-3">
+                      <i class="fa-solid fa-file-pdf text-danger fs-4"></i>
+                      <div>
+                        <p class="mb-1 fw-semibold">Proof of Address</p>
+                        <a href="#" class="text-decoration-none text-success">Download PDF</a>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Additional Document -->
+                  <div class="file-item p-3 bg-light rounded-3 border">
+                    <div class="d-flex align-items-center gap-3">
+                      <i class="fa-solid fa-file-word text-info fs-4"></i>
+                      <div>
+                        <p class="mb-1 fw-semibold">Additional Document</p>
+                        <a href="#" class="text-decoration-none text-success">Download DOC</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Notes Section -->
+            <div class="row">
+              <div class="col-12">
+                <h6 class="fw-bold text-success mb-3"><i class="fa-solid fa-sticky-note me-2"></i> Admin Notes</h6>
+                <textarea class="form-control rounded-3" rows="3" placeholder="Add notes for this user..."></textarea>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer bg-light rounded-bottom-4">
+            <button type="button" class="btn btn-outline-secondary rounded-pill px-4" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-success rounded-pill px-4 approve-from-modal">
+              <i class="fa-solid fa-check me-2"></i> Approve
+            </button>
+            <button type="button" class="btn btn-danger rounded-pill px-4 deny-from-modal">
+              <i class="fa-solid fa-xmark me-2"></i> Deny
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Transactions</title>
+
+  <!-- FAVICON -->
+  <link rel="icon" type="image/png" href="../images/KadiwaNet_Logo.png" sizes="32x32">
+
+  <!-- Custom CSS  -->
+  <link rel="stylesheet" href="../css/custom-classes.css">
+  <link rel="stylesheet" href="admin-css/admin-styles.css">
+
+  <!--Bootstrap link-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+
+  <!-- BS ICONS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+  <!-- FontAwesome Icons -->
+  <script src="https://kit.fontawesome.com/da97a1e785.js" crossorigin="anonymous"></script>
+
+  <!-- Google Fonts  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Loved+by+the+King&family=Over+the+Rainbow&family=Roboto:ital,wght@0,100..900;1,100..900&family=Unkempt:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- CDN for JQUERY -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <style>
+    /* Make sure dropdowns always appear above everything */
+    .dropdown-menu {
+      z-index: 9999 !important;
+    }
+  </style>
+
+</head>
+<body class="w-100 vh-100 bg-color overflow-hidden">
+
+  <!-- Navbar top -->
+  <div class="px-5">
+
+    <!-- Header -->
+    <header class="navbar navbar-expand-lg navbar-light bg-light px-5 py-2">
+      <!-- Logo -->
+      <a class="navbar-brand d-flex align-items-center" href="#">
+        <img src="../images/KadiwaNet_Logo.png" alt="KadiwaNet Logo" width="70" height="50" class="me-2">
+        <span class="fw-bold">KadiwaNet</span>
+      </a>
+
+      <!-- Search bar (wider) -->
+      <form class="d-flex mx-auto" role="search" style="width: 40%;"> <!-- adjust width as needed -->
+        <div class="input-group w-100">
+          <!-- Icon inside input -->
+          <span class="input-group-text bg-white cursor-pointer">
+            <i class="fa-solid fa-magnifying-glass cursor-pointer"></i>
+          </span>
+          <input class="form-control border-start-0" type="search" placeholder="Search..." aria-label="Search">
+        </div>
+      </form>
+
+      <!-- ✅ Notifications & Profile -->
+      <div class="d-flex align-items-center justify-content-center mt-3 mt-lg-0">
+
+        <!-- Notifications -->
+        <button class="btn btn-light position-relative me-3">
+          <i class="fa-solid fa-bell fs-5 text-secondary"></i>
+          <span class="position-absolute top-0 start-100 translate-middle p-1 bg-danger border border-light rounded-circle"></span>
+        </button>
+
+        <!-- Profile Dropdown -->
+        <div class="dropdown">
+          <!-- Dropdown Toggle -->
+          <a class="d-flex align-items-center text-decoration-none dropdown-toggle text-success" 
+            href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="../images/farmer-images/12_05_2024 10_10_06 am.png" 
+                alt="User Profile" 
+                width="45" height="45" 
+                class="rounded-circle me-2 border border-2 border-success-subtle">
+            <span class="fw-semibold text-dark">Mike Jann</span>
+          </a>
+
+          <!-- Dropdown Menu -->
+          <ul class="dropdown-menu dropdown-menu-end shadow border-0 rounded-4 p-2" aria-labelledby="userDropdown">
+            <li>
+              <a class="dropdown-item rounded-3" href="vendor_profile_folder/vendor_profile.html">
+                <i class="fa-solid fa-user me-2 text-success"></i> Profile
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item rounded-3" href="settings.html">
+                <i class="fa-solid fa-gear me-2 text-success"></i> Settings
+              </a>
+            </li>
+            <li><hr class="dropdown-divider"></li>
+            <li>
+              <a class="dropdown-item text-danger rounded-3" href="logout.html">
+                <i class="fa-solid fa-right-from-bracket me-2"></i> Logout
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </header>
+
+  </div>
+
+  <!-- Container for Aside and Main -->
+  <div class="w-100 vh-100 d-flex flex-row">
+
+    <!-- Navigation Aside Bar -->
+    <aside class="w-25 border border-1 h-100 bg-white">
+      <nav class="nav flex-column bg-white py-3">
+
+        <!-- 🏠 Dashboard Link -->
+        <a class="nav-link mb-3 d-flex align-items-center text-decoration-none sidebar-hover" href="admin-home.html">
+          <i class="bi bi-columns-gap fs-4 me-4"></i>
+          <h4 class="mb-0 fw-normal">Home</h4>
+        </a>
+
+        <!-- 💰 Market Price -->
+        <a class="nav-link mb-3 d-flex align-items-center text-decoration-none sidebar-hover" href="admin-market-price.html">
+          <i class="bi bi-cash-coin fs-3 me-4"></i>
+          <h4 class="mb-0 fw-normal">Market Price</h4>
+        </a>
+
+        <!-- 💳 Transactions -->
+        <a class="nav-link mb-3 d-flex align-items-center text-decoration-none sidebar-link" href="admin-transactions.html">
+          <i class="bi bi-credit-card-2-back fs-3 me-4 text-white"></i>
+          <h4 class="mb-0 fw-normal text-white fw-bold">Transactions</h4>
+        </a>
+
+        <!-- 👤 User Verification -->
+        <a class="nav-link mb-3 d-flex align-items-center text-decoration-none sidebar-hover" href="admin-user-verification.html">
+          <i class="bi bi-person-check fs-3 me-4"></i>
+          <h4 class="mb-0 fw-normal">User Verification</h4>
+        </a>
+
+        <!-- 👥 Users -->
+        <a class="nav-link mb-3 d-flex align-items-center text-decoration-none sidebar-hover" href="admin-users.html">
+          <i class="bi bi-people fs-3 me-4"></i>
+          <h4 class="mb-0 fw-normal">Users</h4>
+        </a>
+
+        <!-- 📊 Reports -->
+        <a class="nav-link mb-3 d-flex align-items-center text-decoration-none sidebar-hover" href="admin-reports.html">
+          <i class="bi bi-graph-up fs-3 me-4"></i>
+          <h4 class="mb-0 fw-normal">Reports</h4>
+        </a>
+
+        <!-- 📧 Messages (updated icon) -->
+        <a class="nav-link mb-3 d-flex align-items-center text-decoration-none sidebar-hover" href="admin-messages.html">
+          <i class="fa-solid fa-envelope fs-3 me-4"></i><br>
+          <h4 class="mb-0 fw-normal">Messages</h4>
+        </a>
+
+      </nav>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="w-75 bg-white px-5 py-4 h-100">
+
+      <!-- 🧭 Header Section -->
+      <header class="d-flex flex-wrap justify-content-between align-items-center mb-4">
+
+        <!-- Title -->
+        <h4 class="fw-bold mb-0">Transactions Overview</h4>
+
+        <div class="d-flex align-items-center gap-2">
+          <!-- Sort Dropdown -->
+          <div class="dropdown">
+            <button class="btn btn-outline-success dropdown-toggle rounded-pill px-4 w-100 w-sm-auto"
+                    type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="fa-solid fa-filter me-2"></i> Sort By
+            </button>
+            <ul class="dropdown-menu shadow border-0 rounded-4 p-2">
+              <li><a class="dropdown-item rounded-3" href="#">Default</a></li>
+              <li><a class="dropdown-item rounded-3" href="#">Name (A–Z)</a></li>
+              <li><a class="dropdown-item rounded-3" href="#">Date & Time</a></li>
+              <li><a class="dropdown-item rounded-3" href="#">Status</a></li>
+            </ul>
+          </div>
+
+          <!-- Role Filter -->
+          <div class="dropdown">
+            <button class="btn btn-outline-secondary dropdown-toggle rounded-pill px-4 w-100 w-sm-auto"
+                    type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="fa-solid fa-users me-2"></i> Role
+            </button>
+            <ul class="dropdown-menu shadow border-0 rounded-4 p-2">
+              <li><a class="dropdown-item rounded-3" href="#">All</a></li>
+              <li><a class="dropdown-item rounded-3" href="#">Farmer</a></li>
+              <li><a class="dropdown-item rounded-3" href="#">Vendor</a></li>
+            </ul>
+          </div>
+
+          <!-- Search Bar -->
+          <div class="input-group rounded-pill border border-success ps-3" style="max-width: 250px;">
+            <span class="input-group-text bg-transparent border-0 p-0 pe-2">
+              <i class="fa-solid fa-magnifying-glass text-success"></i>
+            </span>
+            <input type="text" class="form-control border-0 rounded-end-pill"
+                  placeholder="Search..." aria-label="Search">
+          </div>
+        </div>
+
+      </header>
+
+      <!-- 💳 Transactions Table -->
+      <div class="table-responsive fixed-table shadow-sm rounded-4 border bg-white">
+        <table class="table align-middle mb-0">
+          <thead class="table-success text-center sticky-top">
+            <tr>
+              <th>#</th>
+              <th>Product</th>
+              <th>Buyer</th>
+              <th>Seller</th>
+              <th>Date & Time</th>
+              <th>Amount</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+
+          <tbody class="text-center">
+            <!-- ✅ Completed -->
+            <tr>
+              <td>1</td>
+              <td>Banana</td>
+              <td>Maria Vendor</td>
+              <td>John Farmer</td>
+              <td>2025-10-26 10:15 AM</td>
+              <td>₱1,200</td>
+              <td><span class="badge bg-success">Completed</span></td>
+              <td>
+                <div class="d-flex justify-content-center gap-2">
+                  <!-- VIEW BUTTON -->
+                  <button class="btn btn-outline-success btn-sm rounded-circle"
+                          data-bs-toggle="modal" data-bs-target="#viewTransactionModal"
+                          data-product="Banana"
+                          data-amount="₱1,200"
+                          data-transaction-id="TXN-01234"
+                          data-buyer="Maria Vendor"
+                          data-seller="John Farmer"
+                          data-datetime="2025-10-26 10:15 AM"
+                          data-payment="G-Cash"
+                          data-status="Completed"
+                          data-buyer-img="../images/no-image.png"
+                          data-seller-img="../images/farmer-images/12_05_2024 10_10_06 am.png"
+                          data-product-img="../images/crop_images/banana.avif"
+                          data-product-desc="Fresh organic bananas directly from local farms. Delivered within 24 hours.">
+                    <i class="fa-solid fa-eye"></i>
+                  </button>
+                  <button class="btn btn-outline-danger btn-sm rounded-circle" title="Delete">
+                    <i class="fa-solid fa-trash"></i>
+                  </button>
+                </div>
+              </td>
+            </tr>
+
+            <!-- ⏳ Pending -->
+            <tr>
+              <td>2</td>
+              <td>Mango</td>
+              <td>David Vendor</td>
+              <td>Maria Farmer</td>
+              <td>2025-10-25 08:40 AM</td>
+              <td>₱980</td>
+              <td><span class="badge bg-warning text-dark">Pending</span></td>
+              <td>
+                <div class="d-flex justify-content-center gap-2">
+                  <button class="btn btn-outline-success btn-sm rounded-circle" title="View">
+                    <i class="fa-solid fa-eye"></i>
+                  </button>
+                  <button class="btn btn-outline-danger btn-sm rounded-circle" title="Delete">
+                    <i class="fa-solid fa-trash"></i>
+                  </button>
+                </div>
+              </td>
+            </tr>
+
+            <!-- ❌ Cancelled -->
+            <tr>
+              <td>3</td>
+              <td>Rice</td>
+              <td>Kevin Vendor</td>
+              <td>Ana Farmer</td>
+              <td>2025-10-23 01:25 PM</td>
+              <td>₱2,500</td>
+              <td><span class="badge bg-danger">Cancelled</span></td>
+              <td>
+                <div class="d-flex justify-content-center gap-2">
+                  <button class="btn btn-outline-success btn-sm rounded-circle" title="View">
+                    <i class="fa-solid fa-eye"></i>
+                  </button>
+                  <button class="btn btn-outline-danger btn-sm rounded-circle" title="Delete">
+                    <i class="fa-solid fa-trash"></i>
+                  </button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </main>
+
+  </div>
+
+  <!-- 🧾 View Transaction Modal -->
+  <div class="modal fade" id="viewTransactionModal" tabindex="-1" aria-labelledby="viewTransactionModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content rounded-4 border-0 shadow-lg">
+        <div class="modal-header bg-success text-white rounded-top-4 d-flex justify-content-between">
+          <h5 class="modal-title fw-bold" id="viewTransactionModalLabel">
+            <i class="fa-solid fa-receipt me-2"></i> Transaction Details
+          </h5>
+          <i class="fa-solid fa-circle-xmark fs-2 cursor-pointer" data-bs-dismiss="modal" aria-label="Close"></i>
+        </div>
+
+        <div class="modal-body p-4">
+          <!-- Transaction Info -->
+          <div class="row g-3">
+            <div class="col-md-6">
+              <h6 class="text-muted mb-1">Product Name</h6>
+              <p class="fw-semibold" id="productName">Banana</p>
+            </div>
+            <div class="col-md-6">
+              <h6 class="text-muted mb-1">Transaction ID</h6>
+              <p class="fw-semibold" id="transactionID">TXN-01234</p>
+            </div>
+            <div class="col-md-6">
+              <h6 class="text-muted mb-1">Buyer</h6>
+              <div class="d-flex align-items-center gap-2">
+                <img src="../images/no-image.png" class="rounded-circle" alt="buyer" width="100" height="100">
+                <div>
+                  <p class="fw-semibold mb-0" id="buyerName">Maria Vendor</p>
+                  <small class="text-muted">Vendor</small>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <h6 class="text-muted mb-1">Seller</h6>
+              <div class="d-flex align-items-center gap-2">
+                <img src="../images/farmer-images/12_05_2024 10_10_06 am.png" class="rounded-circle" alt="seller" 
+                width="100" height="100">
+                <div>
+                  <p class="fw-semibold mb-0" id="sellerName">John Farmer</p>
+                  <small class="text-muted">Farmer</small>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <h6 class="text-muted mb-1">Date & Time</h6>
+              <p class="fw-semibold" id="dateTime">2025-10-26 10:15 AM</p>
+            </div>
+            <div class="col-md-6">
+              <h6 class="text-muted mb-1">Amount</h6>
+              <p class="fw-semibold text-success" id="amount">₱1,200</p>
+            </div>
+            <div class="col-md-6">
+              <h6 class="text-muted mb-1">Payment Method</h6>
+              <p class="fw-semibold" id="paymentMethod">G-Cash</p>
+            </div>
+            <div class="col-md-6">
+              <h6 class="text-muted mb-1">Status</h6>
+              <span class="badge bg-success px-3 py-2" id="status">Completed</span>
+            </div>
+          </div>
+
+          <hr class="my-4">
+
+          <h6 class="fw-bold mb-2">Product Details</h6>
+          <div class="d-flex align-items-center gap-3">
+            <img src="../images/crop_images/banana.avif" alt="product" class="rounded-3 border" width="100" height="100">
+            <p class="mb-0 small text-muted">Fresh organic bananas directly from local farms. Delivered within 24 hours.</p>
+          </div>
+        </div>
+
+        <div class="modal-footer border-0">
+          <button type="button" class="btn btn-outline-success rounded-pill px-4" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    $(document).ready(function () {
+      $('#viewTransactionModal').on('show.bs.modal', function (event) {
+        const button = $(event.relatedTarget); // Button that triggered the modal
+        
+        // Get data attributes
+        const product = button.data('product') || '—';
+        const amount = button.data('amount') || '—';
+        const transactionId = button.data('transaction-id') || '—';
+        const buyer = button.data('buyer') || '—';
+        const seller = button.data('seller') || '—';
+        const dateTime = button.data('datetime') || '—';
+        const paymentMethod = button.data('payment') || '—';
+        const status = button.data('status') || '—';
+
+        // Update modal content
+        const modal = $(this);
+        modal.find('#productName').text(product);
+        modal.find('#amount').text(amount);
+        modal.find('#transactionID').text(transactionId);
+        modal.find('#buyerName').text(buyer);
+        modal.find('#sellerName').text(seller);
+        modal.find('#dateTime').text(dateTime);
+        modal.find('#paymentMethod').text(paymentMethod);
+        modal.find('#status').text(status);
+      });
+    });
+  </script>
+
+</body>
+</html>

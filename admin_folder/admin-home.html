@@ -79,7 +79,7 @@
           <!-- Dropdown Menu -->
           <ul class="dropdown-menu dropdown-menu-end shadow border-0 rounded-4 p-2" aria-labelledby="userDropdown">
             <li>
-              <a class="dropdown-item rounded-3" href="vendor_profile_folder/vendor_profile.html">
+              <a class="dropdown-item rounded-3" href="admin_profile_folder/admin_profile.html" >
                 <i class="fa-solid fa-user me-2 text-success"></i> Profile
               </a>
             </li>
@@ -479,6 +479,16 @@
         $('.dropdown-item').removeClass('active bg-success text-white');
         $(this).addClass('active bg-success text-white');
       });
+
+      //for the manual links in dropdowns
+      $(".dropdown-menu a").on("click", function(e) {
+        const href = $(this).attr("href");
+        if (href && href !== "#") {
+          e.preventDefault();
+          window.location.href = href;
+        }
+      });
+
     });
   </script>
 
