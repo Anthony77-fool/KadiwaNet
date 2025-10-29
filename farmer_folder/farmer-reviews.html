@@ -55,33 +55,49 @@
         </div>
       </form>
 
-      <!-- Notification and User -->
-      <div class="d-flex align-items-center">
+      <!-- ✅ Notifications & Profile -->
+      <div class="d-flex align-items-center justify-content-center mt-3 mt-lg-0">
+
+        <!-- Notifications -->
         <button class="btn btn-light position-relative me-3">
-          <i class="fa-solid fa-bell"></i>
+          <i class="fa-solid fa-bell fs-5 text-secondary"></i>
           <span class="position-absolute top-0 start-100 translate-middle p-1 bg-danger border border-light rounded-circle"></span>
         </button>
 
-        <!-- User profile with chevron at the bottom inside the profile picture -->
-        <div class="d-flex align-items-center cursor-pointer">
-          <!-- Name next to picture -->
-          <h6 class="mb-0 ms-2">Mike Jann</h6>
-
-          <!-- Profile picture wrapper -->
-          <div class="position-relative">
+        <!-- Profile Dropdown -->
+        <div class="dropdown">
+          <!-- Dropdown Toggle -->
+          <a class="d-flex align-items-center text-decoration-none dropdown-toggle text-success" 
+            href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             <img src="../images/farmer-images/12_05_2024 10_10_06 am.png" 
-                alt="User Profile Picture" 
+                alt="User Profile" 
                 width="45" height="45" 
-                class="rounded-circle">
-            
-            <!-- Chevron inside the profile picture at bottom center -->
-            <i class="bi bi-send-arrow-down-fill fs-5 position-absolute text-success" 
-              style="top: 22px; left: 90%; transform: translateX(-50%);"></i>
-          </div>
+                class="rounded-circle me-2 border border-2 border-success-subtle">
+            <span class="fw-semibold text-dark">Mike Jann</span>
+          </a>
 
+          <!-- Dropdown Menu -->
+          <ul class="dropdown-menu dropdown-menu-end shadow border-0 rounded-4 p-2" aria-labelledby="userDropdown">
+            <li>
+              <a class="dropdown-item rounded-3" href="farmer_profile_folder/farmer_profile.html">
+                <i class="fa-solid fa-user me-2 text-success"></i> Profile
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item rounded-3" href="settings.html">
+                <i class="fa-solid fa-gear me-2 text-success"></i> Settings
+              </a>
+            </li>
+            <li><hr class="dropdown-divider"></li>
+            <li>
+              <a class="dropdown-item text-danger rounded-3" href="logout.html">
+                <i class="fa-solid fa-right-from-bracket me-2"></i> Logout
+              </a>
+            </li>
+          </ul>
         </div>
-
       </div>
+
     </header>
 
   </div>
@@ -141,15 +157,16 @@
         <!-- Filter Dropdown -->
         <div class="d-flex justify-content-between align-items-center mb-3">
           <h2 class="letter-spacing fw-bold">Reviews</h2>
+          <!-- Filter Dropdown -->
           <div class="dropdown">
-            <button class="btn bg-white border border-success text-dark dropdown-toggle fw-semibold" 
+            <button class="btn btn-outline-success dropdown-toggle rounded-pill px-4 fw-semibold"
                     type="button" id="filterDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-              Filter: Default
+              <i class="fa-solid fa-filter me-2"></i> Sort By
             </button>
-            <ul class="dropdown-menu dropdown-menu-end bg-white border border-success" aria-labelledby="filterDropdown">
-              <li><a class="dropdown-item bg-success text-white fw-semibold" href="#" data-filter="default">Default</a></li>
-              <li><a class="dropdown-item" href="#" data-filter="name">By Name</a></li>
-              <li><a class="dropdown-item" href="#" data-filter="date">By Date</a></li>
+            <ul class="dropdown-menu shadow border-0 rounded-4 p-2" aria-labelledby="filterDropdown">
+              <li><a class="dropdown-item rounded-3 fw-medium" href="#" data-filter="default">Default</a></li>
+              <li><a class="dropdown-item rounded-3 fw-medium" href="#" data-filter="name">Name</a></li>
+              <li><a class="dropdown-item rounded-3 fw-medium" href="#" data-filter="date">Date</a></li>
             </ul>
           </div>
         </div>
