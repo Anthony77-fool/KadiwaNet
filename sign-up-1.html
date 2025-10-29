@@ -29,6 +29,14 @@
   <!-- CDN for JQUERY -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
+  <style>
+    @media (max-width: 991px) {
+      aside {
+        display: none !important;
+      }
+    }
+  </style>
+
 </head>
 <body>
 
@@ -36,7 +44,7 @@
   <div class="d-flex flex-row justify-content-evenly vh-100">
 
     <!-- This is sign-in image side -->
-    <aside class="w-100 box-bg shadow-box d-flex flex-column justify-content-center align-items-center">
+    <aside class="w-100 box-bg shadow-box d-flex flex-column justify-content-center align-items-center d-none d-lg-flex">
 
       <!-- Image Container -->
       <div class="image-container">
@@ -60,7 +68,7 @@
     </aside>
 
     <!-- This is sign-in inputs side -->
-    <main class="w-100 d-flex flex-column justify-content-center align-items-center">
+    <main class="w-100 d-flex flex-column justify-content-center align-items-center px-3 px-md-5">
 
       <!-- Sign In Form -->
       <form action="" class="h-and-w signin-box py-5">

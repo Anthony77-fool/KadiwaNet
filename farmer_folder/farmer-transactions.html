@@ -55,33 +55,49 @@
         </div>
       </form>
 
-      <!-- Notification and User -->
-      <div class="d-flex align-items-center">
+      <!-- ✅ Notifications & Profile -->
+      <div class="d-flex align-items-center justify-content-center mt-3 mt-lg-0">
+
+        <!-- Notifications -->
         <button class="btn btn-light position-relative me-3">
-          <i class="fa-solid fa-bell"></i>
+          <i class="fa-solid fa-bell fs-5 text-secondary"></i>
           <span class="position-absolute top-0 start-100 translate-middle p-1 bg-danger border border-light rounded-circle"></span>
         </button>
 
-        <!-- User profile with chevron at the bottom inside the profile picture -->
-        <div class="d-flex align-items-center cursor-pointer">
-          <!-- Name next to picture -->
-          <h6 class="mb-0 ms-2">Mike Jann</h6>
-
-          <!-- Profile picture wrapper -->
-          <div class="position-relative">
+        <!-- Profile Dropdown -->
+        <div class="dropdown">
+          <!-- Dropdown Toggle -->
+          <a class="d-flex align-items-center text-decoration-none dropdown-toggle text-success" 
+            href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             <img src="../images/farmer-images/12_05_2024 10_10_06 am.png" 
-                alt="User Profile Picture" 
+                alt="User Profile" 
                 width="45" height="45" 
-                class="rounded-circle">
-            
-            <!-- Chevron inside the profile picture at bottom center -->
-            <i class="bi bi-send-arrow-down-fill fs-5 position-absolute text-success" 
-              style="top: 22px; left: 90%; transform: translateX(-50%);"></i>
-          </div>
+                class="rounded-circle me-2 border border-2 border-success-subtle">
+            <span class="fw-semibold text-dark">Mike Jann</span>
+          </a>
 
+          <!-- Dropdown Menu -->
+          <ul class="dropdown-menu dropdown-menu-end shadow border-0 rounded-4 p-2" aria-labelledby="userDropdown">
+            <li>
+              <a class="dropdown-item rounded-3" href="farmer_profile_folder/farmer_profile.html">
+                <i class="fa-solid fa-user me-2 text-success"></i> Profile
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item rounded-3" href="settings.html">
+                <i class="fa-solid fa-gear me-2 text-success"></i> Settings
+              </a>
+            </li>
+            <li><hr class="dropdown-divider"></li>
+            <li>
+              <a class="dropdown-item text-danger rounded-3" href="logout.html">
+                <i class="fa-solid fa-right-from-bracket me-2"></i> Logout
+              </a>
+            </li>
+          </ul>
         </div>
-
       </div>
+
     </header>
 
   </div>
@@ -133,160 +149,149 @@
     </aside>
 
     <!-- Main Content Area -->
-    <main class="w-75 bg-white px-5 py-4 h-100">
-      <!-- Header Text -->
-      <header class="d-flex flex-row justify-content-between">
-        <h2 class="letter-spacing fw-bold">Transactions</h2>
+    <main class="w-100 bg-white px-5 py-4 h-100 position-relative">
+
+      <!-- Header -->
+      <header class="d-flex flex-row justify-content-between align-items-center mb-4">
+        <h2 class="letter-spacing fw-bold text-success">Transactions</h2>
+
+        <!-- Filter Dropdown -->
+        <div class="dropdown">
+          <button class="btn btn-outline-success dropdown-toggle rounded-pill px-4"
+                  type="button" id="filterDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fa-solid fa-filter me-2"></i> Sort By
+          </button>
+          <ul class="dropdown-menu shadow border-0 rounded-4 p-2" aria-labelledby="filterDropdown">
+            <li><a class="dropdown-item rounded-3" href="#" data-filter="default">Default</a></li>
+            <li><a class="dropdown-item rounded-3" href="#" data-filter="name">Name</a></li>
+            <li><a class="dropdown-item rounded-3" href="#" data-filter="date">Date</a></li>
+          </ul>
+        </div>
       </header>
-      
-      <!-- submain -->
-      <div class="d-flex flex-row w-100 shadow-article" style="height: 550px; overflow-y: auto;">
+
+      <!-- 🌾 Transactions Container -->
+      <section class="d-flex flex-row gap-3" style="height: 500px;">
         
-        <!-- for orders -->
-        <article class="w-75 rounded-start shadow p-3 text-white"
-         style="background: url('farmer-images/bg-img-daily-rem1.jpg') center/cover no-repeat; height: 100%; overflow-y: auto;">
-  
-          <header class="d-flex justify-content-between align-items-center">
-            <!-- Search bar -->
-            <form role="search" style="width: 40%;"> <!-- adjust width as needed -->
-              <div class="input-group w-100">
-                <span class="input-group-text bg-white cursor-pointer">
-                  <i class="fa-solid fa-magnifying-glass cursor-pointer"></i>
-                </span>
-                <input class="form-control border-start-0" type="search" placeholder="Search..." aria-label="Search">
-              </div>
-            </form>
+        <!-- Left: Transactions Table -->
+        <article id="transactionsList" class="bg-white shadow-sm rounded-4 p-4 flex-grow-1 transition-all" style="overflow-y: auto;">
+          <h5 class="fw-bold text-success mb-3">All Orders</h5>
 
-            <!-- Filter dropdown -->
-            <div class="dropdown">
-              <button class="btn bg-white border border-success text-dark dropdown-toggle fw-semibold" 
-                      type="button" id="filterDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                Filter: Default
-              </button>
-              <ul class="dropdown-menu dropdown-menu-end bg-white border border-success" aria-labelledby="filterDropdown">
-                <li><a class="dropdown-item bg-success text-white fw-semibold" href="#" data-filter="default">Default</a></li>
-                <li><a class="dropdown-item" href="#" data-filter="name">By Name</a></li>
-                <li><a class="dropdown-item" href="#" data-filter="date">By Date</a></li>
-              </ul>
-            </div>
-          </header>
-
-          <!-- this is where the orders gonna be shown -->
-          <!-- Orders List -->
-          <div class="orders-list mt-3">
-
-            <!-- Header Row -->
-            <div class="order-row header text-white fw-semibold">
-              <div class="col fs-5">Name</div>
-              <div class="col fs-5">Order ID</div>
-              <div class="col fs-5">Action</div>
-            </div>
-
-            <!-- Data Rows -->
-            <div class="order-row bg-white shadow-sm">
-              <div class="col text-dark">Juan Dela Cruz</div>
-              <div class="col text-dark">#ORD001</div>
-              <div class="col">
-                <button class="btn btn-success fw-semibold">View</button>
-              </div>
-            </div>
-
-            <div class="order-row bg-white shadow-sm">
-              <div class="col text-dark">Maria Santos</div>
-              <div class="col text-dark">#ORD002</div>
-              <div class="col">
-                <button class="btn btn-success fw-semibold">View</button>
-              </div>
-            </div>
-
-            <div class="order-row bg-white shadow-sm">
-              <div class="col text-dark">Carlos Reyes</div>
-              <div class="col text-dark">#ORD003</div>
-              <div class="col">
-                <button class="btn btn-success fw-semibold">View</button>
-              </div>
-            </div>
-
-            <!-- Data Rows -->
-            <div class="order-row bg-white shadow-sm">
-              <div class="col text-dark">Juan Dela Cruz</div>
-              <div class="col text-dark">#ORD001</div>
-              <div class="col">
-                <button class="btn btn-success fw-semibold">View</button>
-              </div>
-            </div>
-
-            <div class="order-row bg-white shadow-sm">
-              <div class="col text-dark">Maria Santos</div>
-              <div class="col text-dark">#ORD002</div>
-              <div class="col">
-                <button class="btn btn-success fw-semibold">View</button>
-              </div>
-            </div>
-
-            <div class="order-row bg-white shadow-sm">
-              <div class="col text-dark">Carlos Reyes</div>
-              <div class="col text-dark">#ORD003</div>
-              <div class="col">
-                <button class="btn btn-success fw-semibold">View</button>
-              </div>
-            </div>
-
+          <div class="table-responsive" style="max-height: 480px; overflow-y: auto;">
+            <table class="table table-hover align-middle">
+              <thead class="table-success text-center">
+                <tr>
+                  <th>Customer Name</th>
+                  <th>Order ID</th>
+                  <th>Date</th>
+                  <th>Status</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody class="text-center">
+                <tr>
+                  <td>Juan Dela Cruz</td>
+                  <td>#ORD001</td>
+                  <td>2025-10-29</td>
+                  <td><span class="badge bg-success">Delivered</span></td>
+                  <td>
+                    <button class="btn btn-outline-success btn-sm rounded-pill view-btn" data-customer="Juan Dela Cruz">
+                      <i class="fa-solid fa-eye me-1"></i> View
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Maria Santos</td>
+                  <td>#ORD002</td>
+                  <td>2025-10-28</td>
+                  <td><span class="badge bg-warning text-dark">Pending</span></td>
+                  <td>
+                    <button class="btn btn-outline-success btn-sm rounded-pill view-btn" data-customer="Maria Santos">
+                      <i class="fa-solid fa-eye me-1"></i> View
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Carlos Reyes</td>
+                  <td>#ORD003</td>
+                  <td>2025-10-26</td>
+                  <td><span class="badge bg-danger">Cancelled</span></td>
+                  <td>
+                    <button class="btn btn-outline-success btn-sm rounded-pill view-btn" data-customer="Carlos Reyes">
+                      <i class="fa-solid fa-eye me-1"></i> View
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </div>
-                      
         </article>
 
-        <article class="w-25 box-bg rounded-end p-2" style="overflow-y: auto;">
-
-          <div class="d-flex flex-row justify-content-between align-items-center">
-            <!-- This is de expand icon -->
-            <i class="fa-solid fa-square-caret-left fs-2 text-success cursor-pointer"></i>
-            <!-- This is message icon -->
-            <a href="#" class="text-decoration-none d-flex justify-content-end w-100">
-              <i class="bi bi-chat fs-2 text-success cursor-pointer"></i>
-            </a>
+        <!-- Right: Order Details -->
+        <aside id="orderDetails" class="bg-white shadow-sm rounded-4 p-4 flex-shrink-0"
+                style="width: 0; opacity: 0; overflow: hidden; transition: all 0.4s ease;">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <h5 class="fw-bold text-success mb-0"><i class="fa-solid fa-receipt me-2"></i> Order Details</h5>
+            <button class="btn btn-sm btn-outline-danger rounded-pill" id="closeDetails">
+              <i class="fa-solid fa-xmark"></i>
+            </button>
           </div>
 
-          <div class="d-flex flex-column justify-content-center align-items-center">
-            <img src="../images/farmer-images/12_05_2024 10_10_06 am.png" alt="" class="rounded-circle" width="100px" height="100px">
-            <label for="" class="text-secondary fw-semibold">Marck Anthony Sabado</label>
+          <div id="orderContent">
+            <div class="text-center mb-3">
+              <img src="../images/farmer-images/12_05_2024 10_10_06 am.png" class="rounded-circle border" width="90" height="90" alt="Customer">
+              <h6 class="fw-bold mt-2" id="customerName">Juan Dela Cruz</h6>
+            </div>
+
+            <div class="border rounded-4 p-3 mb-3 bg-light">
+              <p class="mb-1"><strong>Order ID:</strong> <span id="orderId">#ORD001</span></p>
+              <p class="mb-1"><strong>Date:</strong> <span id="orderDate">2025-10-29</span></p>
+              <p class="mb-1"><strong>Status:</strong> <span class="badge bg-success" id="orderStatus">Delivered</span></p>
+            </div>
+
+            <div class="border rounded-4 p-3 bg-light">
+              <h6 class="fw-bold mb-2"><i class="fa-solid fa-box-open me-2"></i> Product Details</h6>
+              <p class="mb-1"><strong>Product:</strong> <span id="productName">Tomatoes</span></p>
+              <p class="mb-1"><strong>Quantity:</strong> <span id="productQty">50 kg</span></p>
+              <p class="mb-1"><strong>Total Price:</strong> <span class="text-success fw-semibold" id="productPrice">₱3,000</span></p>
+              <p class="mb-0"><strong>Delivery Address:</strong> <span id="deliveryAddress">Pasuquin, Ilocos Norte</span></p>
+            </div>
           </div>
+        </aside>
 
-          <!-- Product Card -->
-          <div class="shadow-article cursor-pointer p-4 rounded-0 m-2">
-
-              <img src="../images/crop_images/banana.avif" alt="Banana Image" class="rounded w-100" style="height:150px; object-fit:cover;">
-              <h5 class="mt-2 text-center fw-semibold">Saging</h5><!-- This is prod name -->
-              <div class="d-flex justify-content-between"><!-- This is Price -->
-                <h6 class="fw-semibold">Price</h6>
-                <h6 class="text-success">₱60</h6>
-              </div>
-              <div class="d-flex justify-content-between"><!-- This is Quantity -->
-                <h6 class="fw-semibold">Quantity</h6>
-                <h6 class="text-success">70</h6>
-              </div>
-              <!-- Address (label left, value right, allow wrapping) -->
-              <div class="d-flex justify-content-between align-items-start">
-                <h6 class="fw-semibold mb-1">Address</h6>
-                <h6 class="text-success mb-0 text-wrap text-end" 
-                    style="max-width: 100px; white-space: normal; word-break: break-word;">
-                  Nalvo, Pasuquin, Ilocos Norte
-                </h6>
-              </div>
-              <div class="d-flex justify-content-between"><!-- This is Status -->
-                <h6 class="fw-semibold">Status</h6>
-                <h6 class="text-success">Delivered</h6>
-              </div>
-
-          </div>
-
-        </article>
-
-      </div>
-
+      </section>
     </main>
 
   </div>
+
+  <script>
+    $(document).ready(function () {
+      $(".view-btn").on("click", function () {
+        const customerName = $(this).data("customer");
+        $("#customerName").text(customerName);
+        $("#orderId").text("#ORD00" + (Math.floor(Math.random() * 9) + 1));
+        $("#orderDate").text("2025-10-" + (25 + Math.floor(Math.random() * 5)));
+        $("#orderStatus").text(["Delivered", "Pending", "Cancelled"][Math.floor(Math.random() * 3)]);
+
+        // Expand right panel
+        $("#orderDetails").css({
+          width: "25%",
+          opacity: "1",
+          overflow: "auto"
+        });
+        $("#transactionsList").css("width", "75%");
+      });
+
+      $("#closeDetails").on("click", function () {
+        $("#orderDetails").css({
+          width: "0",
+          opacity: "0",
+          overflow: "hidden"
+        });
+        $("#transactionsList").css("width", "100%");
+      });
+    });
+  </script>
+
 
 </body>
 </html>

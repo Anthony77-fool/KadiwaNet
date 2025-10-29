@@ -29,14 +29,25 @@
   <!-- CDN for JQUERY -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
+  <style>
+    .box-bg{
+      min-height: 100vh; /* Always full screen height */
+      height: 100%;      /* Make sure it stretches with parent */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  </style>
+
 </head>
 <body>
 
   <!-- main container -->
-  <div class="d-flex flex-row justify-content-evenly vh-100">
+  <div class="d-flex flex-column flex-lg-row justify-content-center justify-content-lg-evenly align-items-center vh-100">
 
     <!-- This is sign-in inputs side -->
-    <main class="w-100 d-flex flex-column justify-content-center align-items-center">
+    <main class="w-100 d-flex flex-column justify-content-center align-items-center px-3 px-md-5">
 
       <!-- Sign In Form -->
       <form action="" class="h-and-w signin-box py-5">
@@ -76,7 +87,7 @@
 
     </main>
     <!-- This is sign-in image side -->
-    <aside class="w-100 box-bg shadow-box d-flex flex-column justify-content-center align-items-center">
+    <aside class="w-100 box-bg shadow-box d-flex flex-column justify-content-center align-items-center d-none d-lg-flex">
 
       <!-- Image Container -->
       <div class="image-container">

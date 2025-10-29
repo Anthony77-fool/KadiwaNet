@@ -200,7 +200,18 @@
               <td>2025-10-10</td>
               <td>
                 <div class="d-flex justify-content-center gap-2">
-                  <button class="btn btn-outline-success btn-sm rounded-circle" title="View">
+                  <button class="btn btn-outline-success btn-sm rounded-circle view-user-btn" title="View"
+                    data-id="U-1001"
+                    data-name="Juan Farmer"
+                    data-email="juanfarmer@example.com"
+                    data-phone="+63 912 345 6789"
+                    data-role="farmer"
+                    data-status="Verified"
+                    data-date="2025-10-22"
+                    data-idfile="https://example.com/id.jpg"
+                    data-prooffile="https://example.com/proof.pdf"
+                    data-products='[{"name":"Banana","category":"Fruit","price":"45.00","image":"../images/crop_images/banana.avif"},
+                                  {"name":"Corn","category":"Grain","price":"30.00","image":"../images/crop_images/corn-img.jpg"}]'>
                     <i class="fa-solid fa-eye"></i>
                   </button>
                   <button class="btn btn-outline-danger btn-sm rounded-circle" title="Delete">
@@ -222,7 +233,7 @@
               <td>2025-09-15</td>
               <td>
                 <div class="d-flex justify-content-center gap-2">
-                  <button class="btn btn-outline-success btn-sm rounded-circle" title="View">
+                  <button class="btn btn-outline-success btn-sm rounded-circle" title="View" data-bs-toggle="modal" data-bs-target="#vendorDetailsModal">
                     <i class="fa-solid fa-eye"></i>
                   </button>
                   <button class="btn btn-outline-danger btn-sm rounded-circle" title="Delete">
@@ -261,74 +272,245 @@
 
   </div>
 
-  <!-- Product Modal -->
-  <div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
+  <!-- Farmer User Details Modal -->
+  <div class="modal fade" id="userDetailsModal" tabindex="-1" aria-labelledby="userDetailsModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content rounded-4 shadow-lg border-0">
 
-        <!-- Modal Header -->
-        <div class="modal-header d-flex flex-row justify-content-between box-bg">
-          <h5 class="modal-title fw-bold" id="pinModalLabel">Add New Inventory</h5>
-          <i class="fa-solid fa-square-xmark cursor-pointer fs-2 text-success" data-bs-dismiss="modal" aria-label="Close"></i>
+        <!-- Header -->
+        <div class="modal-header bg-success text-white rounded-top-4 d-flex justify-content-between align-items-center">
+          <h5 class="modal-title fw-bold" id="userDetailsModalLabel">
+            <i class="fa-solid fa-user-circle me-2"></i> User Details
+          </h5>
+          <i class="fa-solid fa-circle-xmark fs-3 cursor-pointer" data-bs-dismiss="modal" aria-label="Close"></i>
         </div>
 
-        <!-- Modal Body -->
-        <div class="modal-body">
-          <form id="productForm">
-
-            <!-- Image Upload + Preview -->
-            <div class="d-flex flex-column align-items-center mb-3">
-              <img id="imagePreview" src="../images/no-image.png" 
-                  alt="Product Preview" 
-                  class="rounded border border-2 border-success mb-2"
-                  style="width: 300px; height:200px; object-fit:cover; cursor:pointer;">
-              <input type="file" id="productImage" accept="image/*" class="d-none">
-              <small class="text-muted">Click the image to upload</small>
+        <!-- Body -->
+        <div class="modal-body p-4">
+          <div class="row">
+            <!-- Left Column: User Information -->
+            <div class="col-md-6 mb-4">
+              <h6 class="fw-bold text-success mb-3"><i class="fa-solid fa-id-card me-2"></i> Basic Information</h6>
+              <p><strong>User ID:</strong> <span id="modalUserId">—</span></p>
+              <p><strong>Name:</strong> <span id="modalUserName">—</span></p>
+              <p><strong>Email:</strong> <span id="modalUserEmail">—</span></p>
+              <p><strong>Phone:</strong> <span id="modalUserPhone">—</span></p>
+              <p><strong>Role:</strong> <span id="modalUserRole" class="badge bg-success">—</span></p>
+              <p><strong>Registered On:</strong> <span id="modalRegDate">—</span></p>
+              <p><strong>Status:</strong> <span id="modalUserStatus" class="badge bg-secondary">Unverified</span></p>
             </div>
 
-            <!-- Product Name -->
-            <div class="mb-3">
-              <label class="form-label fw-semibold">Product Name</label>
-              <input type="text" class="form-control" placeholder="Enter product name">
-            </div>
-
-            <!-- Container for Grouping Price and Quantity -->
-            <div class="d-flex flex-row justify-content-between w-100">
-              <!-- Price -->
-              <div class="mb-3 w-75">
-                <label class="form-label fw-semibold">Price</label>
-                <input type="number" class="form-control" placeholder="Enter price" min="1" id="priceInput">
+            <!-- Right Column: Files (for both roles) -->
+            <div class="col-md-6 mb-4">
+              <h6 class="fw-bold text-success mb-3"><i class="fa-solid fa-file-lines me-2"></i> Submitted Documents</h6>
+              <div class="d-flex flex-column gap-3">
+                <div class="file-item p-3 bg-light rounded-3 border">
+                  <div class="d-flex align-items-center gap-3">
+                    <i class="fa-solid fa-id-badge text-primary fs-4"></i>
+                    <div>
+                      <p class="mb-1 fw-semibold">Valid ID</p>
+                      <a href="#" id="viewIdLink" class="text-success text-decoration-none">View Image</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="file-item p-3 bg-light rounded-3 border">
+                  <div class="d-flex align-items-center gap-3">
+                    <i class="fa-solid fa-file-pdf text-danger fs-4"></i>
+                    <div>
+                      <p class="mb-1 fw-semibold">Proof of Address</p>
+                      <a href="#" id="viewProofLink" class="text-success text-decoration-none">Download PDF</a>
+                    </div>
+                  </div>
+                </div>
               </div>
+            </div>
+          </div>
 
-              <!-- Quantity -->
-              <div class="mb-3 w-75 ms-2">
-                <label class="form-label fw-semibold">Quantity</label>
-                <input type="number" class="form-control" placeholder="Enter quantity" min="1" id="quantityInput">
+          <!-- Farmer Products (visible only if user is a seller/farmer) -->
+          <div class="row" id="farmerProductsSection" style="display: none;">
+            <div class="col-12">
+              <h6 class="fw-bold text-success mb-3"><i class="fa-solid fa-leaf me-2"></i> Farmer's Products</h6>
+              <div class="table-responsive border rounded-4 shadow-sm" style="max-height: 300px; overflow-y: auto;">
+                <table class="table table-hover align-middle mb-0 text-center">
+                  <thead class="table-success">
+                    <tr>
+                      <th>Image</th>
+                      <th>Product Name</th>
+                      <th>Category</th>
+                      <th>Price (₱)</th>
+                    </tr>
+                  </thead>
+                  <tbody id="farmerProductsBody">
+                    <tr>
+                      <td colspan="4" class="text-muted py-3">No products available.</td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
             </div>
+          </div>
 
-            <!-- Hashtags -->
-            <div class="mb-3">
-              <label class="form-label fw-semibold">Hashtags</label>
-              <div id="hashtagBox" class="form-control d-flex flex-wrap gap-2 p-2" 
-                  style="height: 200px; cursor:text;" 
-                  contenteditable="true"></div>
-            </div>
-
-          </form>
+          <!-- Notes -->
+          <div class="mt-4">
+            <h6 class="fw-bold text-success mb-3"><i class="fa-solid fa-sticky-note me-2"></i> Admin Notes</h6>
+            <textarea class="form-control rounded-3" rows="3" placeholder="Add notes for this user..."></textarea>
+          </div>
         </div>
 
-        <!-- Modal Footer -->
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-          <button type="button" class="btn btn-success">Save Product</button>
+        <!-- Footer -->
+        <div class="modal-footer bg-light rounded-bottom-4">
+          <button type="button" class="btn btn-outline-secondary rounded-pill px-4" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-success rounded-pill px-4 approve-user">
+            <i class="fa-solid fa-check me-2"></i> Approve
+          </button>
+          <button type="button" class="btn btn-danger rounded-pill px-4 deny-user">
+            <i class="fa-solid fa-xmark me-2"></i> Deny
+          </button>
         </div>
 
       </div>
     </div>
   </div>
 
-  <script src="farmer-js/modal-trigger-js.js">
+  <!-- 🧾 Vendor (Buyer) Details Modal -->
+  <div class="modal fade" id="vendorDetailsModal" tabindex="-1" aria-labelledby="vendorDetailsModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content rounded-4 shadow-lg border-0">
+
+        <!-- Modal Header -->
+        <div class="modal-header bg-success text-white rounded-top-4 d-flex justify-content-between">
+          <h5 class="modal-title fw-bold" id="vendorDetailsModalLabel">
+            <i class="fa-solid fa-store me-2"></i> Vendor Details
+          </h5>
+          <i class="fa-solid fa-circle-xmark fs-2 cursor-pointer" data-bs-dismiss="modal" aria-label="Close"></i>
+        </div>
+
+        <!-- Modal Body -->
+        <div class="modal-body p-4">
+          <div class="row mb-4">
+            
+            <!-- Left: Vendor Info -->
+            <div class="col-md-6">
+              <h6 class="fw-bold text-success mb-3"><i class="fa-solid fa-user-tag me-2"></i> Vendor Information</h6>
+              <p><strong>Vendor ID:</strong> <span id="vendorId">VND-102</span></p>
+              <p><strong>Name:</strong> <span id="vendorName">Maria Santos</span></p>
+              <p><strong>Email:</strong> <span id="vendorEmail">maria.santos@example.com</span></p>
+              <p><strong>Store Name:</strong> <span id="vendorStore">Santos Fresh Mart</span></p>
+              <p><strong>Contact Number:</strong> <span id="vendorPhone">+63 912 345 6789</span></p>
+              <p><strong>Location:</strong> <span id="vendorLocation">Quezon City, Philippines</span></p>
+              <p><strong>Registration Date:</strong> <span id="vendorRegDate">2025-09-18</span></p>
+            </div>
+
+            <!-- Right: Submitted Files -->
+            <div class="col-md-6">
+              <h6 class="fw-bold text-success mb-3"><i class="fa-solid fa-file-alt me-2"></i> Submitted Files</h6>
+              <div class="d-flex flex-column gap-3">
+                
+                <!-- Business Permit -->
+                <div class="file-item p-3 bg-light rounded-3 border">
+                  <div class="d-flex align-items-center gap-3">
+                    <i class="fa-solid fa-file-contract text-warning fs-4"></i>
+                    <div>
+                      <p class="mb-1 fw-semibold">Business Permit</p>
+                      <a href="#" class="text-decoration-none text-success">View File</a>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- ID Proof -->
+                <div class="file-item p-3 bg-light rounded-3 border">
+                  <div class="d-flex align-items-center gap-3">
+                    <i class="fa-solid fa-id-card text-primary fs-4"></i>
+                    <div>
+                      <p class="mb-1 fw-semibold">ID Proof</p>
+                      <a href="#" class="text-decoration-none text-success">View Image</a>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Additional Document -->
+                <div class="file-item p-3 bg-light rounded-3 border">
+                  <div class="d-flex align-items-center gap-3">
+                    <i class="fa-solid fa-file text-info fs-4"></i>
+                    <div>
+                      <p class="mb-1 fw-semibold">Additional Document</p>
+                      <a href="#" class="text-decoration-none text-success">Download</a>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <!-- Notes Section -->
+          <div class="row">
+            <div class="col-12">
+              <h6 class="fw-bold text-success mb-3"><i class="fa-solid fa-sticky-note me-2"></i> Admin Notes</h6>
+              <textarea class="form-control rounded-3" rows="3" placeholder="Add notes about this vendor..."></textarea>
+            </div>
+          </div>
+        </div>
+
+        <!-- Modal Footer -->
+        <div class="modal-footer bg-light rounded-bottom-4">
+          <button type="button" class="btn btn-outline-secondary rounded-pill px-4" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-success rounded-pill px-4 approve-vendor">
+            <i class="fa-solid fa-check me-2"></i> Approve
+          </button>
+          <button type="button" class="btn btn-danger rounded-pill px-4 deny-vendor">
+            <i class="fa-solid fa-xmark me-2"></i> Deny
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script>
+    $(document).on('click', '.view-user-btn', function () {
+      const role = $(this).data('role'); // 'vendor' or 'farmer'
+
+      // Fill in details
+      $('#modalUserId').text($(this).data('id'));
+      $('#modalUserName').text($(this).data('name'));
+      $('#modalUserEmail').text($(this).data('email'));
+      $('#modalUserPhone').text($(this).data('phone'));
+      $('#modalUserRole').text(role.charAt(0).toUpperCase() + role.slice(1));
+      $('#modalRegDate').text($(this).data('date'));
+      $('#modalUserStatus').text($(this).data('status')).removeClass('bg-secondary bg-success bg-danger')
+        .addClass($(this).data('status') === 'Verified' ? 'bg-success' : 'bg-secondary');
+
+      // Load file links
+      $('#viewIdLink').attr('href', $(this).data('idfile'));
+      $('#viewProofLink').attr('href', $(this).data('prooffile'));
+
+      // Show/hide farmer products
+      if (role === 'farmer') {
+        $('#farmerProductsSection').show();
+        const products = $(this).data('products') || [];
+        let productRows = '';
+        if (products.length) {
+          products.forEach(p => {
+            productRows += `
+              <tr>
+                <td><img src="${p.image}" alt="${p.name}" class="rounded-3" width="50"></td>
+                <td>${p.name}</td>
+                <td>${p.category}</td>
+                <td>₱${p.price}</td>
+              </tr>`;
+          });
+        } else {
+          productRows = `<tr><td colspan="4" class="text-muted py-3">No products available.</td></tr>`;
+        }
+        $('#farmerProductsBody').html(productRows);
+      } else {
+        $('#farmerProductsSection').hide();
+      }
+
+      // Show modal
+      $('#userDetailsModal').modal('show');
+    });
   </script>
 
 </body>
