@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KadiwaNet - Connecting Farmers & Vendors</title>
+
+  <!-- FAVICON -->
+  <link rel="icon" type="image/png" href="images/KadiwaNet_Logo.png" sizes="32x32">
+
+  <link rel="stylesheet" href="css/landing-page-style.css">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+  <!-- FontAwesome Icons -->
+  <script src="https://kit.fontawesome.com/da97a1e785.js" crossorigin="anonymous"></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- AOS Animation -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <style>
+    .btn-signup {
+      background: #198754;
+      color: white;
+      padding: 10px 30px;
+      border-radius: 50px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .btn-signup:hover {
+      background: #157347;
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(25, 135, 84, 0.3);
+    }
+
+    .btn-login {
+      color: #198754;
+      padding: 10px 30px;
+      border: 2px solid #198754;
+      border-radius: 50px;
+      font-weight: 600;
+      margin-right: 10px;
+      transition: all 0.3s ease;
+    }
+
+    .btn-login:hover {
+      background: #198754;
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    .btn-cta-white {
+      background: white;
+      color: #198754;
+      padding: 15px 50px;
+      border-radius: 50px;
+      font-size: 1.2rem;
+      font-weight: 700;
+      transition: all 0.3s ease;
+      border: none;
+      margin: 10px;
+    }
+
+    .btn-cta-white:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      color: #198754;
+    }
+
+    .btn-cta-outline {
+      background: transparent;
+      color: white;
+      padding: 15px 50px;
+      border: 3px solid white;
+      border-radius: 50px;
+      font-size: 1.2rem;
+      font-weight: 700;
+      transition: all 0.3s ease;
+      margin: 10px;
+    }
+
+    .btn-cta-outline:hover {
+      background: white;
+      color: #198754;
+      transform: translateY(-3px);
+    }
+
+    /* ===========================
+        RESPONSIVE
+        =========================== */
+    @media (max-width: 768px) {
+      .hero-content h1 {
+        font-size: 2.5rem;
+      }
+
+      .hero-content p {
+        font-size: 1.1rem;
+      }
+
+      .section-title h2 {
+        font-size: 2rem;
+      }
+
+      .cta-section h2 {
+        font-size: 2rem;
+      }
+
+      .cta-section p {
+        font-size: 1.1rem;
+      }
+
+      .btn-cta-white,
+      .btn-cta-outline {
+        padding: 12px 30px;
+        font-size: 1rem;
+      }
+    }
+  </style>
+
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="#">
+        <img src="images/KadiwaNet_Logo.png" alt="KadiwaNet Logo" width="50" height="40">
+        <span>KadiwaNet</span>
+      </a>
+      
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto align-items-center">
+          <li class="nav-item">
+            <a class="nav-link" href="#home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#features">Features</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#how-it-works">How It Works</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#testimonials">Testimonials</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact</a>
+          </li>
+          <li class="nav-item ms-3">
+            <a href="sign-in.html" class="btn btn-login">Log In</a>
+          </li>
+          <li class="nav-item">
+            <a href="verify-email.html" class="btn btn-signup">Sign Up</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section id="home" class="hero-section">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6" data-aos="fade-right">
+          <div class="hero-content">
+            <h1>Connecting <span class="highlight">Farmers</span> Directly to <span class="highlight">Vendors</span></h1>
+            <p>Eliminate the middleman. Increase profits. Fresh crops from farm to market in the Philippines.</p>
+            <div class="d-flex gap-3 flex-wrap align-items-center">
+              <a href="verify-email.html" class="btn btn-signup btn-lg py-3">Get Started Today</a>
+              <a href="#how-it-works" class="btn btn-cta-outline">Learn More</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6" data-aos="fade-left">
+          <div class="hero-image">
+            <!-- Replace with actual image: Filipino farmer in rice field or vendor at market -->
+            <img src="images/filipino-farmer.jpg" class="img-placeholder" alt="Filipino farmer holding fresh vegetables or rice, 
+              smiling at camera. Background: lush green farm or rice terraces. 
+              Or: Split image showing farmer on left, vendor/market on right with connecting arrow.">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS SECTION -->
+  <section class="stats-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="stat-card">
+            <i class="fas fa-users"></i>
+            <h3>5,000+</h3>
+            <p>Active Users</p>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="stat-card">
+            <i class="fas fa-handshake"></i>
+            <h3>10,000+</h3>
+            <p>Successful Transactions</p>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+          <div class="stat-card">
+            <i class="fas fa-chart-line"></i>
+            <h3>30%</h3>
+            <p>Average Profit Increase</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES SECTION -->
+  <section id="features" class="features-section">
+    <div class="container">
+      <div class="section-title" data-aos="fade-up">
+        <h2>Why Choose KadiwaNet?</h2>
+        <p>The future of agricultural commerce in the Philippines</p>
+      </div>
+      
+      <div class="row g-4">
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="feature-card">
+            <i class="fas fa-user-slash"></i>
+            <h4>No Middleman</h4>
+            <p>Connect directly with farmers or vendors. Keep more of your profits and reduce costs.</p>
+          </div>
+        </div>
+        
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="feature-card">
+            <i class="fas fa-leaf"></i>
+            <h4>Fresh Produce</h4>
+            <p>Get the freshest crops directly from the farm. Better quality, better prices.</p>
+          </div>
+        </div>
+        
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+          <div class="feature-card">
+            <i class="fas fa-mobile-alt"></i>
+            <h4>Easy to Use</h4>
+            <p>Simple, intuitive platform designed for Filipino farmers and vendors.</p>
+          </div>
+        </div>
+        
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="feature-card">
+            <i class="fas fa-shield-alt"></i>
+            <h4>Secure Transactions</h4>
+            <p>Safe and verified transactions with built-in buyer and seller protection.</p>
+          </div>
+        </div>
+        
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="feature-card">
+            <i class="fas fa-comments"></i>
+            <h4>Direct Communication</h4>
+            <p>Chat directly with farmers or vendors to negotiate prices and arrange deliveries.</p>
+          </div>
+        </div>
+        
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+          <div class="feature-card">
+            <i class="fas fa-chart-bar"></i>
+            <h4>Track Your Orders</h4>
+            <p>Real-time order tracking and inventory management for your business.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="how-it-works" class="how-it-works">
+    <div class="container">
+      <div class="section-title" data-aos="fade-up">
+        <h2>How It Works</h2>
+        <p>Get started in three simple steps</p>
+      </div>
+      
+      <div class="row g-5">
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="step-card">
+            <div class="step-number">1</div>
+            <h4>Sign Up</h4>
+            <p>Create your free account as a farmer or vendor. It takes less than 2 minutes.</p>
+          </div>
+        </div>
+        
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="step-card">
+            <div class="step-number">2</div>
+            <h4>Connect</h4>
+            <p>Browse available crops or find vendors in your area. Send messages and negotiate directly.</p>
+          </div>
+        </div>
+        
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+          <div class="step-card">
+            <div class="step-number">3</div>
+            <h4>Trade</h4>
+            <p>Complete your transaction, arrange delivery, and enjoy better profits without middlemen.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOR FARMERS & VENDORS -->
+  <section class="user-sections">
+    <div class="container">
+      <div class="section-title mb-5" data-aos="fade-up">
+        <h2>Built for Filipino Agriculture</h2>
+        <p>Whether you grow or sell, we've got you covered</p>
+      </div>
+      
+      <div class="row g-4">
+        <div class="col-lg-6" data-aos="fade-right">
+          <div class="user-card">
+            <div class="user-card-header">
+              <i class="fas fa-tractor"></i>
+              <h3>For Farmers</h3>
+            </div>
+            <ul>
+              <li><i class="fas fa-check-circle"></i> Sell directly to vendors at better prices</li>
+              <li><i class="fas fa-check-circle"></i> No middleman taking your profits</li>
+              <li><i class="fas fa-check-circle"></i> List your crops and get offers instantly</li>
+              <li><i class="fas fa-check-circle"></i> Build lasting relationships with buyers</li>
+              <li><i class="fas fa-check-circle"></i> Get paid faster and more fairly</li>
+              <li><i class="fas fa-check-circle"></i> Access to wider market across the Philippines</li>
+            </ul>
+            <a href="verify-email.html" class="btn btn-signup btn-lg w-100 mt-3">Sign Up as Farmer</a>
+          </div>
+        </div>
+        
+        <div class="col-lg-6" data-aos="fade-left">
+          <div class="user-card">
+            <div class="user-card-header">
+              <i class="fas fa-store"></i>
+              <h3>For Vendors</h3>
+            </div>
+            <ul>
+              <li><i class="fas fa-check-circle"></i> Source fresh produce directly from farms</li>
+              <li><i class="fas fa-check-circle"></i> Lower costs, higher quality products</li>
+              <li><i class="fas fa-check-circle"></i> Browse available crops from multiple farmers</li>
+              <li><i class="fas fa-check-circle"></i> Negotiate prices and quantities directly</li>
+              <li><i class="fas fa-check-circle"></i> Reliable supply chain connections</li>
+              <li><i class="fas fa-check-circle"></i> Track orders and manage inventory easily</li>
+            </ul>
+            <a href="verify-email.html" class="btn btn-signup btn-lg w-100 mt-3">Sign Up as Vendor</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonials" class="testimonials-section">
+    <div class="container">
+      <div class="section-title" data-aos="fade-up">
+        <h2>What Our Users Say</h2>
+        <p>Real stories from real farmers and vendors</p>
+      </div>
+      
+      <div class="row">
+        <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="testimonial-card">
+            <i class="fas fa-quote-left quote"></i>
+            <div class="testimonial-content">
+              <p>"KadiwaNet changed my farming business. I now sell directly to vendors and earn 30% more than before. No more middlemen taking my profits!"</p>
+              <div class="testimonial-author">
+                <!-- Image: Filipino male farmer, around 40-50 years old, wearing barong or polo -->
+                <img src="images/juan-santos-img.jpg" alt="Juan Santos">
+                <div class="author-info">
+                  <h5>Juan Santos</h5>
+                  <span>Rice Farmer, Nueva Ecija</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="testimonial-card">
+            <i class="fas fa-quote-left quote"></i>
+            <div class="testimonial-content">
+              <p>"As a market vendor, finding reliable suppliers was always a challenge. KadiwaNet made it so easy to connect with farmers and get fresh produce at great prices."</p>
+              <div class="testimonial-author">
+                <!-- Image: Filipino female vendor, around 35-45 years old, friendly smile -->
+                <img src="images/maria-cruz.jpg" alt="Maria Cruz">
+                <div class="author-info">
+                  <h5>Maria Cruz</h5>
+                  <span>Vegetable Vendor, Manila</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
+          <div class="testimonial-card">
+            <i class="fas fa-quote-left quote"></i>
+            <div class="testimonial-content">
+              <p>"The platform is simple to use even for someone like me who's not tech-savvy. I can now reach vendors all over Luzon and expand my business."</p>
+              <div class="testimonial-author">
+                <!-- Image: Filipino male farmer, around 30-40 years old, wearing farmer's hat -->
+                <img src="images/farmer-testimonial-2.jpg" alt="Pedro Reyes">
+                <div class="author-info">
+                  <h5>Pedro Reyes</h5>
+                  <span>Vegetable Farmer, Benguet</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA SECTION -->
+  <section class="cta-section">
+    <div class="container" data-aos="zoom-in">
+      <h2>Ready to Transform Your Agricultural Business?</h2>
+      <p>Join thousands of farmers and vendors already using KadiwaNet</p>
+      <div class="cta-buttons">
+        <a href="verify-email.html" class="btn btn-cta-white">Create Free Account</a>
+        <a href="sign-in.html" class="btn btn-cta-outline">Log In</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="contact" class="footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <div class="footer-logo d-flex align-items-center mb-3">
+            <img src="images/KadiwaNet_Logo.png" alt="KadiwaNet Logo" width="50" height="40" class="me-2">
+            KadiwaNet
+          </div>
+          <p class="text-light">Connecting Filipino farmers and vendors directly. Eliminating middlemen, increasing profits, and supporting local agriculture.</p>
+          <div class="social-links mt-4">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        
+        <div class="col-lg-2 col-md-6">
+          <h5>Quick Links</h5>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#how-it-works">How It Works</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+          </ul>
+        </div>
+        
+        <div class="col-lg-2 col-md-6">
+          <h5>For Users</h5>
+          <ul>
+            <li><a href="verify-email.html">Farmer Sign Up</a></li>
+            <li><a href="verify-email.html">Vendor Sign Up</a></li>
+            <li><a href="sign-in.html">Log In</a></li>
+            <li><a href="help.html">Help Center</a></li>
+          </ul>
+        </div>
+        
+        <div class="col-lg-2 col-md-6">
+          <h5>Company</h5>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="press.html">Press</a></li>
+          </ul>
+        </div>
+        
+        <div class="col-lg-2 col-md-6">
+          <h5>Legal</h5>
+          <ul>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+            <li><a href="cookies.html">Cookie Policy</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="copyright">
+        <p>&copy; 2024 KadiwaNet. All Rights Reserved. Made with <i class="fas fa-heart text-danger"></i> for Filipino Agriculture</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- AOS Animation JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  
+  <script>
+    // Initialize AOS
+    AOS.init({
+      duration: 800,
+      easing: 'ease-in-out',
+      once: true,
+      mirror: false
+    });
+
+    // Navbar scroll effect
+    window.addEventListener('scroll', function() {
+      const navbar = document.querySelector('.navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          const offsetTop = target.offsetTop - 80;
+          window.scrollTo({
+            top: offsetTop,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
