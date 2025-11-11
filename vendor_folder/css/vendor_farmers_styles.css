@@ -12,10 +12,11 @@ body {
 
 /* Left Farmer List */
 .farmer-list {
-  width: 28%;
+  width: 100%;
   background: #fff;
   border-right: 1px solid #ddd;
   overflow-y: auto;
+  height: 100%;
 }
 
 .farmer-item {

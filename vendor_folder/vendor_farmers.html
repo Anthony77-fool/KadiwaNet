@@ -130,28 +130,66 @@
   <div class="messenger-container">
 
     <!-- LEFT: Farmer List -->
-    <div class="farmer-list">
-      <h3 class="fw-bold mb-3 ps-3 pt-2">Farmers</h3>
+    <div>
+
+      <header class="d-flex justify-content-between align-items-center pe-2">
+        <h3 class="fw-bold ps-3 pt-2 me-5">Farmers</h3>
+
+        <!-- 📍Sort Dropdown with  Province, with preset province_code -->
+        <div class="dropdown ">
+          <button class="btn btn-outline-success dropdown-toggle rounded-pill px-4 w-100 w-sm-auto"
+                  type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fa-solid fa-filter me-2"></i> Sort By
+          </button>
+          <ul class="dropdown-menu shadow border-0 rounded-4 p-2" id="filter-farmer-dropdown">
+            <li><a class="dropdown-item rounded-3 active-filter-default" href="#">Default</a></li>
+            <li>
+              <a class="dropdown-item rounded-3 sort-option" data-sort="name" href="#">
+                Name (A–Z)
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item rounded-3" href="#"
+                data-psgc="012800000">Ilocos Norte</a>
+            </li>
+            <li>
+              <a class="dropdown-item rounded-3" href="#"
+                data-psgc="012900000">Ilocos Sur</a>
+            </li>
+            <li>
+              <a class="dropdown-item rounded-3" href="#"
+                data-psgc="013300000">La Union</a>
+            </li>
+            <li>
+              <a class="dropdown-item rounded-3" href="#"
+                data-psgc="015500000">Pangasinan</a>
+            </li>
+          </ul>
+        </div>
+      </header>
       
-      <div class="farmer-item active">
-        <img src="../images/farmer-images/12_05_2024 10_10_06 am.png" alt="John Doe">
-        <div>
-          <strong>John Dela Cruz</strong><br>
-          <small>Laguna, PH</small>
+      <!-- Farmer List -->
+      <div class="farmer-list">
+        <div class="farmer-item active">
+          <img src="../images/farmer-images/12_05_2024 10_10_06 am.png" alt="John Doe">
+          <div>
+            <strong>John Dela Cruz</strong><br>
+            <small>Laguna, PH</small>
+          </div>
         </div>
-      </div>
-      <div class="farmer-item">
-        <img src="../images/no-image.png" alt="Jane Farmer">
-        <div>
-          <strong>Jane Santos</strong><br>
-          <small>Batangas, PH</small>
+        <div class="farmer-item">
+          <img src="../images/no-image.png" alt="Jane Farmer">
+          <div>
+            <strong>Jane Santos</strong><br>
+            <small>Batangas, PH</small>
+          </div>
         </div>
-      </div>
-      <div class="farmer-item">
-        <img src="../images/farmer-images/12_05_2024 10_10_06 am.png" alt="Carlos Farmer">
-        <div>
-          <strong>Carlos Perez</strong><br>
-          <small>Cebu, PH</small>
+        <div class="farmer-item">
+          <img src="../images/farmer-images/12_05_2024 10_10_06 am.png" alt="Carlos Farmer">
+          <div>
+            <strong>Carlos Perez</strong><br>
+            <small>Cebu, PH</small>
+          </div>
         </div>
       </div>
     </div>
