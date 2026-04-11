@@ -2,7 +2,7 @@
 
 KadiwaNet is a web-based platform designed to empower Filipino farmers by providing a transparent digital marketplace for direct sales and a unique barter exchange mechanism for surplus management. By facilitating disintermediation, the system aims to reduce post-harvest losses and bypass exploitative middlemen.
 
-**Status:** 🎓 **Research Defended & Pilot Tested.** This system has been successfully defended as a scholarly research project and has undergone pilot testing to validate its efficacy in real-world agrarian trade scenarios.
+**Status:** 🎓 **Research Defended & Pilot Tested.** The system was specifically piloted and tested within the **Ilocos Region**, Philippines, ensuring its relevance to local agrarian challenges. It has been evaluated based on **ISO/IEC 25010:2023** software quality standards, receiving **"Excellent"** ratings for its core inventory and trading functionalities.
 
 > **Note on Repository Security:** This public repository serves as the **Frontend & UI Mirror**. The core backend logic and deployment configurations are maintained in a private repository to protect the **CI/CD pipeline (GitHub Actions)**, database credentials, and user data integrity.
 
