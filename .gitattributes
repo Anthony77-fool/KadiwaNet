@@ -5,3 +5,5 @@
 
 # Force the repository to be categorized as PHP
 *.php linguist-detectable=true
+
+* linguist-language=PHP
